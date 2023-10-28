@@ -2,9 +2,11 @@
 
   imports = [ 
     # include the results of the hardware scan
-    ./hardware.nix *
+    ./hardware-configuration.nix
+
     # home-manager
-    <home-manager/nixos>
+    # <home-manager/nixos>
+    
     # local
     ./modules
     ./overlays

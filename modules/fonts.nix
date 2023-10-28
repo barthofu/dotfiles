@@ -2,9 +2,9 @@
 
 {
   fonts = {
-    enableDefaultPackages = false;
+    enableDefaultFonts = false;
 
-    packages = with pkgs; [
+    fonts = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
