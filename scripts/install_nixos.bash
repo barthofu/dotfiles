@@ -2,15 +2,15 @@
 
 set -xe
 
-disk_name="sda"
-boot_part="/dev/${disk_name}1"
-root_part="/dev/${disk_name}2"
+disk_name="nvme0n1"
+boot_part="/dev/${disk_name}p4"
+root_part="/dev/${disk_name}p5"
 
-echo "[*] Parititioning disk '$disk_name'"
-parted "/dev/${disk_name}" -- mklabel gpt
-parted "/dev/${disk_name}" -- mkpart ESP fat32 1MB 512MB
-parted "/dev/${disk_name}" -- mkpart primary 512MB 100%
-parted "/dev/${disk_name}" -- set 1 esp on
+# echo "[*] Parititioning disk '$disk_name'"
+# parted "/dev/${disk_name}" -- mklabel gpt
+# parted "/dev/${disk_name}" -- mkpart ESP fat32 1MB 512MB
+# parted "/dev/${disk_name}" -- mkpart primary 512MB 100%
+# parted "/dev/${disk_name}" -- set 1 esp on
 
 echo "[*] Creating LUKS encrypted container"
 cryptsetup luksFormat "${root_part}"
@@ -25,8 +25,8 @@ lvcreate -l "100%FREE" "${vol_grp_name}" -n root
 
 echo "[*] Formatting LVM volumes"
 mkfs.fat -F32 "${boot_part}" -n boot 
-mkfs.ext4 "/dev/${vol_grp_name}/root"
-mkswap "/dev/${vol_grp_name}/swap"
+mkfs.ext4 -L root "/dev/${vol_grp_name}/root"
+mkswap -L swap "/dev/${vol_grp_name}/swap"
 
 echo "[*] Mounting file systems"
 mount "/dev/${vol_grp_name}/root" /mnt
