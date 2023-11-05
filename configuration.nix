@@ -1,11 +1,11 @@
-{ config, pkgs, ... }: {
+{ home-manager, pkgs, ... }: {
 
   imports = [ 
     # include the results of the hardware scan
     ./hardware-configuration.nix
 
     # home-manager
-    # <home-manager/nixos>
+    home-manager.nixosModules.home-manager
     
     # local
     ./modules
