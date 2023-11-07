@@ -10,26 +10,26 @@
     home.packages = with pkgs; [
 
         # Code
-        vscodium
-        vim
-        git
+        # vscodium
+        # vim
+        # git
 
-        # Browser
-        firefox
-        chromium
-        qutebrowser
+        # # Browser
+        # firefox
+        # chromium
+        # qutebrowser
 
-        # CLI
-        cmatrix
-        neofetch
+        # # CLI
+        # cmatrix
+        # neofetch
 
-        # Media
-        vlc
+        # # Media
+        # vlc
 
-        # Messaging
-        discord
-        telegram-desktop
-        signal-desktop
+        # # Messaging
+        # discord
+        # telegram-desktop
+        # signal-desktop
 
     ];
 }

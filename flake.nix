@@ -50,7 +50,7 @@
     nixosConfigurations = {
 
       nixos = nixpkgs.lib.nixosSystem {
-        system = ${system};
+        system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > My main nixos configuration file <
