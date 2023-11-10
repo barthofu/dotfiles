@@ -15,17 +15,23 @@
 
 ### Todo
 
+#### Scripts
+- [ ] Generators (programs)
+- [ ] Justfile
+- [ ] Formatter
+- [ ] Check imports on pre-commit
+
 #### Home Manager
-- [ ] atuin: better shell history
-- [ ] zsh
-- [ ] oh-my-zsh
+- [x] atuin: better shell history
+- [x] zsh
+- [x] oh-my-zsh
 - [ ] i3
 - [ ] i3lock
-- [ ] btop
-- [ ] eza
+- [x] btop
+- [x] eza
 - [ ] nvim
-- [ ] firefox (ou chrome encore et toujours ?)
+- [x] firefox (ou chrome encore et toujours ?)
 - [ ] gh
-- [ ] git
+- [x] git
 - [ ] gpg ?
 - [ ] himalaya
