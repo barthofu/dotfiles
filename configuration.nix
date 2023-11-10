@@ -8,7 +8,6 @@
     home-manager.nixosModules.home-manager
     
     # local
-    ./home/home.nix
     ./modules
     ./overlays
     ./derivations
