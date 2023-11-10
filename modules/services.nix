@@ -9,7 +9,7 @@
       xkbVariant = "azerty";
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      libinput.touchpad.naturalScrolling = true;
+      libinput.touchpad.traditionalScrolling = true;
     };
 
     printing.enable = true;
