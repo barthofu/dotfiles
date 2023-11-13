@@ -2,16 +2,13 @@
 
   imports = [ 
     # include the results of the hardware scan
-    ./hardware-configuration.nix
+    ./hosts/lenovo/hardware-configuration.nix # TODO: make this dynamic based on hostname provided in the flake's nixos config
 
     # home-manager
     home-manager.nixosModules.home-manager
     
     # local
-    ./modules
-    ./overlays
-    ./derivations
-    ./packages
+    ./core
   ];
 
   system.stateVersion = "23.05";

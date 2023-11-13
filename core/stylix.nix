@@ -6,7 +6,7 @@ let
   font-size = 11;
 in
 {
-  stylix.image = ../assets/wallpaper.jpg;
+  stylix.image = ../assets/wallpapers/umbrella_girl.jpg;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 

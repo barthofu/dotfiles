@@ -23,21 +23,21 @@
   } @ inputs: {
 
     nixosConfigurations = {
-      main = nixpkgs.lib.nixosSystem {
+      lenovo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [ 
-          ./configuration.nix 
+          ./default.nix
           
           # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch --flake .#lenovo`
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.bartho = import ./home/home.nix;
+            home-manager.users.bartho = import ./home/bartho/lenovo;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            # optionally, use home-manager.extraSpecialArgs to pass arguments to home/bartho/lenovo/default.nix
           }
         ];
       };

@@ -15,13 +15,21 @@
 
 ### Todo
 
+*There is also inline TODOs in the different files, just ctrl+maj+F to find them*
+
+#### Global
+
+- [ ] check if my gpu is correctly working
+- [ ] printer
+
 #### Scripts
-- [ ] Generators (programs)
-- [ ] Justfile
-- [ ] Formatter
-- [ ] Check imports on pre-commit
+
+- [ ] formatter
+- [ ] check imports on pre-commit
+- [ ] *generators (programs)*
 
 #### Home Manager
+
 - [x] atuin: better shell history
 - [x] zsh
 - [x] oh-my-zsh
