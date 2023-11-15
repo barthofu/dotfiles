@@ -8,6 +8,7 @@
         jetbrains-toolbox
         # postman # TODO: not working, should install it using flatpak instead
         insomnia
+        starship
 
         # Web
         firefox
