@@ -1,5 +1,7 @@
 rebuild:
     sudo nixos-rebuild switch --flake .#lenovo
+install:
+    sudo nixos-install --flake .#lenovo
 force-pull:
     git reset --hard HEAD~1 && git pull
 force-push:
