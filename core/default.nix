@@ -7,7 +7,7 @@
     ./home-manager.nix
     ./networking.nix
     ./nix.nix
-    ./services.nix
+    ./graphical.nix
     ./virtualization.nix
     ./boot.nix
     ./locale.nix
