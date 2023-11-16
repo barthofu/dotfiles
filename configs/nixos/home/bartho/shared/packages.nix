@@ -46,6 +46,7 @@
         file
         # spotdl # spotify downloader # TODO: not working, find a fix or a correct working version
         scdl # soundcloud downloader
+        feh # manage wallpapers
 
         # Monitoring
         btop # replacement of htop/nmon
