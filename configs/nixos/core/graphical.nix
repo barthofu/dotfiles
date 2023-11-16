@@ -40,6 +40,7 @@
 
     layout = "fr";
     xkbVariant = "azerty";
+    dpi = 140;
     
     desktopManager = {
       xterm.enable = false;

@@ -5,6 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    gh
     just
     libinput-gestures
     direnv
