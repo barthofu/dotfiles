@@ -16,7 +16,7 @@ gaps outer 5
 # Hide titlebar
 new_window pixel
 
-# No border*
+# No borders
 default_border pixel 0
 
 # Font for window titles
@@ -24,6 +24,12 @@ font pango: SauceCodePro Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Lock screen
+bindsym $mod+l exec "i3lock -c 000000"
+
+# Auto lock the screen
+exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 # Start a terminal
 bindsym $mod+Return exec alacritty
