@@ -4,6 +4,7 @@
     imports = [
         ./programs
         ./packages.nix
+        ./flatpaks.nix
     ];
 
     home = {
