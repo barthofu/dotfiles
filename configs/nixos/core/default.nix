@@ -1,9 +1,9 @@
 {
   imports = [
-    ./packages
     ./derivations
     ./overlays
 
+    ./packages.nix
     ./home-manager.nix
     ./networking.nix
     ./nix.nix

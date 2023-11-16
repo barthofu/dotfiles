@@ -1,10 +1,13 @@
 { pkgs, ... }:
 
 {
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = true;
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    git
+    just
+    libinput-gestures
+    direnv
     docker-compose
   ];
 }
