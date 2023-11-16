@@ -13,15 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
-
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    flatpaks,
     ...
   } @ inputs: {
 
@@ -30,7 +27,6 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [ 
-          flatpaks.homeManagerModules.default
           ./default.nix
           
           # make home-manager as a module of nixos
