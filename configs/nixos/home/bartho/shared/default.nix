@@ -12,5 +12,18 @@
         stateVersion = "23.05";
     };
 
+      xsession.windowManager.i3 = {
+    config = {
+      startup = [
+        {
+          command =
+            "${pkgs.feh}/bin/feh --bg-fill ~/.dotfiles/configs/nixos/assets/wallpapers/umbrella_girl.jpg";
+          always = true;
+          notification = false;
+        }
+      ];
+    };
+  };
+
     programs.home-manager.enable = true;
 }
