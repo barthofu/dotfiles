@@ -31,6 +31,7 @@
         neatvnc
         cloudflare-warp
         rofi
+        nvtop # monitor GPU
 
         # CLI utilities
         jq # lightweight and flexible command-line JSON processor

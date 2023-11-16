@@ -37,7 +37,7 @@
 - [x] eza
 - [x] firefox (ou chrome encore et toujours ?)
 - [x] git
-- [ ] alacritty
+- [x] alacritty
 - [ ] nvim
 - [ ] gh
 - [ ] gpg ?
@@ -47,10 +47,10 @@
 #### i3 related
 - [x] i3
 - [x] i3lock
+- [x] rofi
+- [x] picom
 - [ ] polybar
-- [ ] rofi
 - [ ] dunst
-- [ ] picom
 - [ ] pywal
 - [ ] autorandr (if i have problems with external monitors)
 - [ ] bumblebee-status (?)

@@ -14,7 +14,8 @@
     ./users.nix
     ./fonts.nix
     ./console.nix
-    ./sound.nix
+    ./audio.nix
+    ./security.nix
     # ./stylix.nix
   ];
 }

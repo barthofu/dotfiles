@@ -61,4 +61,34 @@
     
     libinput.touchpad.naturalScrolling = false;
   };
+
+  # Compositor
+  services.picom = {
+    enable = true;
+
+    backend = "glx";
+    vSync = true;
+    
+    fade = true;
+    
+    activeOpacity = 1;
+    inactiveOpacity = 0.9;
+    opacityRules = [ "100:class_g *?= 'Rofi'" ];
+
+    shadow = true;
+    shadowOpacity = 0.8;
+    # shadowOffsets = [
+    #   -10 
+    #   -15 
+    # ];
+
+    settings = {
+      corner-radius = 12;
+      blur = {
+        method = "gaussian";
+        size = 10;
+        deviation = 5.0;
+      };
+    };
+  };
 }
