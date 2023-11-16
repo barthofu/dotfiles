@@ -33,13 +33,24 @@
 - [x] atuin: better shell history
 - [x] zsh
 - [x] oh-my-zsh
-- [ ] i3
-- [ ] i3lock
 - [x] btop
 - [x] eza
-- [ ] nvim
 - [x] firefox (ou chrome encore et toujours ?)
-- [ ] gh
 - [x] git
+- [ ] alacritty
+- [ ] nvim
+- [ ] gh
 - [ ] gpg ?
 - [ ] himalaya
+- [ ] conky
+
+#### i3 related
+- [x] i3
+- [x] i3lock
+- [ ] polybar
+- [ ] rofi
+- [ ] dunst
+- [ ] picom
+- [ ] pywal
+- [ ] autorandr (if i have problems with external monitors)
+- [ ] bumblebee-status (?)

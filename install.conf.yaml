@@ -1,0 +1,11 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- link:
+    ~/.config/i3/config: configs/i3/config
+    /etc/nixos/:
+      glob: true
+      path: configs/nixos/*
+      exclude: [ configs/nixos/README.md, configs/nixos/scripts ]

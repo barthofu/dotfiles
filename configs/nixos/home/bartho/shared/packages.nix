@@ -30,6 +30,7 @@
         realvnc-vnc-viewer
         neatvnc
         cloudflare-warp
+        rofi
 
         # CLI utilities
         jq # lightweight and flexible command-line JSON processor

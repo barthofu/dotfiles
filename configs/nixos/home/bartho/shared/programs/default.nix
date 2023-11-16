@@ -5,5 +5,6 @@
     ./git.nix
     ./zoxide.nix
     ./atuin.nix
+    ./alacritty.nix
   ];
 }
