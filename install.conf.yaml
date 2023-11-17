@@ -2,9 +2,18 @@
     link:
       relink: true
       force: true
+      create: true
 
 - link:
-    ~/.config/i3/config: configs/i3/config
+    ~/.config/i3/config: 
+      path: configs/i3/config
+    ~/.config/rofi/:
+      glob: true
+      path: configs/rofi/*
+      exclude: [ configs/rofi/README.md ]
+    ~/.local/share/fonts/:
+      glob: true
+      path: resources/fonts/*
     /etc/nixos/:
       glob: true
       path: configs/nixos/*
