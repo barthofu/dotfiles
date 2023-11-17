@@ -21,6 +21,8 @@
 
 - [ ] check if my gpu is correctly working
 - [ ] printer
+- [ ] re-organize things between nixos and home-manager
+- [ ] limit max number of archived generations
 
 #### Scripts
 
