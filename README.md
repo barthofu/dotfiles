@@ -22,7 +22,9 @@
 - [ ] check if my gpu is correctly working
 - [ ] printer
 - [ ] re-organize things between nixos and home-manager
+- [ ] re-organize things between shared and host-specific
 - [ ] limit max number of archived generations
+- [ ] trackpad pinch-to-zoom support (especialy in Chrome)
 
 #### Scripts
 
@@ -45,6 +47,9 @@
 - [ ] gpg ?
 - [ ] himalaya
 - [ ] conky
+- [ ] vscode (instead of codium)
+    - [ ] w/ declarative extensions
+    - [ ] w/ declarative keybindings 
 
 #### i3 related
 - [x] i3
