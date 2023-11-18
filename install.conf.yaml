@@ -3,18 +3,27 @@
       relink: true
       force: true
       create: true
+      glob: true
 
 - link:
-    ~/.config/i3/config: 
-      path: configs/i3/config
-    ~/.config/rofi/:
+
+    # User config
+    ~/.config/i3/: configs/i3/*
+    ~/.config/feh/: configs/feh/*
+    ~/.config/polybar/: 
       glob: true
+      path: configs/polybar/*
+    ~/.config/systemd/: configs/systemd/*
+    ~/.config/rofi/:
       path: configs/rofi/*
       exclude: [ configs/rofi/README.md ]
-    ~/.local/share/fonts/:
-      glob: true
-      path: resources/fonts/*
+    
+    # User resources
+    ~/.local/share/wallpapers/: resources/wallpapers/*
+    ~/.local/share/fonts/: resources/fonts/*
+
+    # NixOS
     /etc/nixos/:
       glob: true
-      path: configs/nixos/*
-      exclude: [ configs/nixos/README.md, configs/nixos/scripts ]
+      path: nixos/*
+      exclude: [ nixos/README.md, nixos/scripts ]

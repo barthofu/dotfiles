@@ -25,6 +25,8 @@
 - [ ] re-organize things between shared and host-specific
 - [ ] limit max number of archived generations
 - [ ] trackpad pinch-to-zoom support (especialy in Chrome)
+- [ ] better looking lockscreens
+- [ ] pin code to unlock session
 
 #### Scripts
 
@@ -47,6 +49,7 @@
 - [ ] gpg ?
 - [ ] himalaya
 - [ ] conky
+- [ ] navi
 - [ ] vscode (instead of codium)
     - [ ] w/ declarative extensions
     - [ ] w/ declarative keybindings 

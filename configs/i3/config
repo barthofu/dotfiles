@@ -9,6 +9,12 @@
 # Default modkey
 set $mod Mod4
 
+# Start polybar on startup
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
+
+# Setup wallpaper on startup
+exec_always --no-startup-id $HOME/.config/feh/launch.sh
+
 # Gaps
 gaps inner 16
 gaps outer 5
@@ -174,9 +180,3 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    status_command i3status
-}
