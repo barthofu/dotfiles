@@ -1,0 +1,7 @@
+% git
+
+# Force push
+git add . && git commit --amend --no-edit && git push --force-with-lease
+
+# Force pull
+git reset --hard HEAD~1 && git pull

@@ -90,6 +90,11 @@
         size = 10;
         deviation = 5.0;
       };
+      wintypes = {
+        dropdown_menu = { shadow = false; };
+        utility       = { shadow = false; };
+        dock          = { shadow = false; };
+      };
     };
   };
 }
