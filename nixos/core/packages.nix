@@ -15,6 +15,7 @@
     pavucontrol # pipewire frontend
     htop
     krusader
+    arandr
   ];
 
   # thunar
