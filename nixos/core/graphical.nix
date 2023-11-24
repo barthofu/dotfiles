@@ -97,4 +97,9 @@
       };
     };
   };
+
+  # services.xserver.displayManager.setupCommands = ''
+  #   LAPTOP_SCREEN='eDP-1'
+  #   ${pkgs.xorg.xrandr}/bin/xrandr --output $LAPTOP_SCREEN --scale 0.8x0.8
+  # '';
 }

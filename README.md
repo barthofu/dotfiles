@@ -27,6 +27,11 @@
 - [ ] trackpad pinch-to-zoom support (especialy in Chrome)
 - [ ] better looking lockscreens
 - [ ] pin code to unlock session
+- [ ] check gc and nixos storage optimization
+- [ ] better control over sound control (limit to 100% or 150%)
+- [ ] dig power consumption in order to have better battery life
+    - [ ] make comparisons tests against Windows 
+- [ ] global system dark mode so apps can inherit it (e.g: chrome)
 
 #### Scripts
 

@@ -32,33 +32,14 @@
         neatvnc
         cloudflare-warp
         rofi
-        nvtop # monitor GPU
         pywal
         calc
         networkmanager_dmenu
-
-        # CLI utilities
-        jq # lightweight and flexible command-line JSON processor
-        eza # modern replacement for ‘ls’
-        fzf # command-line fuzzy finder
-        zip
-        xz
-        unzip
-        p7zip
-        tree
-        which
-        file
         # spotdl # spotify downloader # TODO: not working, find a fix or a correct working version
         scdl # soundcloud downloader
         feh # manage wallpapers
 
-        # Monitoring
-        btop # replacement of htop/nmon
-        iotop # io monitoring
-        iftop # network monitoring
-
         # Misc
-        cmatrix 
-        neofetch
+
     ];
 }

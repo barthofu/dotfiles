@@ -4,18 +4,47 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    git
-    gh
-    just
-    libinput-gestures
-    direnv
-    docker-compose
+
+    # CLI utilities
+    jq # lightweight and flexible command-line JSON processor
+    eza # modern replacement for ‘ls’
+    fzf # command-line fuzzy finder
+    zip
+    xz
+    unzip
+    p7zip
+    tree
+    which
+    file
+    
+    # System configuration
     brightnessctl # cli to control brightness
     pulseaudio # audio control
     pavucontrol # pipewire frontend
+    arandr # gui for xrandr (monitors management)
+    
+    # Monitoring
     htop
-    krusader
-    arandr
+    btop
+    iotop # io monitoring
+    iftop # network monitoring
+    nvtop # GPU monitoring
+    
+    # Utilities
+    libinput-gestures # TODO: verify if really useful
+    direnv
+    just # command runner
+    
+    # Git
+    git
+    gh
+
+    # Misc
+    docker-compose
+    krusader # file manager
+    cmatrix # just flexin u know
+    neofetch
+    
   ];
 
   # thunar
