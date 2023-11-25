@@ -58,9 +58,7 @@
         i3status
         i3lock
       ];
-    };
-    
-    libinput.touchpad.naturalScrolling = false;
+    };    
   };
 
   # Compositor

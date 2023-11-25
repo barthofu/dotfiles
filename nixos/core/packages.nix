@@ -16,6 +16,7 @@
     tree
     which
     file
+    just # command runner
     
     # System configuration
     brightnessctl # cli to control brightness
@@ -32,8 +33,9 @@
     
     # Utilities
     libinput-gestures # TODO: verify if really useful
+    wmctrl # libinput-gestures dependency
+    xdotool # libinput-gestures dependency
     direnv
-    just # command runner
     
     # Git
     git

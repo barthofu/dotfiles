@@ -24,7 +24,7 @@
 - [ ] re-organize things between nixos and home-manager
 - [ ] re-organize things between shared and host-specific
 - [ ] limit max number of archived generations
-- [ ] trackpad pinch-to-zoom support (especialy in Chrome)
+- [ ] touchpad pinch-to-zoom support (especialy in Chrome)
 - [ ] better looking lockscreens
 - [ ] pin code to unlock session
 - [ ] check gc and nixos storage optimization
