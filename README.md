@@ -37,6 +37,7 @@
 - [ ] docked / portable modes: make distinct modes for when i'm docked and when i'm not (this could impact GPU performance settings, screens resolutions, apps auto-launch at startup, etc)
 - [ ] gui for when typing in my encrypted disk code
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
+- [ ] selectable display mode when external monitor connected (same as Windows; duplicate, extend and only 2nd screen)
 
 #### Scripts
 
