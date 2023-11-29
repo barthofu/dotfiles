@@ -6,6 +6,6 @@
     ./zoxide.nix
     ./atuin.nix
     ./alacritty.nix
-    ./polybar.nix
+    # ./polybar.nix
   ];
 }

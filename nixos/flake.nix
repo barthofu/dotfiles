@@ -13,12 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    # hyprland,
     ...
   } @ inputs: {
 
@@ -28,6 +30,8 @@
         specialArgs = inputs;
         modules = [ 
           ./default.nix
+
+          # hyprland.nixosModules.default
           
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch --flake .#lenovo`
