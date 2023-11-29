@@ -5,7 +5,22 @@
     enable = true;
 
     profiles = {
-      
+
+      "portable" = {
+        fingerprint = {
+          eDP-1 = "00ffffffffffff000e6f151600000000001f0104b5221678032c27a4544c992711515500000001010101010101010101010101010101ffd700a0a0405e603020360058d710000018ff6b00a0a0405e603020360058d710000018000000fd003078cccc38010a202020202020000000fe004d4e473030374441312d4a0a200030";
+        };
+        config = {
+          eDP-1 = {
+            dpi = 140;
+            enable = true;
+            mode = "2560x1600";
+            position = "0x0";
+            primary = true;
+          };
+        };
+      };
+
       "docked" = {
         fingerprint = {
           eDP-1 = "00ffffffffffff000e6f151600000000001f0104b5221678032c27a4544c992711515500000001010101010101010101010101010101ffd700a0a0405e603020360058d710000018ff6b00a0a0405e603020360058d710000018000000fd003078cccc38010a202020202020000000fe004d4e473030374441312d4a0a200030";
@@ -17,10 +32,10 @@
             enable = true;
             mode = "2560x1600";
             position = "0x0";
-            primary = true;
           };
           DP-3 = {
             enable = true;
+            primary = true;
             position = "2560x0";
             scale = {
               x = 2;

@@ -20,24 +20,30 @@
 #### Global
 
 - [ ] continuous integration
-- [ ] check if my gpu is correctly working
-- [ ] printer
-- [ ] re-organize things between nixos and home-manager
-- [ ] re-organize things between shared and host-specific
-- [ ] touchpad pinch-to-zoom support (especialy in Chrome)
-- [ ] better looking lockscreens
-- [ ] pin code to unlock session
 - [ ] check gc and nixos storage optimization
-- [ ] better control over sound control (limit to 100% or 150% via script)
 - [ ] dig power consumption in order to have better battery life
     - [ ] make comparisons tests against Windows 
-- [ ] global system dark mode so apps can inherit it (e.g: chrome)
-- [ ] fix this godamn dpi/scaling issue with my monitors
-- [ ] apps auto-launch and disposition across workspaces at startup (i3 related)
-- [ ] docked / portable modes: make distinct modes for when i'm docked and when i'm not (this could impact GPU performance settings, screens resolutions, apps auto-launch at startup, etc)
-- [ ] gui for when typing in my encrypted disk code
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
-- [ ] selectable display mode when external monitor connected (same as Windows; duplicate, extend and only 2nd screen)
+- [ ] re-organize things between nixos and home-manager
+- [ ] re-organize things between shared and host-specific
+  
+#### Environment
+
+- [ ] **switch to wayland**
+    - [ ] touchpad pinch-to-zoom support (especialy in Chrome)
+    - [ ] fix this godamn dpi/scaling issue with my monitors
+- [ ] better looking lockscreens
+- [ ] pin code to unlock session
+- [ ] better control over sound control (limit to 100% or 150% via script)
+- [ ] global system dark mode so apps can inherit it (e.g: chrome)
+- [ ] apps auto-launch and disposition across workspaces at startup (i3 related)
+- [ ] docked / portable modes: make distinct modes for when i'm docked and when i'm not (this could impact GPU performance settings, screens resolutions, apps auto-launch at startup, etc) -> autorandr?
+- [ ] gui for when typing in my encrypted disk code
+- [ ] selectable display mode when external monitor connected (same as Windows; duplicate, extend and only 2nd screen) -> autorandr?
+- [ ] win+maj+S equivalent of windows (to take localized screenshots)
+- [ ] screen color picker
+- [ ] practical wifi manager with 5ghz support (wtf?)
+- [ ] check if my gpu is correctly working
 
 #### Scripts
 
