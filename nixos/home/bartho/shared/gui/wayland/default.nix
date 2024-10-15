@@ -3,18 +3,20 @@
 {  
     imports = [
         ./hyprland
+        ./hyprlock.nix
+        ./wlogout.nix
     ];
 
     home.packages = with pkgs; [
         # screenshot
-        # grim
-        # slurp
+        grim
+        slurp
 
         # utils
         # self.packages.${pkgs.system}.wl-ocr
-        # wl-clipboard
-        # wl-screenrec
-        # wlr-randr
+        wl-clipboard
+        wl-screenrec
+        wlr-randr
     ];
 
     home.sessionVariables = {

@@ -20,6 +20,7 @@
     ./security.nix
     ./users.nix
     ./virtualization.nix
+    ./greetd.nix
   ];
 
   system.stateVersion = "23.05";
