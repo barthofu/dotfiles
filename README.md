@@ -13,6 +13,10 @@
 6. Run `wpa_supplicant -B -c /etc/wpa_supplicant.conf -i <interface_id>` to connect to the network in the background.
 7. If you don't directly have an IP adress, run `dhclient <interface_id>` to get one.
 
+### Utilities commands
+
+- `lsblk -o name,uuid | grep nvme0n1p3 | awk '{print $NF}'` to get the UUID of the partition
+
 ### Todo
 
 *There is also inline TODOs in the different files, just ctrl+maj+F to find them*
@@ -23,6 +27,8 @@
 - [ ] check gc and nixos storage optimization
 - [ ] dig power consumption in order to have better battery life
     - [ ] make comparisons tests against Windows 
+    - [ ] check if the GPU is correctly working
+    - [ ] check c-states
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 - [ ] re-organize things between nixos and home-manager
 - [ ] re-organize things between shared and host-specific

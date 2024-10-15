@@ -2,8 +2,9 @@
 
 {
     imports = [
+        ./gui
         ./programs
-        ./packages.nix
+        ./terminal
     ];
 
     home = {

@@ -46,7 +46,6 @@
     krusader # file manager
     cmatrix # just flexin u know
     neofetch
-    
   ];
 
   # thunar

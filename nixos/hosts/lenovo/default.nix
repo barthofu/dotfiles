@@ -6,17 +6,16 @@
 
     ./hardware/hardware-configuration.nix
     ./hardware/audio.nix
-    ./hardware/networking.nix
     ./hardware/touchpad.nix
 
     ./graphics/nvidia.nix
     ./graphics/opengl.nix
-    ./graphical.nix # TODO: split in graphics/ and remove
 
     ./boot.nix
     ./fonts.nix
     ./locale.nix
     ./misc.nix
+    ./networking.nix
     ./packages.nix
     ./security.nix
     ./users.nix
