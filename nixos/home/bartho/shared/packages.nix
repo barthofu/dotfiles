@@ -13,7 +13,6 @@
 
         # Web
         firefox
-        google-chrome # TODO: eradicate my dependence on this shit
 
         # Media
         vlc

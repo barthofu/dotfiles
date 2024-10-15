@@ -21,7 +21,6 @@
     ./security.nix
     ./users.nix
     ./virtualization.nix
-    ./console.nix
   ];
 
   system.stateVersion = "23.05";

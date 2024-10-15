@@ -6,7 +6,7 @@
     touchpad = {
       tapping = true;
       naturalScrolling = false;
-      scrollMethod = "twofingers";
+      scrollMethod = "twofinger";
       disableWhileTyping = false;
     };
   };
