@@ -19,8 +19,8 @@
       exclude: [ configs/rofi/README.md ]
     
     # User resources
-    ~/.local/share/wallpapers/: resources/wallpapers/*
-    ~/.local/share/fonts/: resources/fonts/*
+    ~/.local/share/wallpapers/: assets/wallpapers/*
+    ~/.local/share/fonts/: assets/fonts/*
 
     # NixOS
     /etc/nixos/:

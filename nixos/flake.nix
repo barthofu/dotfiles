@@ -12,13 +12,32 @@
   inputs = {
 
     ####################  Core Repositories ####################
-    # Between nixpkgs-unstable and master is about 3 days and a binary cache And then like 1-2 more days till nixos-unstable
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nix.url = "github:nixos/nix";
+    # Official NixOS repo
+    master = {
+      url = "github:NixOS/nixpkgs/master";
+    };
 
-    # Home Manager is a Nix-powered tool for reproducible management of the contents of users’ home directories
+    unstable = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+
+    # Latest stable
+    stable = {
+      url = "github:NixOS/nixpkgs/nixos-24.05";
+    };
+
+    # Current nixpkgs branch
+    nixpkgs = {
+      follows = "unstable";
+    };
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -46,40 +65,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence = {
+      url = "github:/nix-community/impermanence";
+    };
+
   };
 
   outputs = {
     self,
-    nixpkgs,
-    home-manager,
+    flake-parts,
     ...
-  } @ inputs: {
+  } @ inputs:
+  let
+    # Description of hosts
+    hosts = import ./hosts.nix;
+    # Import helper functions
+    libx = import ./lib { inherit self inputs; };
+  in flake-parts.lib.mkFlake { inherit inputs; } {
+    
+    systems = libx.forAllSystems;
 
-    nixosConfigurations = {
-      lenovo = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [ 
-
-          ./hosts/lenovo
-          ./hosts/shared
-          
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch --flake .#lenovo`
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.bartho = {
-              imports = [
-                ./home/bartho/lenovo
-              ];
-            };
-
-            # optionally, use home-manager.extraSpecialArgs to pass arguments to home/bartho/lenovo/default.nix
-          }
-        ];
-      };
+    flake = {
+      nixosConfigurations = libx.genNixos hosts.nixos;
     };
   };
 }

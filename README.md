@@ -1,5 +1,18 @@
 # Dotfiles
 
+## File structure
+
+```bash
+.
+├── nixos
+│   ├── flake.nix # configuration entry point
+│   ├── home # home-manager configuration
+│   │   ├── modules # home-manager modules
+│   │   └── users # users configurations for home manager 
+│   ├── 
+
+```
+
 ## NixOS
 
 ### Installation
