@@ -29,7 +29,8 @@
     btop
     iotop # io monitoring
     iftop # network monitoring
-    nvtop # GPU monitoring
+    nvtopPackages.full # GPU monitoring
+    powertop # power consumption monitoring
     
     # Utilities
     libinput-gestures # TODO: verify if really useful
