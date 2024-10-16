@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+    programs.gh.gitCredentialHelper.enable = false;
     programs.git = {
         enable = true;
         package = pkgs.gitFull;
@@ -20,6 +21,14 @@
         extraConfig = {
             init.defaultBranch = "main";
             github.user = "barthofu";
+            credential = {
+                "https://github.com" = {
+                    helper = "!gh auth git-credential";
+                };
+                "https://gist.github.com" = {
+                    helper = "!gh auth git-credential";
+                };
+            };
         };
     };
 }
