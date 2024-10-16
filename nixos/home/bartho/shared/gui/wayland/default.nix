@@ -5,6 +5,7 @@
         ./hyprland
         ./hyprlock.nix
         ./wlogout.nix
+        ./wofi.nix
     ];
 
     home.packages = with pkgs; [

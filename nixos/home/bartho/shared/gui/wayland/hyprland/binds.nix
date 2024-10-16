@@ -35,6 +35,7 @@ in {
       [
         # compositor commands
         "$mod SHIFT, E, exec, pkill Hyprland"
+        "$mod,SPACE,exec, pkill wofi || wofi"
         "$mod, Q, killactive,"
         "$mod, F, fullscreen,"
         "$mod, G, togglegroup,"

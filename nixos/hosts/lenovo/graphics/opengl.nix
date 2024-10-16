@@ -3,6 +3,6 @@
 {
     hardware.graphics = {
         enable = true;
-        enable32bit = true;
-    }
+        enable32Bit = true;
+    };
 }
