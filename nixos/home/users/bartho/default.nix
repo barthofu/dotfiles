@@ -31,7 +31,7 @@
 
     user = {
       packages.enable = true;
-      impermanence.enable = false;
+      xdg.enable = true;
     };
   };
 }

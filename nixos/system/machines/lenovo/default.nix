@@ -28,6 +28,7 @@
 
 		programs = {
 			hm.enable = true;
+			xdg-portal.enable = true;
 		};
 	};
 }

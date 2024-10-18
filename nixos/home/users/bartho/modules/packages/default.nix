@@ -55,7 +55,9 @@ in {
       # spotdl # spotify downloader # TODO: not working, find a fix or a correct working version
       scdl # soundcloud downloader
       feh # manage wallpapers
-
+      brightnessctl
+      killall
+      
       # Web
       firefox
     ] ++ lib.optionals hyprlandEnable [
@@ -65,9 +67,14 @@ in {
 
       # utils
       # self.packages.${pkgs.system}.wl-ocr
+      # hyprland
       wl-clipboard
+      cliphist
       wl-screenrec
       wlr-randr
+      hypridle
+      waybar
+      xdg-utils
     ];
   };
 }

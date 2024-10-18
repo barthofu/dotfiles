@@ -37,7 +37,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -67,6 +67,11 @@
 
     impermanence = {
       url = "github:/nix-community/impermanence";
+    };
+
+    xdghypr = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };

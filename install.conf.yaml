@@ -8,6 +8,9 @@
 - link:
 
     # User config
+    ~/.config/hypr/: configs/hypr/*
+    ~/.config/waybar/: configs/waybar/*
+    ~/.config/wal/: config/wal/*
     ~/.config/i3/: configs/i3/*
     ~/.config/feh/: configs/feh/*
     ~/.config/polybar/: 
