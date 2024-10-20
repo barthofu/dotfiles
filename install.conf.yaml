@@ -11,15 +11,7 @@
     ~/.config/hypr/: configs/hypr/*
     ~/.config/waybar/: configs/waybar/*
     ~/.config/wal/: config/wal/*
-    ~/.config/i3/: configs/i3/*
-    ~/.config/feh/: configs/feh/*
-    ~/.config/polybar/: 
-      glob: true
-      path: configs/polybar/*
-    ~/.config/systemd/: configs/systemd/*
-    ~/.config/rofi/:
-      path: configs/rofi/*
-      exclude: [ configs/rofi/README.md ]
+    ~/.config/navi/: config/navi/*
     
     # User resources
     ~/.local/share/wallpapers/: assets/wallpapers/*
