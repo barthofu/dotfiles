@@ -20,6 +20,7 @@ in {
 
       extraConfig = ''
         source = ~/.config/hypr/hyprland-source.conf
+        ${if config.module.gui.swaybg.enable then "exec-once = swaybg -i ~/.local/share/wallpapers/${config.module.gui.swaybg.wallpaper}" else ""}
       '';
 
       # plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [

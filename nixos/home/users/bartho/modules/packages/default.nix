@@ -38,7 +38,7 @@ in {
       spotify
 
       # Social
-      discord
+      vesktop
       teams-for-linux
       telegram-desktop
       signal-desktop

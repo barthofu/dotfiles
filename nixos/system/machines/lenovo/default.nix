@@ -13,6 +13,7 @@
 		battery.enable = true;
 		bluetooth.enable = true;
 		boot.enable = true;
+		fonts.enable = true;
 		graphics.enable = true;
 		locale.enable = true;
 		misc.enable = true;

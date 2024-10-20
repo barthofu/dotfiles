@@ -17,6 +17,7 @@
     file # determine file type
     just # command runner
     brightnessctl # cli to control brightness
+    inotify-tools
     
     # Monitoring
     htop

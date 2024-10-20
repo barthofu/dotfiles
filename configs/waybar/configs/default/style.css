@@ -1,0 +1,140 @@
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0);
+    border-radius: 13px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+}
+
+#workspaces button {
+    color: transparent;
+    background-color: @base;
+    border-radius: 15px;
+    border: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: @crust;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* -----------------------------------------------------
+ * Modules 
+ * ----------------------------------------------------- */
+
+.modules-right, .modules-center {
+    background-color: @base;
+    border-radius: 15px;
+}
+
+.modules-left {
+    background-color: transparent;
+}
+.modules-right {
+    padding: 0 10px;
+}
+
+.modules-left {
+    padding: 0 20px;
+}
+
+.modules-center {
+    padding: 0 10px;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#hardware
+{
+    padding: 0 10px;
+}
+
+#pulseaudio {
+    color: @maroon;
+}
+
+#network {
+    color: @yellow;
+}
+
+#temperature {
+    color: @sky;
+}
+
+#battery {
+    color: @green;
+}
+
+#clock {
+    color: @flamingo;
+}
+
+#window {
+    color: @rosewater;
+}
+
+#hardware {
+    color: @pink;
+}
+
+#battery.charging, #battery.plugged {
+    color: @sapphire;
+}
+
+@keyframes blink {
+    to {
+        color: @base;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    color: @text;
+}

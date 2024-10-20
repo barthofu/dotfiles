@@ -206,7 +206,7 @@
 
   // Clock
   "clock": {
-    "format": "{:%H:%M %a}",
+    "format": "{:%H:%M}",
     "on-click": "ags -t calendar",
     "tooltip": false
   },
@@ -219,26 +219,28 @@
 
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "C: {usage}%",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
 
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "R: {}%",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
 
   // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": "D {percentage_used}% ",
+    "format": "D: {percentage_used}%",
     "path": "/",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
 
-  "hyprland/language": {
-    "format": "/ K {short}"
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
   },
 
   // Group Hardware
@@ -249,7 +251,7 @@
       "children-class": "not-memory",
       "transition-left-to-right": false
     },
-    "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
+    "modules": ["custom/system", "cpu", "memory", "disk", "temperature"]
   },
 
   // Group Tools

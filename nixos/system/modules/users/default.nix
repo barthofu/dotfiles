@@ -11,7 +11,7 @@ with lib;
 let
   cfg = config.module.users;
 in {
-  module.users = {
+  options.module.users = {
     enable = mkEnableOption "Enables users";
   };
 

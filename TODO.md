@@ -1,2 +1,3 @@
 - [ ] Changre tuigreet for gdm?
-- [ ] Check inspiration dotfiles for configuring hyprland as he has modules in home manager AND in system
+- [ ] Check inspiration dotfiles for configuring hyprland as he has modules in home manager AND in system 
+- [ ] Move boot system module to system configuration
