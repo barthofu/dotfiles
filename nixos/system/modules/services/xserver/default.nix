@@ -9,8 +9,8 @@ with lib;
 let
   cfg = config.module.services.xserver;
 in {
-  options = {
-    module.services.xserver.enable = mkEnableOption "Enables xserver";
+  options.module.services.xserver = {
+    enable = mkEnableOption "Enables xserver";
   };
 
   config = mkIf cfg.enable {

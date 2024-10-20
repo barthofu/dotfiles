@@ -9,10 +9,8 @@ with lib;
 let
   cfg = config.module.network;
 in {
-  options = {
-    module.network = {
-      enable = mkEnableOption "Enables network";
-    };
+  options.module.network = {
+    enable = mkEnableOption "Enables network";
   };
 
   config = mkIf cfg.enable {

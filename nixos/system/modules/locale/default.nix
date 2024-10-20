@@ -8,10 +8,8 @@ with lib;
 let
   cfg = config.module.locale;
 in {
-  options = {
-    module.locale = {
-      enable = mkEnableOption "Enables locale";
-    };
+  options.module.locale = {
+    enable = mkEnableOption "Enables locale";
   };
 
   config = mkIf cfg.enable {

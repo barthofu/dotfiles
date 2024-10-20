@@ -8,14 +8,12 @@ with lib;
 let
   cfg = config.module.bluetooth;
 in {
-  options = {
-    module.bluetooth = {
-      enable = mkEnableOption "Enables bluetooth";
-      powerOnBoot = mkOption {
-        type = types.bool;
-        default = false;
-        description = "Power on bluetooth on boot";
-      };
+  options.module.bluetooth = {
+    enable = mkEnableOption "Enables bluetooth";
+    powerOnBoot = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Power on bluetooth on boot";
     };
   };
 

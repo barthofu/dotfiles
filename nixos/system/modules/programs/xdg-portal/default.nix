@@ -10,8 +10,8 @@ with lib;
 let
   cfg = config.module.programs.xdg-portal;
 in {
-  options = {
-    module.programs.xdg-portal.enable = mkEnableOption "Enables xdg-portal";
+  options.module.programs.xdg-portal = {
+    enable = mkEnableOption "Enables xdg-portal";
   };
 
   config = mkIf cfg.enable {

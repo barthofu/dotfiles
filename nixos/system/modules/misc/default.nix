@@ -8,10 +8,8 @@ with lib;
 let
   cfg = config.module.misc;
 in {
-  options = {
-    module.misc = {
-      enable = mkEnableOption "Enables misc";
-    };
+  options.module.misc = {
+    enable = mkEnableOption "Enables misc";
   };
 
   config = mkIf cfg.enable {

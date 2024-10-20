@@ -16,10 +16,8 @@ let
     then "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
   else "";
 in {
-  options = {
-    module.services.greetd = {
-      enable = mkEnableOption "Enables greetd";
-    };
+  options.module.services.greetd = {
+    enable = mkEnableOption "Enables greetd";
   };
 
   config = mkIf cfg.enable {

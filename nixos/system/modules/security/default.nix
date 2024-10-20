@@ -8,10 +8,8 @@ with lib;
 let
   cfg = config.module.security;
 in {
-  options = {
-    module.security = {
-      enable = mkEnableOption "Enables security";
-    };
+  options.module.security = {
+    enable = mkEnableOption "Enables security";
   };
 
   config = mkIf cfg.enable {

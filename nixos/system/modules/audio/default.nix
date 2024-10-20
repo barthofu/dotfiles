@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -8,10 +9,8 @@ with lib;
 let
   cfg = config.module.audio;
 in {
-  options = {
-    module.audio = {
-      enable = mkEnableOption "Enables audio";
-    };
+  options.module.audio = {
+    enable = mkEnableOption "Enables audio";
   };
 
   config = mkIf cfg.enable {
@@ -26,5 +25,10 @@ in {
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      pw-volume # pipewire volume control command line tool
+      pavucontrol # pipewire frontend
+    ];
   };
 }

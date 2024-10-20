@@ -9,10 +9,8 @@ with lib;
 let
   cfg = config.module.boot;
 in {
-  options = {
-    module.boot = {
-      enable = mkEnableOption "Enables boot";
-    };
+  options.module.boot = {
+    enable = mkEnableOption "Enables boot";
   };
 
   config = mkIf cfg.enable {
