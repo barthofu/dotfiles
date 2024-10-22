@@ -32,5 +32,7 @@ in {
       QT_QPA_PLATFORMTHEME                      = "gtk3";
       TDESKTOP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY = "1";
     };
+
+    environment.localBinInPath = true;
   };
 }
