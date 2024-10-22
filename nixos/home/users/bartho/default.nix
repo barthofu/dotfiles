@@ -14,7 +14,7 @@
       hyprlock.enable = hyprlandEnable && isWorkstation;
       swaybg = {
         enable = hyprlandEnable && isWorkstation;
-        wallpaper = "nature/snow_mountains.jpg";
+        wallpaper = "manganimation/smoke_and_panty.png";
       };
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;
@@ -39,6 +39,10 @@
 
     media = {
       obs-studio.enable = isWorkstation;
+    };
+
+    web = {
+      firefox.enable = isWorkstation;
     };
 
     user = {

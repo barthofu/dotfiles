@@ -97,7 +97,7 @@ in {
       
       # Web
       # =======================
-      firefox # web browser
+      chromium # web browser
 
       # Games
       # =======================
