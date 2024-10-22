@@ -28,7 +28,17 @@ let
 
       hyprlandEnable = wm == "hyprland";
       wmEnable       = hyprlandEnable;
+
+      myPkgs = import ../pkgs/cliphist-wofi-img/default.nix { inherit inputs; };
+      
+      pkgs = import inputs.nixpkgs {
+        # inherit system;
+        overlays = [ 
+          (self: super: { cliphist-wofi-img = myPkgs.cliphist-wofi-img; }) 
+        ];
+      };
     in inputs.nixpkgs.lib.nixosSystem {
+
       specialArgs = {
         inherit 
           inputs
@@ -58,6 +68,7 @@ let
     };
 
 in {
+
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
   # This function just add mkHost before hosts attrset

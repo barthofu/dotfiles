@@ -28,6 +28,7 @@ window#waybar {
 
 #workspaces button {
     color: transparent;
+    margin: 0 1px;
     background-color: @base;
     border-radius: 15px;
     border: 0px;

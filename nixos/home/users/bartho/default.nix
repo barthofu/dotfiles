@@ -33,6 +33,14 @@
       zsh.enable = isWorkstation;
     };
 
+    utils = {
+      cliphist.enable = isWorkstation;
+    };
+
+    media = {
+      obs-studio.enable = isWorkstation;
+    };
+
     user = {
       packages.enable = true;
       xdg.enable = true;

@@ -7,6 +7,8 @@ with lib;
 
 let
   cfg = config.module.gui.hyprland;
+  swayBgEnabled = config.module.gui.swaybg.enable;
+  cliphistEnabled = config.module.utils.cliphist.enable;
 in {
   options.module.gui.hyprland = {
     enable = mkEnableOption "Enables hyprland";
@@ -20,7 +22,8 @@ in {
 
       extraConfig = ''
         source = ~/.config/hypr/hyprland-source.conf
-        ${if config.module.gui.swaybg.enable then "exec-once = swaybg -i ~/.local/share/wallpapers/${config.module.gui.swaybg.wallpaper}" else ""}
+        ${if swayBgEnabled then "exec-once = swaybg -i ~/.local/share/wallpapers/${config.module.gui.swaybg.wallpaper}" else ""}
+        ${if cliphistEnabled then "exec-once = cliphist wipe; wl-paste --watch cliphist store" else ""}
       '';
 
       # plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [

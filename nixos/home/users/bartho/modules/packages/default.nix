@@ -32,6 +32,7 @@ in {
       starship
       python3
       gh
+      go
 
       # Media
       vlc
@@ -52,21 +53,25 @@ in {
       pywal
       calc
       networkmanager_dmenu
+      spacedrive
+      smile
       # spotdl # spotify downloader # TODO: not working, find a fix or a correct working version
       scdl # soundcloud downloader
       
       # Web
       firefox
+
+      # Games
+      steam
+      prismlauncher
     ] ++ lib.optionals hyprlandEnable [
       # screenshot
       grim
       slurp
 
       # utils
-      # self.packages.${pkgs.system}.wl-ocr
-      # hyprland
+      wl-ocr
       wl-clipboard
-      cliphist
       wl-screenrec
       wlr-randr
       hypridle

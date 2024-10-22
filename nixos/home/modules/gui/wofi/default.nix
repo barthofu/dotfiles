@@ -14,21 +14,22 @@ in {
 
   config = mkIf cfg.enable {
     programs.wofi = {
-        enable = true;
-        # settings = {
-        #     location = "center";
-        #     allow_markup = true;
-        #     width = 250;
-        # };
-        # style = ''
-        #     * {
-        #         font-family: monospace;
-        #     }
-            
-        #     window {
-        #         background-color: #7c818c;
-        #     }
-        # '';
+      enable = true;
+      settings = {
+        location = "center";
+        allow_markup = true;
+        width = 250;
+        pre_display_exec = true;
+      };
+      style = ''
+        * {
+          font-family: monospace;
+        }
+        
+        window {
+          background-color: #1c1c1c;
+        }
+      '';
     };
   };
 }
