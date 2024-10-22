@@ -64,6 +64,17 @@ in {
         inherit username;
         inherit stateVersion;
         inherit homeDirectory;
+
+        file = {
+          ".config" = {
+            source = ../../dotfiles/.config;
+            recursive = true;
+          };
+          ".local" = {
+            source = ../../dotfiles/.local;
+            recursive = true;
+          };
+        };
       };
     };
   };

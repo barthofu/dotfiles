@@ -70,7 +70,7 @@ in {
       slurp
 
       # utils
-      wl-ocr
+      # wl-ocr TODO: needs a derivation
       wl-clipboard
       wl-screenrec
       wlr-randr
