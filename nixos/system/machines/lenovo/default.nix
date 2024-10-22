@@ -1,12 +1,6 @@
 { username, ... }:
 
 {
-	imports = [
-		./hardware-configuration.nix
-		./nvidia.nix
-		./packages.nix
-	];
-
 	module = {
 
 		audio.enable = true;
@@ -22,7 +16,7 @@
 		touchpad.enable = true;
 		users.enable = true;
 		variables.enable = true;
-		virtualization.enable = true;
+		docker.enable = true;
 
 		services = {
 			greetd.enable = true;

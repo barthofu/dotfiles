@@ -22,6 +22,10 @@ in {
     programs.vscode = {
       enable = true;
       package = if cfg.useCodium then pkgs.codium else pkgs.vscode;
+
+      extensions = (with pkgs.vscode-extensions; [
+        ms-vscode-remote.remote-ssh
+      ]);
     };
   };
 }

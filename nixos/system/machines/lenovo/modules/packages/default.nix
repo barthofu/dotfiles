@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
 
     # CLI utilities
+    # =======================
+    ncdu # disk usage analyzer
     jq # lightweight and flexible command-line JSON processor
     eza # modern replacement for ‘ls’
     fzf # command-line fuzzy finder
@@ -16,32 +18,16 @@
     which # locate a command
     file # determine file type
     just # command runner
-    brightnessctl # cli to control brightness
-    inotify-tools
-    
+    direnv # environment switcher
+
     # Monitoring
+    # =======================
     htop
     btop
+    gotop
     iotop # io monitoring
     iftop # network monitoring
     powertop # power consumption monitoring
     nvtopPackages.full # GPU monitoring
-    
-    # Utilities
-    libinput-gestures # TODO: verify if really useful
-    wmctrl # libinput-gestures dependency
-    xdotool # libinput-gestures dependency
-    direnv
-    
-    # Git
-    git
-    gh
-
-    # Misc
-    docker-compose
-    krusader # file manager
-    cmatrix # just flexin u know
-    neofetch
-    screenfetch
   ];
 }
