@@ -77,6 +77,7 @@ in {
       hypridle
       waybar
       xdg-utils
+      hyprpicker
     ];
   };
 }

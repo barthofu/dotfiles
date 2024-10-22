@@ -23,20 +23,19 @@ window#waybar {
     border: 0px;
     font-weight: bold;
     font-style: normal;
-    opacity: 0.8;
 }
 
 #workspaces button {
     color: transparent;
     margin: 0 1px;
-    background-color: @base;
+    background-color: @crust;
     border-radius: 15px;
     border: 0px;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: @crust;
+    background: @base;
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -51,14 +50,12 @@ window#waybar {
     border-radius: 15px;
 }
 
-.modules-left {
-    background-color: transparent;
-}
 .modules-right {
     padding: 0 10px;
 }
 
 .modules-left {
+    background-color: transparent;
     padding: 0 20px;
 }
 
@@ -78,7 +75,9 @@ window#waybar {
 #temperature,
 #network,
 #pulseaudio,
-#hardware
+#bluetooth,
+#hardware,
+#tray
 {
     padding: 0 10px;
 }
@@ -109,6 +108,15 @@ window#waybar {
 
 #hardware {
     color: @pink;
+}
+
+#bluetooth {
+    color: @sapphire;
+}
+
+#custom-separator {
+    color: @overlay1;
+    padding: 0 7px;
 }
 
 #battery.charging, #battery.plugged {

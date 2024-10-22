@@ -37,8 +37,9 @@
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
         "tray",
+        "custom/separator",
+        "custom/updates",
         "pulseaudio",
         "bluetooth",
         "network",
