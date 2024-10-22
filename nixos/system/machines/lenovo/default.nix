@@ -17,7 +17,8 @@
 		users.enable = true;
 		variables.enable = true;
 		docker.enable = true;
-
+		packages.enable = true;
+		
 		services = {
 			greetd.enable = true;
 			gnome.enable = true;
@@ -26,6 +27,7 @@
 		programs = {
 			hm.enable = true;
 			xdg-portal.enable = true;
+			hyprland.enable = true;
 		};
 	};
 }

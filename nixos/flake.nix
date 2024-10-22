@@ -47,6 +47,11 @@
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    hyprland-virtual-desktops = {
+      url = "https://github.com/levnikmyskin/hyprland-virtual-desktops/archive/refs/tags/v2.2.4.tar.gz";
+      inputs.hyprland.follows = "hyprland";
+    };
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
