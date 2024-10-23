@@ -94,7 +94,9 @@ in {
       ffmpeg # media processing
       networkmanagerapplet # network manager applet
       qdirstat # disk usage analyzer
-      
+      todoist-electron # task list
+      todoist # cli client for todoist
+
       # Web
       # =======================
       chromium # web browser
@@ -111,7 +113,7 @@ in {
       # Misc
       # =======================
       cavalier # cava frontend
-      
+
     ] ++ lib.optionals isWayland [
 
       # Wayland
