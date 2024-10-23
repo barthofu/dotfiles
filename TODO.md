@@ -23,6 +23,14 @@
 - [ ] dig how to actually replace default zsh history with atuin history
 - [ ] pin code to unlock session -> don't seems possible
 - [ ] check TheMaxMur dotfiles for configuring hyprland as he has modules in home manager AND in system 
+- [ ] waybar
+  - [ ] add meteo widget
+  - [ ] change ethernet icon
+  - [ ] hide iface and wireless signal strength in favor of internet speed
+  - [ ] add power button which triggers wlogout
+  - [ ] try with something less rounded and with more splitted background categories (like: https://www.reddit.com/r/unixporn/comments/1g8rmza/hyprland_byebye_waybar_hello_hyprpanel/#lightbox)
+  - [ ] remove workspaces?
+  - [ ] hard display cpu/ram/disk with icons
 
 ## Scripts
 
