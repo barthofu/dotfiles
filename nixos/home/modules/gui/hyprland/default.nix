@@ -29,7 +29,7 @@ in {
       extraConfig = ''
         source = ~/.config/hypr/hyprland-source.conf
       '' + ''
-        ${if swayBgEnabled then "exec-once = swaybg -i ~/.local/share/wallpapers/${config.module.gui.swaybg.wallpaper}" else ""}
+        ${if swayBgEnabled then "exec-once = swaybg -m fill -i ~/.local/share/wallpapers/${config.module.gui.swaybg.wallpaper}" else ""}
         ${if cliphistEnabled then "exec-once = cliphist wipe; wl-paste --watch cliphist store" else ""}
       '' + ''
         plugin {

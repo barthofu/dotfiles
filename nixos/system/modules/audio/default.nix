@@ -27,8 +27,8 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      pw-volume # pipewire volume control command line tool
       pavucontrol # pipewire frontend
+      pamixer
     ];
   };
 }
