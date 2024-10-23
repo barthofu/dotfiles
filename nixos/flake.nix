@@ -90,13 +90,13 @@
     # Description of hosts
     hosts = import ./hosts.nix;
     # Import helper functions
-    libx = import ./lib/gen-nixos.nix { inherit self inputs; };
+    genNixosLib = import ./lib/gen-nixos.nix { inherit self inputs; };
   in flake-parts.lib.mkFlake { inherit inputs; } {
     
-    systems = libx.forAllSystems;
+    systems = genNixosLib.forAllSystems;
 
     flake = {
-      nixosConfigurations = libx.genNixos hosts.nixos;
+      nixosConfigurations = genNixosLib.genNixos hosts.nixos;
     };
   };
 }

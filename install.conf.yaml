@@ -5,10 +5,26 @@
       create: true
       glob: true
 
+- clean: ['~/']  
+
+- clean:
+    ~/.config:
+      recursive: true
+    ~/.local:
+      recursive: true
+
 - link:
+
+    # User config
+    ~/.config/: dotfiles/.config/**
+    ~/.local/: dotfiles/.local/**
 
     # NixOS
     /etc/nixos/:
       glob: true
       path: nixos/*
       exclude: [ nixos/README.md ]
+
+- create:
+    ~/.ssh:
+      mode: 0700

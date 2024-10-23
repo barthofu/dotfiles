@@ -50,9 +50,7 @@ in {
         wmEnable;
     };
 
-    users.${username} = let 
-      # libx = import ../lib/link-home-files.nix { inherit self config pkgs lib; };
-    in {
+    users.${username} = {
 
       imports = [
         inputs.impermanence.nixosModules.home-manager.impermanence

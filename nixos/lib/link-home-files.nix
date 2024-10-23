@@ -1,29 +1,54 @@
+/**
+  This lib file is obsolete but serves as an example on how to create custom functions for me.
+*/
+
 { config
 , pkgs
 , lib
-, ... 
+, ...
 }:
 
 let
-  ln = config.lib.file.mkOutOfStoreSymlink;
-  lndir = path: link: builtins.listToAttrs (
-    map (file: {
-      name = "${link}/${lib.path.removePrefix (/. + path) (/. + file)}";
-      value = { source = ln "${file}"; };
-    }) (lib.filesystem.listFilesRecursive path)
-  );
-  rmopts = attrs: builtins.removeAttrs attrs ["source" "recursive" "outOfStoreSymlink"];
+  homeDir = "/home/${config.users.users.${config.users.mutableUsers.username}.name}";
+
+  mkOutOfStoreSymlink = source: target: ''
+    mkdir -p $(dirname ${target})
+    ln -sf ${source} ${target}
+  '';
+
+  linkHomeFiles = args: let
+    configPath = args.configPath;
+    paths = args.paths;
+
+    # Créer des symlinks pour chaque fichier dans les chemins spécifiés
+    createSymlinks = builtins.concatMap (path: 
+      let
+        fullPath = "${configPath}/${path}";
+        files = lib.filesystem.listFilesRecursive fullPath;
+        
+        # Tracer les fichiers trouvés dans chaque chemin
+        _ = lib.trace "Found files in ${fullPath}: ${files}";
+
+        # Création des symlinks pour chaque fichier
+        symlinks = builtins.mapAttrs (_: file: let
+          # Construire le nom basé sur le chemin relatif
+          name = "${path}/${lib.path.removePrefix fullPath (/. + path) (/. + file)}";
+        in
+          {
+            inherit name;  # On s'assure que `name` est utilisé correctement ici
+            value = {
+              source = "${file}";
+              action = mkOutOfStoreSymlink "${file}" "${homeDir}/${name}";
+            };
+          }) files;
+      in
+        symlinks
+    ) paths;
+  in
+    # Combiner tous les symlinks en un seul attribute set
+    lib.attrsets.concatMapAttrs (_: symlinks: symlinks) createSymlinks;
+  
 in
 {
-  linkHomeFiles = fileAttrs: lib.attrsets.concatMapAttrs (name: value:
-    if value.outOfStoreSymlink or false
-    then
-      if value.recursive or false
-      then
-        lib.attrsets.mapAttrs (_: attrs: attrs // rmopts value) (lndir value.source name)
-      else
-        { "${name}" = { source = ln value.source; } // rmopts value; }
-    else
-      { "${name}" = value; }
-  ) fileAttrs;
+  linkHomeFiles = linkHomeFiles;
 }

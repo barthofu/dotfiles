@@ -48,7 +48,6 @@
     user = {
       packages.enable = true;
       xdg.enable = true;
-      dotfiles.enable = true;
     };
   };
 }
