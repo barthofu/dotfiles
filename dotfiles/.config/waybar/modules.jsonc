@@ -327,13 +327,9 @@
 
   // Pulseaudio
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{icon} {volume}%",
+    "tooltip": false,
+    "format-muted": " Muted",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",
@@ -343,17 +339,31 @@
       "car": " ",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "scroll-step": 5
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
   },
 
   // Bluetooth
   "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager",
-    "format-no-controller": ""
+    "format": " {status}",
+    "format-disabled": " {status}", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
   },
 
   // Other

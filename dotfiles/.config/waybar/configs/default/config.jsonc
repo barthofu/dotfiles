@@ -20,7 +20,7 @@
 
     // Load Modules
     "include": [
-        "~/.config/waybar/modules.json"
+        "~/.config/waybar/modules.jsonc"
     ],
 
     // Modules Left
@@ -41,6 +41,7 @@
         "custom/separator",
         "custom/updates",
         "pulseaudio",
+        "pulseaudio#microphone",
         "bluetooth",
         "network",
         "battery", 
