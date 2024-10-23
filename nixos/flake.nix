@@ -90,7 +90,7 @@
     # Description of hosts
     hosts = import ./hosts.nix;
     # Import helper functions
-    libx = import ./lib { inherit self inputs; };
+    libx = import ./lib/gen-nixos.nix { inherit self inputs; };
   in flake-parts.lib.mkFlake { inherit inputs; } {
     
     systems = libx.forAllSystems;

@@ -1,7 +1,7 @@
 { self
 , pkgs
-, lib
 , inputs
+, lib
 , hostname
 , username
 , platform
@@ -50,7 +50,10 @@ in {
         wmEnable;
     };
 
-    users.${username} = {
+    users.${username} = let 
+      # libx = import ../lib/link-home-files.nix { inherit self config pkgs lib; };
+    in {
+
       imports = [
         inputs.impermanence.nixosModules.home-manager.impermanence
 
@@ -64,17 +67,6 @@ in {
         inherit username;
         inherit stateVersion;
         inherit homeDirectory;
-
-        file = {
-          ".config" = {
-            source = ../../dotfiles/.config;
-            recursive = true;
-          };
-          ".local" = {
-            source = ../../dotfiles/.local;
-            recursive = true;
-          };
-        };
       };
     };
   };
