@@ -14,7 +14,7 @@
       hyprlock.enable = hyprlandEnable && isWorkstation;
       swaybg = {
         enable = hyprlandEnable && isWorkstation;
-        wallpaper = "manganimation/smoke_and_panty.png";
+        wallpaper = "aesthetic/dune.png";
       };
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;
@@ -31,6 +31,7 @@
       navi.enable = isWorkstation;
       zoxide.enable = isWorkstation;
       zsh.enable = isWorkstation;
+      cava.enable = isWorkstation;
     };
 
     utils = {

@@ -108,6 +108,10 @@ in {
       # =======================
       onlyoffice-bin # office suite
 
+      # Misc
+      # =======================
+      cavalier # cava frontend
+      
     ] ++ lib.optionals isWayland [
 
       # Wayland
