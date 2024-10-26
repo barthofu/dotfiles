@@ -1,34 +1,64 @@
-# Dotfiles
+<div align="center"><img src="assets/nixos-logo.png" width="300px"></div>
+<h1 align="center">Bartho's Nix / NixOS config ❄️</h1>
+
+<div align="center">
+
+![nixos](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+![flake check](https://img.shields.io/static/v1?label=Nix%20Flake&message=Check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5)
+![license](https://img.shields.io/static/v1.svg?style=flat&label=License&message=Unlicense&colorA=24273A&colorB=91d7e3&logo=unlicense&logoColor=91d7e3&)
+
+</div>
+
+This repository holds my NixOS configuration. It is fully reproducible, flakes based and uses home-manager for user configurations. Feel free to utilize it in its entirety or borrow specific components for your own configuration!
+
+> [!WARNING]
+> This readme is very likely out-dated at at any given time. This is for two
+> reasons. The first is that Nix, as a language, suffers from an apparent need
+> to be frequently refractored. The second reason is that this is my personal
+> configuration, and it is under constant revision.
+>
+> As with all Nix code (and with software in general), the ultimate form of
+> documentation is the source code itself.
+
+### Table of contents
+
+- [Features](#features)
+- [File structure](#file-structure)
+- [Preview](#preview)
+
+You can also find the full documentation in the [docs folder](docs/).
+
+## Features
+
+- ❄️ **Flakes** for precise dependency management of the entire system.
+- 🏡 **Home Manager** to configure all used software for the user.
+- 📁 Config file structure and modules with options.
 
 ## File structure
 
 ```bash
 .
 ├── nixos
+│   ├── hosts.nix # hosts configuration
 │   ├── flake.nix # configuration entry point
-│   ├── home # home-manager configuration
-│   │   ├── modules # home-manager modules
-│   │   └── users # users configurations for home manager 
-│   ├── 
-
+│   ├── home # entry point for creating a home manager user
+│   │   ├── modules # home-manager modules organized in categories
+│   │   ├── bin # binaries from scripts
+│   │   └── users # specific users configurations for home manager 
+|   |       └── modules # specific user modules
+│   ├── systems # system configuration
+│   │   ├── modules # system modules organized in categories
+│   │   └── machines # machines specific configurations
+│   |       └── modules # machine specific modules
+│   ├── lib # helper functions and variables
+│   ├── pkgs # self sealed packages
+│   ├── modules # nix common modules for all users and machines
+│   └── overlays # common overlays
+├── dotfiles # dotfiles for various programs symlinked to home folder using dotbot
+├── scripts # various scripts
+└── assets # assets used in the readme
 ```
 
-## NixOS
+## Preview
 
-### Installation
-
-**Network:**
-1. Run `rfkill unblock all` to unblock all network devices at a software level.
-2. `systemctl start wpa_supplicant`
-3. Grab your wireless interface name by running `iwconfig`
-4. Up your wireless interface by running `ifconfig <interface_id> up`
-5. Run `wpa_passphrase "<ssid>" "<password>" | tee /etc/wpa_supplicant.conf` to generate a wpa_supplicant.conf file.
-6. Run `wpa_supplicant -B -c /etc/wpa_supplicant.conf -i <interface_id>` to connect to the network in the background.
-7. If you don't directly have an IP adress, run `dhclient <interface_id>` to get one.
-
-### Utilities commands
-
-- `lsblk -o name,uuid | grep nvme0n1p3 | awk '{print $NF}'` to get the UUID of the partition
-
-### Todo
-
+*TODO*

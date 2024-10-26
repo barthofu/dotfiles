@@ -9,6 +9,7 @@
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 - [ ] move boot system module to system configuration
 - [ ] add a dynamic option to change power mode (powersave, performance, etc) on fly
+- [ ] dig the iso creation process (https://github.com/erictossell/nixflakes/blob/main/docs/installation-media.md)
 
 ## Environment
 
