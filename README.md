@@ -61,4 +61,4 @@ You can also find the full documentation in the [docs folder](docs/).
 
 ## Preview
 
-*TODO*
+*The showcased images do not reflect the latest version of the system's appearance. The final setup may vary slightly.*

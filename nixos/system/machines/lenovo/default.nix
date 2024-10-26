@@ -16,8 +16,11 @@
 		touchpad.enable = true;
 		users.enable = true;
 		variables.enable = true;
-		docker.enable = true;
 		packages.enable = true;
+		virtualisation = {
+			enable = true;
+			usePodman = true;
+		};
 		
 		services = {
 			greetd.enable = true;
