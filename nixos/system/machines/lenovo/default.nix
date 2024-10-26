@@ -22,6 +22,7 @@
 			usePodman = true;
 		};
 		location.enable = true;
+		ai.enable = false;
 		
 		services = {
 			greetd.enable = true;
