@@ -39,7 +39,6 @@ in {
       pfetch-rs # system info
       neofetch # system info
       screenfetch # system info
-      yazi # tui file manager
 
       # Hardware utils
       # =======================

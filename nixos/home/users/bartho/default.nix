@@ -31,7 +31,9 @@
       zoxide.enable = true;
       cava.enable = true;
       atuin.enable = true;
+      yazi.enable = true;
       alacritty.enable = isWorkstation;
+      kitty.enable = isWorkstation;
     };
 
     utils = {

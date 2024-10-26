@@ -23,11 +23,18 @@ in {
         noto-fonts-cjk-serif
         noto-fonts-emoji
         maple-mono
-        font-awesome
-        nerdfonts
         kanji-stroke-order-font
+        julia-mono
+        
+        # nerdfonts
+        nerdfonts
         liberation_ttf
         fira-sans
+        jetbrains-mono
+
+        # icons
+        font-awesome
+        material-design-icons
       ];
 
       fontconfig = {

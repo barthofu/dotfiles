@@ -21,15 +21,11 @@ in {
       settings = {
         env = {
           TERM = "xterm-256color";
-          TERMINAL = "alacritty";
+          TERM_PROGRAM = "alacritty";
         };
 
         shell = {
           program = "zsh";
-          # args = [
-          #   "-C"
-          #   "pfetch"
-          # ];
         };
 
         window = {
@@ -44,7 +40,7 @@ in {
     };
 
     home.packages = with pkgs; [
-      ueberzug
+      ueberzugpp
     ];
   };
 }

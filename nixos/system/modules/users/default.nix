@@ -19,7 +19,7 @@ in {
     users = {
       mutableUsers = true;
 
-      groups = { 
+      groups = {
         ${username} = {
           gid = 1000;
         };

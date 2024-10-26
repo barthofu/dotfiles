@@ -34,6 +34,7 @@
   - [ ] hard display cpu/ram/disk with icons
 - [ ] hyprland
   - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
+- [ ] notification system
 
 ## Scripts
 

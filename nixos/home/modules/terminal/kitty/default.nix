@@ -17,12 +17,14 @@ in {
     programs.kitty = {
       enable = true;
       settings = {
+        theme = "Catppuccin-Mocha";
+        
         # font
         font_size = "12.0";
         disable_ligatures = "cursor";
 
         # window layout
-        winwo_padding_width = 10;
+        window_padding_width = 10;
         confirm_os_window_close = 0;
       };
     };
