@@ -21,6 +21,7 @@
 			enable = true;
 			usePodman = true;
 		};
+		location.enable = true;
 		
 		services = {
 			greetd.enable = true;

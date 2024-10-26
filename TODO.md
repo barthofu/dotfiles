@@ -46,3 +46,4 @@
 
 - [ ] nvim with fully-fledged config
 - [ ] gpg?
+- [ ] fix geoclue2
