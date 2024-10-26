@@ -23,6 +23,7 @@
 		};
 		location.enable = true;
 		ai.enable = false;
+		auto-updater.enable = true;
 		
 		services = {
 			greetd.enable = true;
