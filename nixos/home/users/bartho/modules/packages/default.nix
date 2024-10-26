@@ -135,6 +135,7 @@ in {
       wl-clipboard # clipboard manager for wayland
       wl-screenrec # screen recorder for wayland
       wlr-randr # screen layout manager for wayland
+      wlsunset # wayland screen dimmer
       waybar # wayland bar
       hypridle # wayland idle manager
       hyprpicker # wayland color picker

@@ -23,6 +23,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       bluez
+      overskride # bluetooth gui
     ];
 
     hardware.bluetooth = {

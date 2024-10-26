@@ -33,6 +33,7 @@
   - [ ] try with something less rounded and with more splitted background categories (like: https://www.reddit.com/r/unixporn/comments/1g8rmza/hyprland_byebye_waybar_hello_hyprpanel/#lightbox)
   - [ ] remove workspaces?
   - [ ] hard display cpu/ram/disk with icons
+  - [ ] toggle night mode (scripts already exist)
 - [ ] hyprland
   - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
 - [ ] notification system
