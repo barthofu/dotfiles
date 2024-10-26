@@ -104,6 +104,10 @@ in {
       qdirstat # disk usage analyzer
       todoist-electron # task list
       todoist # cli client for todoist
+      kolourpaint # paint
+      gimp # image editor
+      inkscape # vector editor
+      krita # digital painting
 
       # Web
       # =======================
