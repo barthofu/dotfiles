@@ -21,8 +21,8 @@ in {
     environment.pathsToLink = [ "/libexec" ];
 
     console = {
-        font = "Lat2-Terminus16";
-        keyMap = "fr";
+      font = "Lat2-Terminus16";
+      keyMap = "fr";
     };
   };
 }
