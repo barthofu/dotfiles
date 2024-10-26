@@ -14,7 +14,7 @@
       hyprlock.enable = hyprlandEnable && isWorkstation;
       swaybg = {
         enable = hyprlandEnable && isWorkstation;
-        wallpaper = "aesthetic/dune.png";
+        wallpaper = "aesthetic/dune.jpg";
       };
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;
@@ -26,12 +26,12 @@
     };
 
     terminal = {
+      zsh.enable = true;
+      navi.enable = true;
+      zoxide.enable = true;
+      cava.enable = true;
+      atuin.enable = true;
       alacritty.enable = isWorkstation;
-      atuin.enable = isWorkstation;
-      navi.enable = isWorkstation;
-      zoxide.enable = isWorkstation;
-      zsh.enable = isWorkstation;
-      cava.enable = isWorkstation;
     };
 
     utils = {
@@ -44,6 +44,10 @@
 
     web = {
       firefox.enable = isWorkstation;
+    };
+
+    bin = {
+      meteo.enable = isWorkstation;
     };
 
     user = {

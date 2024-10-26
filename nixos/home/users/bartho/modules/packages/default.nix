@@ -17,7 +17,7 @@ let
   isWayland = isLinux && isWorkstation && hyprlandEnable;
 in {
   options.module.user.packages = {
-    enable = mkEnableOption "Enable user packages";
+    enable = mkEnableOption "Enables user packages";
   };
 
   config = mkIf cfg.enable {
@@ -39,6 +39,12 @@ in {
       # =======================
       cmatrix # just flexin u know
       pipes # flex part 2
+      lolcat # colorize output
+      figlet # ascii art
+      toilet # ascii art
+      fortune # fortune teller
+      cowsay # cow ascii art
+      sl # train
 
     ] ++ lib.optionals isWorkstation [
 
@@ -61,6 +67,7 @@ in {
       pulumi-bin # infrastructure as code
       ansible # automation
       git-crypt # encrypt git repos
+      coder # coder cli client
       
       gitkraken # git gui
       jetbrains-toolbox # jetbrains ide manager
@@ -77,7 +84,7 @@ in {
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
       signal-desktop # signal
-
+      
       # Utilities
       # =======================
       notion # note taking
@@ -85,7 +92,8 @@ in {
       realvnc-vnc-viewer # vnc client
       neatvnc # vnc server
       spacedrive # file manager
-      krusader # file manager
+      nemo # file manager
+      nautilus # file manager
       smile # emoji picker
       grim # screenshot
       slurp # select screen area

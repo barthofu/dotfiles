@@ -10,7 +10,7 @@ let
   cfg = config.module.dev.vscode;
 in {
   options.module.dev.vscode = {
-    enable = mkEnableOption "Enable vscode";
+    enable = mkEnableOption "Enables vscode";
     useCodium = mkOption {
       type = types.bool;
       default = false;

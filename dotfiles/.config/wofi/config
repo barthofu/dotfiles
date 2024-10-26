@@ -1,0 +1,5 @@
+allow_markup=true
+location=center
+pre_display_exec=true
+width=1000
+normal_window=true

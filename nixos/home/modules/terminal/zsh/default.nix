@@ -19,6 +19,13 @@ in {
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
+      shellAliases = {
+        "ls" = "ls -CF";
+        "git" = "LANG=en_GB git";
+        "ssh" = "TERM=xterm-256color ssh";
+        "tf" = "terraform";
+      };
+
       oh-my-zsh = {
         enable = true;
         plugins = [ 

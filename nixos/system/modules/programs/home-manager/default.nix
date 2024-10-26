@@ -7,7 +7,7 @@
 with lib;
 
 let
-  cfg = config.module.programs.hm;
+  cfg = config.module.programs.hm; 
 in {
   options.module.programs.hm = {
     enable = mkEnableOption "Enables Home Manager";

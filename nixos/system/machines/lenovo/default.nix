@@ -28,6 +28,7 @@
 			hm.enable = true;
 			xdg-portal.enable = true;
 			hyprland.enable = true;
+			thunar.enable = true;
 		};
 	};
 }

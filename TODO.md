@@ -8,7 +8,8 @@
 - [ ] check gc and nixos storage optimization
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 - [ ] move boot system module to system configuration
-  
+- [ ] add a dynamic option to change power mode (powersave, performance, etc) on fly
+
 ## Environment
 
 - [ ] configure hyprlock
@@ -31,6 +32,8 @@
   - [ ] try with something less rounded and with more splitted background categories (like: https://www.reddit.com/r/unixporn/comments/1g8rmza/hyprland_byebye_waybar_hello_hyprpanel/#lightbox)
   - [ ] remove workspaces?
   - [ ] hard display cpu/ram/disk with icons
+- [ ] hyprland
+  - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
 
 ## Scripts
 

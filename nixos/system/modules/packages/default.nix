@@ -11,7 +11,7 @@ let
   cfg = config.module.packages;
 in {
   options.module.packages = {
-    enable = mkEnableOption "Enable system packages";
+    enable = mkEnableOption "Enables system packages";
   };
 
   config = mkIf cfg.enable {
@@ -37,6 +37,9 @@ in {
       bat # cat with wings
       fastfetch # system info
       pfetch-rs # system info
+      neofetch # system info
+      screenfetch # system info
+      yazi # tui file manager
 
       # Hardware utils
       # =======================

@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -20,9 +21,28 @@ in {
   config = mkIf cfg.enable {
     services.blueman.enable = true;
 
+    environment.systemPackages = with pkgs; [
+      bluez
+    ];
+
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = cfg.powerOnBoot;
+      settings = {
+        General = {
+          Experimental = true;
+          # Enable A2DP sink and source for modern bluetooth headsets
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
+    };
+
+    # using Bluetooth headset buttons to control media player
+    systemd.user.services.mpris-proxy = {
+      description = "Mpris proxy";
+      after = [ "network.target" "sound.target" ];
+      wantedBy = [ "default.target" ];
+      serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
     };
   };
 }
