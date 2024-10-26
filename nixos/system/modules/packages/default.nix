@@ -39,6 +39,9 @@ in {
       pfetch-rs # system info
       neofetch # system info
       screenfetch # system info
+      ipfetch # ip fetcher
+      cpufetch # cpu fetcher
+      ramfetch # ram fetcher
 
       # Hardware utils
       # =======================
@@ -65,16 +68,19 @@ in {
       ipcalc # ip calculator
       cacert # ca certificates
       speedtest-cli # speedtest
+      speedtest-rs # speedtest
 
       # Monitoring
       # =======================
       htop
       btop
+      bottom
       gotop
       iotop # io monitoring
       iftop # network monitoring
       powertop # power consumption monitoring
       nvtopPackages.full # GPU monitoring
+      zfxtop # all-in-one monitoring
     
     ] ++ lib.optionals isWorkstation [
 

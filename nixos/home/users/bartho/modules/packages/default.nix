@@ -125,6 +125,8 @@ in {
       # Misc
       # =======================
       cavalier # cava frontend
+      starfetch # constellations fetcher
+      octofetch # github stats fetcher
 
     ] ++ lib.optionals isWayland [
 
