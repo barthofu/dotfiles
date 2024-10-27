@@ -136,6 +136,7 @@ in {
       wl-screenrec # screen recorder for wayland
       wlr-randr # screen layout manager for wayland
       wlsunset # wayland screen dimmer
+      wttrbar # wayland weather bar
       waybar # wayland bar
       hypridle # wayland idle manager
       hyprpicker # wayland color picker
@@ -144,6 +145,7 @@ in {
       wmctrl # libinput-gestures dependency
       xdotool # libinput-gestures dependency
       ydotool # libinput-gestures dependency
+      pywal # color scheme generator
       # wl-ocr TODO: needs a derivation
     ];
   };

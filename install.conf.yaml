@@ -7,11 +7,9 @@
 
 - clean: ['~/']  
 
-# - clean:
-#     ~/.config:
-#       recursive: true
-#     ~/.local:
-#       recursive: true
+- clean:
+    ~/.local/share/wallpapers:
+      recursive: true
 
 - link:
 

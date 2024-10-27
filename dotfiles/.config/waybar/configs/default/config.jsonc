@@ -32,7 +32,11 @@
 
     // Modules Center
     "modules-center": [
+        "clock#date",
+        "custom/dash",
         "clock",
+        "custom/dash",
+        "custom/weather",
         "custom/empty"
     ],
 

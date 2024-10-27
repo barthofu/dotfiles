@@ -81,6 +81,7 @@ in {
       powertop # power consumption monitoring
       nvtopPackages.full # GPU monitoring
       zfxtop # all-in-one monitoring
+      powerstat # power consumption monitoring
     
     ] ++ lib.optionals isWorkstation [
 

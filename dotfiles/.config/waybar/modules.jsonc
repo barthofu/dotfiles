@@ -46,6 +46,10 @@
     "format": ""
   },
 
+  "custom/dash": {
+    "format": "-"
+  },
+
   // Power Menu
   "custom/exit": {
     "format": "",
@@ -79,6 +83,14 @@
     "tooltip": false
   },
 
+  "clock#date": {
+    "format": "{:L%m/%d}",
+    "timezone": "Europe/Paris",
+    "locale": "fr_FR.UTF-8",
+    "on-click": "ags -t calendar",
+    "tooltip": false
+  },
+
   // CPU
   "cpu": {
     "format": " {usage}%",
@@ -108,6 +120,15 @@
   //   "format-icons": ["", "", ""],
   //   "on-click": "$HOME/.local/scripts/system_monitor.sh"
   // },
+
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar",
+    "return-type": "json",
+    "on-click": "meteo"
+  },
 
   "custom/temperature": {
     "interval": 5,

@@ -7,4 +7,4 @@ f-pull:
 f-push:
     git add . && git commit --amend --no-edit && git push --force-with-lease
 link:
-    ./install
+    sudo chmod +x ./dotfiles/.local/scripts/* && ./install

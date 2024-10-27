@@ -1,3 +1,16 @@
+@import '../../../../.cache/wal/colors-waybar.css';
+
+#workspaces button,
+.modules-center,
+#tray,
+#hardware,
+#misc,
+#signals,
+#monitoring
+{
+    background-color: rgba(0,0,0,0.7);
+}
+
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
@@ -8,7 +21,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
     border-radius: 13px;
     transition-property: background-color;
     transition-duration: .5s;
@@ -28,14 +41,13 @@ window#waybar {
 #workspaces button {
     color: transparent;
     margin: 0 1px;
-    background-color: @base;
     border-radius: 15px;
     border: 0px;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: @mantle;
+    background: rgba(255,255,255,0.2);
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -46,7 +58,6 @@ window#waybar {
  * ----------------------------------------------------- */
 
 .modules-center {
-    background-color: @base;
     border-radius: 10px;
 }
 
@@ -59,23 +70,20 @@ window#waybar {
     padding: 0 10px;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
 #cpu,
 #memory,
 #disk,
 #custom-temperature,
 #clock,
+#clock.date,
 #pulseaudio,
 #backlight,
 #custom-nightmode,
 #bluetooth,
 #network,
 #battery,
-#custom-exit
+#custom-exit,
+#custom-weather
 {
     padding: 0 10px;
 }
@@ -88,8 +96,12 @@ window#waybar {
 #monitoring {
     margin-left: 10px;
     padding: 0 10px;
-    background-color: @base;
     border-radius: 10px;
+}
+
+#custom-weather {
+    color: @flamingo;
+    opacity: 0.7;
 }
 
 #pulseaudio {
@@ -107,7 +119,6 @@ window#waybar {
 #custom-nightmode {
     color: @lavender; 
 }
-
 
 #network {
     color: @overlay1;
@@ -139,6 +150,10 @@ window#waybar {
     color: @flamingo;
 }
 
+#clock.date {
+    opacity: 0.7;
+}
+
 #cpu {
     color: @pink;
 }
@@ -152,15 +167,21 @@ window#waybar {
 }
 
 #bluetooth {
-    color: @overlay1;
+    color: @sapphire;
 }
 
-#bluetooth.on {
-    color: @sapphire;
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @overlay1;
 }
 
 
 #custom-separator {
+    color: @overlay1;
+    padding: 0 7px;
+}
+
+#custom-dash {
     color: @overlay1;
     padding: 0 7px;
 }
@@ -175,7 +196,7 @@ window#waybar {
 
 @keyframes blink {
     to {
-        color: @base;
+        color: transparent;
     }
 }
 
