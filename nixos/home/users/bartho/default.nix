@@ -12,6 +12,7 @@
     gui = {
       hyprland.enable = hyprlandEnable && isWorkstation;
       hyprlock.enable = hyprlandEnable && isWorkstation;
+      hypridle.enable = hyprlandEnable && isWorkstation;
       swaybg = {
         enable = hyprlandEnable && isWorkstation;
         wallpaper = "aesthetic/dune.jpg";

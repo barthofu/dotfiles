@@ -108,6 +108,7 @@ in {
       gimp # image editor
       inkscape # vector editor
       krita # digital painting
+      udiskie # automount
 
       # Web
       # =======================
