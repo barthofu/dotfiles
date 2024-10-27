@@ -38,6 +38,7 @@
     };
 
     utils = {
+      syncthing.enable = true;
       cliphist.enable = isWorkstation;
     };
 

@@ -1,5 +1,4 @@
 # How to use this repo
-## Requirements: NixOS, x86_64
 
 These steps assume that you have already installed NixOS.
 
