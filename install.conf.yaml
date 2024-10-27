@@ -7,11 +7,11 @@
 
 - clean: ['~/']  
 
-- clean:
-    ~/.config:
-      recursive: true
-    ~/.local:
-      recursive: true
+# - clean:
+#     ~/.config:
+#       recursive: true
+#     ~/.local:
+#       recursive: true
 
 - link:
 

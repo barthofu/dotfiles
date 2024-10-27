@@ -27,7 +27,7 @@
 		
 		services = {
 			greetd.enable = true;
-			gnome.enable = true;
+			gnome.enable = false;
 		};
 
 		programs = {

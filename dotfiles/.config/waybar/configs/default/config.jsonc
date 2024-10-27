@@ -26,6 +26,7 @@
     // Modules Left
     "modules-left": [
         "hyprland/workspaces",
+        "group/monitoring",
         "custom/empty"
     ],
 
@@ -38,13 +39,48 @@
     // Modules Right    
     "modules-right": [
         "tray",
-        "custom/separator",
-        "custom/updates",
-        "pulseaudio",
-        "pulseaudio#microphone",
-        "bluetooth",
-        "network",
-        "battery", 
-        "group/hardware"
-    ]
+        "group/hardware",
+        "group/signals",
+        "group/misc"
+    ],
+
+    // Groups
+    // =========================
+
+    "group/signals": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "bluetooth"
+        ]
+    },
+    
+    "group/misc": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "custom/exit"
+        ]
+    },
+
+    "group/monitoring": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/system", 
+            "cpu", 
+            "memory", 
+            "disk", 
+            "custom/temperature"
+        ]
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#microphone",
+            "backlight",
+            "custom/nightmode"
+        ]
+    }    
 }

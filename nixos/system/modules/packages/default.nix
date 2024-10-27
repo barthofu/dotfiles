@@ -94,10 +94,13 @@ in {
       intel-gpu-tools # intel gpu tools
       fwupd # firmware updates
       fwupd-efi # firmware updates
+      iwgtk # wifi gui
 
       # Utils
       # =======================
       dconf-editor # direct editing of dconf settings
+      monitorets # system resources
+      resources # system resources
     ];
   };
 }

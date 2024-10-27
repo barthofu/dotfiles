@@ -28,14 +28,14 @@ window#waybar {
 #workspaces button {
     color: transparent;
     margin: 0 1px;
-    background-color: @crust;
+    background-color: @base;
     border-radius: 15px;
     border: 0px;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: @base;
+    background: @mantle;
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -45,13 +45,9 @@ window#waybar {
  * Modules 
  * ----------------------------------------------------- */
 
-.modules-right, .modules-center {
+.modules-center {
     background-color: @base;
-    border-radius: 15px;
-}
-
-.modules-right {
-    padding: 0 10px;
+    border-radius: 10px;
 }
 
 .modules-left {
@@ -68,55 +64,109 @@ window#waybar {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock,
-#battery,
 #cpu,
 #memory,
-#temperature,
-#network,
+#disk,
+#custom-temperature,
+#clock,
 #pulseaudio,
+#backlight,
+#custom-nightmode,
 #bluetooth,
-#hardware,
-#tray
+#network,
+#battery,
+#custom-exit
 {
     padding: 0 10px;
 }
 
-#pulseaudio {
-    color: @maroon;
+/* Groups */
+#tray,
+#hardware,
+#misc,
+#signals,
+#monitoring {
+    margin-left: 10px;
+    padding: 0 10px;
+    background-color: @base;
+    border-radius: 10px;
 }
 
+#pulseaudio {
+    color: @lavender;
+}
+
+#pulseaudio.muted {
+    color: @red;
+}
+
+#backlight {
+    color: @lavender;
+}
+
+#custom-nightmode {
+    color: @lavender; 
+}
+
+
 #network {
+    color: @overlay1;
+}
+
+#network.linked,
+#network.ethernet,
+#network.wifi {
     color: @yellow;
 }
 
-#temperature {
+#custom-temperature {
     color: @sky;
 }
 
-#battery {
-    color: @green;
+#custom-temperature.critical {
+    color: @red;
+}
+
+#custom-temperature.hot {
+    color: @flamingo;
+}
+
+#custom-temperature.warm {
+    color: @yellow;
 }
 
 #clock {
     color: @flamingo;
 }
 
-#window {
-    color: @rosewater;
-}
-
-#hardware {
+#cpu {
     color: @pink;
 }
 
+#memory {
+    color: @green;
+}
+
+#disk {
+    color: @teal;
+}
+
 #bluetooth {
+    color: @overlay1;
+}
+
+#bluetooth.on {
     color: @sapphire;
 }
+
 
 #custom-separator {
     color: @overlay1;
     padding: 0 7px;
+}
+
+#battery {
+    color: @green;
 }
 
 #battery.charging, #battery.plugged {
@@ -140,10 +190,10 @@ window#waybar {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
+#custom-exit {
+    color: @red;
 }
 
-#pulseaudio.muted {
-    color: @text;
+label:focus {
+    background-color: #000000;
 }
