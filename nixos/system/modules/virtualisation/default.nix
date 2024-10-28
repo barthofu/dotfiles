@@ -43,7 +43,7 @@ in {
       qemu
     ] ++ (if cfg.usePodman then [ 
       podman-compose 
-      podman-tui 
+      podman-tui
     ] else [
       lazydocker
       docker-credential-helpers

@@ -128,6 +128,7 @@ in {
       cavalier # cava frontend
       starfetch # constellations fetcher
       octofetch # github stats fetcher
+      zathura # document viewer
 
     ] ++ lib.optionals isWayland [
 

@@ -28,6 +28,7 @@
 		services = {
 			greetd.enable = true;
 			tailscale.enable = true;
+			acpid.enable = true;
 		};
 
 		programs = {

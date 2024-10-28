@@ -26,7 +26,6 @@
 - [ ] hyprland
   - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
 - [ ] notification system
-- [ ] 
 
 ## Scripts
 
@@ -38,6 +37,6 @@
 - [ ] nvim with fully-fledged config
 - [ ] gpg?
 - [ ] fix geoclue2
-- [ ] tailscale
 - [ ] pia
 - [ ] syncthing
+- [x] tailscale
