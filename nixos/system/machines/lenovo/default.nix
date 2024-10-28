@@ -3,7 +3,9 @@
 {
 	module = {
 
+		ai.enable = false;
 		audio.enable = true;
+		auto-updater.enable = true;
 		battery.enable = true;
 		bluetooth.enable = true;
 		boot.enable = true;
@@ -22,12 +24,10 @@
 			usePodman = true;
 		};
 		location.enable = true;
-		ai.enable = false;
-		auto-updater.enable = true;
 		
 		services = {
 			greetd.enable = true;
-			gnome.enable = false;
+			tailscale.enable = true;
 		};
 
 		programs = {
