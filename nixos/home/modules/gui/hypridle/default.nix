@@ -48,7 +48,7 @@ in {
           }
           {
             timeout = 3600;                   # 1hr
-            on_timeout = "systemctl suspend"; # suspend pc
+            on_timeout = "$HOME/.local/scripts/power.sh suspend"; # suspend pc
           }
         ];
       };

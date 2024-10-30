@@ -14,6 +14,7 @@
 		locale.enable = true;
 		misc.enable = true;
 		network.enable = true;
+		power.enable = true;
 		security.enable = true;
 		touchpad.enable = true;
 		users.enable = true;
@@ -28,7 +29,7 @@
 		services = {
 			greetd.enable = true;
 			tailscale.enable = true;
-			acpid.enable = true;
+			acpid.enable = false;
 		};
 
 		programs = {

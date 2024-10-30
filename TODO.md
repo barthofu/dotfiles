@@ -38,5 +38,6 @@
 - [ ] gpg?
 - [ ] fix geoclue2
 - [ ] pia
-- [ ] syncthing
+- [x] syncthing
 - [x] tailscale
+- [ ] vesktop

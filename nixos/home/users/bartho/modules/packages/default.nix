@@ -77,6 +77,7 @@ in {
       # =======================
       vlc # media player
       spotify # music player
+      jellyfin-media-player # jellyfin media player
 
       # Social
       # =======================

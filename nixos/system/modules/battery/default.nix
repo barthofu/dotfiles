@@ -13,7 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    powerManagement.powertop.enable = true;
     services = {
       system76-scheduler.settings.cfsProfiles.enable = true;
       power-profiles-daemon.enable = !config.services.tlp.enable;
