@@ -14,20 +14,25 @@ in {
   };
 
   config = mkIf cfg.enable {
-    hardware.pulseaudio.enable = false;
+    hardware.pulseaudio = {
+      enable = true;
+      support32Bit = true;
+    };
+
+    nixpkgs.config.pulseaudio = true;
     
     # daemon useful for wine, pipewire, pulseaudio, etc
     security.rtkit.enable = true;
     
     services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+      enable = false;
+      # alsa.enable = true;
+      # alsa.support32Bit = true;
+      # pulse.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
-      pavucontrol # pipewire frontend
+      pavucontrol # gui sound mixer
       pamixer
     ];
   };
