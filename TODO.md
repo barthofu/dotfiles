@@ -13,16 +13,11 @@
 
 ## Environment
 
-- [ ] configure hyprlock
 - [ ] configure gdm or sddm
-- [ ] themify wofi
-- [ ] change cursor appearance
 - [ ] global system dark mode so apps can inherit it (e.g: chrome)
 - [ ] apps auto-launch and disposition across workspaces at startup (hyprland related)
 - [ ] selectable display mode when external monitor connected (same as Windows; duplicate, extend and only 2nd screen) -> autorandr?
-- [ ] practical wifi manager with 5ghz support (wtf?)
 - [ ] gui for when typing in my encrypted disk code
-- [ ] pin code to unlock session -> don't seems possible
 - [ ] hyprland
   - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
 - [ ] notification system
@@ -40,4 +35,4 @@
 - [ ] pia
 - [x] syncthing
 - [x] tailscale
-- [ ] vesktop
+- [x] vesktop

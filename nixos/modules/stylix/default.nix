@@ -23,8 +23,8 @@ in {
     stylix = {
       enable = true;
       image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/aesthetic/dune.jpg";
-        sha256 = "RYN8KwJPDMfxrcosbpmjON0Y+I58IhB1Ke36LdohsxA=";
+        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/cyberpunk/cyberpunk_street.jpg";
+        sha256 = "kDZLDfMtaMqsQH7M/O/KGMgtbqAks+kjUKRelMh5BcE=";
       };
       autoEnable = true;
       polarity = "dark";
@@ -32,8 +32,8 @@ in {
       base16Scheme = theme;
 
       cursor = {
-        name    = "Vimix-cursors";
-        package = pkgs.vimix-cursors;
+        name    = "frappeDark";
+        package = pkgs.catppuccin-cursors;
         size    = cursorSize;
       };
 
