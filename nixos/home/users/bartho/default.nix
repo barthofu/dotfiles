@@ -23,8 +23,7 @@
       hyprlock.enable = hyprlandEnable && isWorkstation;
       hypridle.enable = hyprlandEnable && isWorkstation;
       swaybg.enable = hyprlandEnable && isWorkstation;
-      # gtk.enable = hyprlandEnable && isWorkstation;
-      # swaync.enable = hyprlandEnable && isWorkstation;
+      swaync.enable = hyprlandEnable && isWorkstation;
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;
     };

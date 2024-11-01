@@ -1,5 +1,6 @@
 { config
 , lib
+, pkgs
 , ...
 }:
 
@@ -13,8 +14,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.swaync = {
-      enable = true;
-    };
+    # services.swaync = {
+    #   enable = true;
+    # };
+    home.packages = with pkgs; [
+      swaynotificationcenter
+      libnotify
+      glib
+    ];
   };
 }

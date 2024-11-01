@@ -15,10 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      (writeShellScriptBin {
-        name = "soundcloud";
-        text = import ./soundcloud.sh;
-      })
+			(writeShellScriptBin "soundcloud" (builtins.readFile ./soundcloud.sh))
     ];
   };
 }
