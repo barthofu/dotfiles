@@ -8,7 +8,7 @@ lint:
 deadnix:
     nix run 'nixpkgs/nixos-unstable#deadnix' -- check ./nixos
 update:
-    nix flake update --update-input lenovo
+    nix flake update --flake ./nixos
 
 # git
 f-pull:
