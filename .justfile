@@ -1,10 +1,21 @@
+# nix
 rebuild:
     sudo nixos-rebuild switch --flake ./nixos#lenovo
 install:
     sudo nixos-install --flake ./nixos#lenovo
+lint:
+    nix run 'nixpkgs/nixos-unstable#statix' -- check ./nixos
+deadnix:
+    nix run 'nixpkgs/nixos-unstable#deadnix' -- check ./nixos
+update:
+    nix flake update --update-input lenovo
+
+# git
 f-pull:
     git reset --hard HEAD~1 && git pull
 f-push:
     git add . && git commit --amend --no-edit && git push --force-with-lease
+
+# dotbot
 link:
     sudo chmod +x ./dotfiles/.local/scripts/* && ./install
