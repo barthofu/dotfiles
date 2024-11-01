@@ -84,7 +84,7 @@
   },
 
   "clock#date": {
-    "format": "{:L%m/%d}",
+    "format": "{:L%d/%m}",
     "timezone": "Europe/Paris",
     "locale": "fr_FR.UTF-8",
     "on-click": "ags -t calendar",
