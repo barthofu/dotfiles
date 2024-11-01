@@ -17,6 +17,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
+    inputs.stylix.nixosModules.stylix
 
     "${commonModules}"
     "${systemModules}"

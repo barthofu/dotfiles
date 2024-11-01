@@ -6,7 +6,16 @@
 }:
 
 {
-  nixpkgs.overlays = [  ];
+  nixpkgs.overlays = [];
+
+  stylix.targets = {
+    vscode.enable = false;
+    wofi.enable = false;
+    waybar.enable = false;
+    feh.enable = false;
+    sway.enable = false;
+    wpaperd.enable = false;
+  };
 
   module = {
     gui = {
@@ -14,6 +23,7 @@
       hyprlock.enable = hyprlandEnable && isWorkstation;
       hypridle.enable = hyprlandEnable && isWorkstation;
       swaybg.enable = hyprlandEnable && isWorkstation;
+      # gtk.enable = hyprlandEnable && isWorkstation;
       # swaync.enable = hyprlandEnable && isWorkstation;
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;

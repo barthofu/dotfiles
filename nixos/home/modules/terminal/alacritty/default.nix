@@ -35,7 +35,7 @@ in {
           dynamic_padding = true;
         };
 
-        colors = lib.attrsets.recursiveUpdate (import ./themes/one-dark.nix) {};
+        # colors = lib.attrsets.recursiveUpdate (import ./themes/one-dark.nix) {};
       };
     };
 

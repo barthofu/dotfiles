@@ -12,10 +12,12 @@
 		fonts.enable = true;
 		graphics.enable = true;
 		locale.enable = true;
+		location.enable = true;
 		misc.enable = true;
 		network.enable = true;
 		power.enable = true;
 		security.enable = true;
+		stylix.enable = true;
 		touchpad.enable = true;
 		users.enable = true;
 		variables.enable = true;
@@ -24,7 +26,6 @@
 			enable = true;
 			usePodman = true;
 		};
-		location.enable = true;
 		
 		services = {
 			greetd.enable = true;

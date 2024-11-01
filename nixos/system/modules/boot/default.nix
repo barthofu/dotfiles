@@ -42,22 +42,22 @@ in {
       plymouth = {
         enable = true;
         font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
-        theme = "dna";
-        themePackages = with pkgs; [
-          (adi1090x-plymouth-themes.override {
-            selected_themes = [ 
-              "dna"
-              "colorful"
-              "colorful_sliced"
-              "cuts_alt"
-              "deus_ex"
-              "metal_ball"
-              "red_loader"
-              "sliced"
-              "sphere"
-            ];
-          })
-        ];
+        # theme = "dna";
+        # themePackages = with pkgs; [
+        #   (adi1090x-plymouth-themes.override {
+        #     selected_themes = [ 
+        #       "dna"
+        #       "colorful"
+        #       "colorful_sliced"
+        #       "cuts_alt"
+        #       "deus_ex"
+        #       "metal_ball"
+        #       "red_loader"
+        #       "sliced"
+        #       "sphere"
+        #     ];
+        #   })
+        # ];
       };
     };
   };
