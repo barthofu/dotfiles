@@ -60,6 +60,7 @@
 
     bin = {
       meteo.enable = isWorkstation;
+      soundcloud.enable = isWorkstation;
     };
 
     user = {

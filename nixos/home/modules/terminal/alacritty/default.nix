@@ -24,7 +24,7 @@ in {
           TERM_PROGRAM = "alacritty";
         };
 
-        shell = {
+        terminal.shell = {
           program = "zsh";
         };
 
