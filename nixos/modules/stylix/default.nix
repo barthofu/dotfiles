@@ -12,7 +12,7 @@ let
   cfg = config.module.stylix;
 
   theme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
-  cursorSize = 13;
+  cursorSize = 14;
   fontSize = 11;
 in {
   options = {
