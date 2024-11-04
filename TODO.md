@@ -11,6 +11,26 @@
 - [ ] add a dynamic option to change power mode (powersave, performance, etc) on fly
 - [ ] dig the iso creation process (https://github.com/erictossell/nixflakes/blob/main/docs/installation-media.md)
 
+## Current problems
+
+*Problems are sorted from highest priority to lowest.*
+
+- [ ] hibernate crashes the system (sometimes?)
+- [ ] closing the lid has an unstable behavior (sometimes it hibernates, sometimes it doesn't)
+- [ ] discord, git and wifi not keeping session between launches
+  - [ ] maybe cause by not using any keyring service?
+- [ ] workspaces not stable (often desynchronized on multiple monitors, and other random bugs)
+- [ ] cursor styling 
+- [ ] performance problem on games
+- [ ] bt speaker wonderboom 3 not connecting
+- [ ] 2.4ghz mouse bugged on login
+- [ ] discord opening on workspace 1 instead of workspace 3 because of mouse focus
+  -> focus workspace 3 at hyprland launch, sleep for some time and then focus workspace 1
+- [ ] swaync not showing many notifications (maybe normal as i don't have any notifs in my apps by default?)
+- [ ] vscode discord rpc connection not working
+- [ ] windows random freezing (quite rare tho)
+- [ ] discord vscode rich presence not working (open an issue)
+
 ## Environment
 
 - [ ] configure gdm or sddm
@@ -20,7 +40,10 @@
 - [ ] gui for when typing in my encrypted disk code
 - [ ] hyprland
   - [ ] make bitwarden popup float (https://github.com/hyprwm/Hyprland/issues/3835)
-- [ ] notification system
+- [ ] swaync
+  - [ ] style the bar
+    - https://github.com/erikreider/swaynotificationcenter/discussions/183
+    - https://github.com/erikreider/swaynotificationcenter/discussions/183#discussioncomment-7734063
 
 ## Scripts
 

@@ -1,7 +1,7 @@
 { config
 , lib
 , pkgs
-, inputs
+, pkgs-stable
 , isWorkstation
 , wmEnable
 , hyprlandEnable ? false
@@ -52,7 +52,7 @@ in {
       jdk21 # java
       cargo # rust
       rustc # rust
-      nodejs # node
+      nodejs_22 # node
       nodePackages.pnpm # node package manager
       d2 # modern diagram scripting language
 
@@ -77,10 +77,11 @@ in {
       vlc # media player
       spotify # music player
       jellyfin-media-player # jellyfin media player
+      qbittorrent # torrent client
 
       # Social
       # =======================
-      vesktop # discord
+      pkgs-stable.vesktop # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
       signal-desktop # signal

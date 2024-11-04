@@ -20,6 +20,7 @@ in {
 
       # CLI utilities
       # =======================
+      vim # vim
       ncdu # disk usage analyzer
       jq # lightweight and flexible command-line JSON processor
       eza # modern replacement for ‘ls’
@@ -102,6 +103,7 @@ in {
       dconf-editor # direct editing of dconf settings
       monitorets # system resources
       resources # system resources
+      gedit # text editor
     ];
   };
 }

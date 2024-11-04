@@ -41,11 +41,10 @@
 		}
 	},
 	"widgets": [
+		"dnd",
 		"label",
-		"buttons-grid",
 		"mpris",
 		"title",
-		"dnd",
 		"notifications"
 	],
 	"widget-config": {

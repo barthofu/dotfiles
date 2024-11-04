@@ -33,7 +33,7 @@ in {
     useUserPackages = true;
     backupFileExtension = "backup-" + pkgs.lib.readFile "${pkgs.runCommand "timestamp" {} "echo -n `date '+%Y%m%d%H%M%S'` > $out"}";
 
-    extraSpecialArgs  = {
+    extraSpecialArgs = {
       inherit 
         inputs 
         self 
@@ -48,6 +48,10 @@ in {
         wm 
         hyprlandEnable 
         wmEnable;
+      pkgs-stable = import inputs.stable {
+        system = platform;
+        config.allowUnfree = true;
+      };
     };
 
     users.${username} = {
