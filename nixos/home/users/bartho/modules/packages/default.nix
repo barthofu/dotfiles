@@ -1,7 +1,6 @@
 { config
 , lib
 , pkgs
-, pkgs-stable
 , isWorkstation
 , wmEnable
 , hyprlandEnable ? false
@@ -81,7 +80,7 @@ in {
 
       # Social
       # =======================
-      pkgs-stable.vesktop # discord
+      vesktop # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
       signal-desktop # signal
