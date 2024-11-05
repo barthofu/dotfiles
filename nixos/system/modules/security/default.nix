@@ -67,6 +67,12 @@ in {
     # login
     security.pam.services.hyprlock = {};
 
+    # keyring
+    security.pam.services.kwallet = {
+      name = "kwallet";
+      enableKwallet = true;
+    };
+
     # misc
     security.tpm2 = {
       enable = true;
