@@ -30,6 +30,8 @@
 		services = {
 			greetd.enable = true;
 			tailscale.enable = true;
+			dbus.enable = true;
+			polkit.enable = true;
 			acpid.enable = false;
 		};
 

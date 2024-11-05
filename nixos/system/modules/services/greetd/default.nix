@@ -21,31 +21,20 @@ in {
   };
 
   config = mkIf cfg.enable {
-    security.pam.services.greetd = {
-      enableGnomeKeyring = true;
-    };
-
-    programs.regreet = {
-      enable = true;
-      cageArgs = [ "-s" "-m" "last" ];
-    };
+    # security.pam.services.greetd = {
+    #   enableGnomeKeyring = true;
+    # };
 
     services.greetd = {
       enable = true;
-      vt = 7;
+      vt = 1;
 
-      settings = {
-        default_session = {
+      settings = rec {
+        initial_session = { # triggers the autologin
           user = username;
-
-          command = builtins.concatStringsSep " " [
-            "${pkgs.greetd.tuigreet}/bin/tuigreet"
-            "--asterisks"
-            "--remember"
-            "--time"
-            "--cmd ${cmd}"
-          ];
+          command = cmd;
         };
+        default_session = initial_session;
       };
     };
   };
