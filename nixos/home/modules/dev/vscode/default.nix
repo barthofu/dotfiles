@@ -1,5 +1,5 @@
 { config
-, pkgs
+, pkgs-master
 , lib
 , ...
 }:
@@ -21,9 +21,9 @@ in {
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
-      package = if cfg.useCodium then pkgs.codium else pkgs.vscode;
+      package = if cfg.useCodium then pkgs-master.codium else pkgs-master.vscode;
 
-      extensions = (with pkgs.vscode-extensions; [
+      extensions = (with pkgs-master.vscode-extensions; [
         ms-vscode-remote.remote-ssh
       ]);
     };

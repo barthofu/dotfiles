@@ -52,6 +52,10 @@ in {
         system = platform;
         config.allowUnfree = true;
       };
+      pkgs-master = import inputs.master {
+        system = platform;
+        config.allowUnfree = true;
+      };
     };
 
     users.${username} = {
