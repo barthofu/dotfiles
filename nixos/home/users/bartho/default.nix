@@ -30,6 +30,7 @@
 
     dev = {
       git.enable = true;
+      vim.enable = true;
       vscode.enable = isWorkstation;
     };
 
