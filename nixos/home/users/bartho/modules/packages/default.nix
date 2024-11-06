@@ -34,6 +34,7 @@ in {
       # =======================
       networkmanager_dmenu # dmenu frontend for networkmanager
       brightnessctl # cli to control brightness
+      ripgrep # better grep
       
       # Misc
       # =======================
@@ -44,6 +45,8 @@ in {
       toilet # ascii art
       fortune # fortune teller
       cowsay # cow ascii art
+
+      # To sort cli
 
     ] ++ lib.optionals isWorkstation [
 
@@ -110,6 +113,7 @@ in {
       inkscape # vector editor
       krita # digital painting
       udiskie # automount
+      teamviewer # remote desktop
 
       # Web
       # =======================
@@ -131,6 +135,8 @@ in {
       octofetch # github stats fetcher
       zathura # document viewer
 
+      # To sort gui
+      
     ] ++ lib.optionals isWayland [
 
       # Wayland

@@ -16,6 +16,8 @@ in {
 
   config = mkIf cfg.enable {
 
+    services.teamviewer.enable = true;
+
     environment.systemPackages = with pkgs; [
 
       # CLI utilities
@@ -56,6 +58,7 @@ in {
       sysstat # sar
       cpufetch # cpu info
       sbctl # system boot control
+      geekbench # benchmark
 
       # Network
       # =======================
@@ -83,6 +86,8 @@ in {
       nvtopPackages.full # GPU monitoring
       zfxtop # all-in-one monitoring
       powerstat # power consumption monitoring
+
+      # To sort cli
     
     ] ++ lib.optionals isWorkstation [
 
@@ -104,6 +109,9 @@ in {
       monitorets # system resources
       resources # system resources
       gedit # text editor
+
+      # To sort gui
+
     ];
   };
 }
