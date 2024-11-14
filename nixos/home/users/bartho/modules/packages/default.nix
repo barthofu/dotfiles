@@ -136,6 +136,7 @@ in {
       zathura # document viewer
 
       # To sort gui
+      gedit
       
     ] ++ lib.optionals isWayland [
 
