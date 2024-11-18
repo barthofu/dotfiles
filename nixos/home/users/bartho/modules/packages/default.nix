@@ -47,6 +47,7 @@ in {
       cowsay # cow ascii art
 
       # To sort cli
+      atac
 
     ] ++ lib.optionals isWorkstation [
 
@@ -57,6 +58,7 @@ in {
       rustc # rust
       nodejs_22 # node
       nodePackages.pnpm # node package manager
+      nodePackages.yarn # node package manager
       d2 # modern diagram scripting language
 
       gh # github cli
@@ -136,6 +138,7 @@ in {
       zathura # document viewer
 
       # To sort gui
+      webtorrent_desktop
       gedit
       
     ] ++ lib.optionals isWayland [
