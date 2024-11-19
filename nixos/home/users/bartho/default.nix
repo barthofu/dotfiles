@@ -59,6 +59,7 @@
     };
 
     bin = {
+      nix-add.enable = true;
       meteo.enable = isWorkstation;
       soundcloud.enable = isWorkstation;
     };

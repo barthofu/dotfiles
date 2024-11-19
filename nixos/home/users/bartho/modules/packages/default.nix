@@ -30,6 +30,8 @@ in {
       go # golang
       python3 # python
 
+      atac # tui postman
+
       # CLI utilities
       # =======================
       networkmanager_dmenu # dmenu frontend for networkmanager
@@ -47,7 +49,6 @@ in {
       cowsay # cow ascii art
 
       # To sort cli
-      atac
 
     ] ++ lib.optionals isWorkstation [
 
@@ -136,10 +137,9 @@ in {
       starfetch # constellations fetcher
       octofetch # github stats fetcher
       zathura # document viewer
+      gedit # text editor
 
       # To sort gui
-      webtorrent_desktop
-      gedit
       
     ] ++ lib.optionals isWayland [
 
