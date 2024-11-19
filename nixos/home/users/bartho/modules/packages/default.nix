@@ -124,6 +124,9 @@ in {
 
       # Games
       # =======================
+      zeroad # open source rts game
+      xonotic # quake like
+
       steam # game client
       prismlauncher # minecraft open source launcher 
 
@@ -140,6 +143,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      mangohud
       
     ] ++ lib.optionals isWayland [
 
