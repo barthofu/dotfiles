@@ -6,67 +6,51 @@
 @import '../../.cache/wal/colors-waybar.css';
 
 window {
-    font-family: Fira Code Medium;
-    font-size: 16pt;
-    color:  transparent; /* text */
-    background-color: rgba(24, 27, 32, 0.2);
+  font-family: Fira Code Medium;
+  font-size: 16pt;
+  color:  transparent; /* text */
+  background-color: rgba(24, 27, 32, 0.2);
 } 
 
 button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    background-color: transparent;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s ease-in;
-    box-shadow: 0 0 10px 2px transparent;
-    border-radius: 36px;
-    border: none;
-    outline: none;
-    margin: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  background-color: transparent;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s ease-in;
+  box-shadow: 0 0 10px 2px transparent;
+  border-radius: 36px;
+  border: none;
+  outline: none;
+  margin: 10px;
 }
 
-button:hover,
+/* button:hover, */
 button:focus {
-    background-size: 50%;
-    box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
-    background-color: @color6;
-    color: red;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
+  background-size: 50%;
+  box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
+  background-color: @color6;
+  color: red;
+  transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
 }
 
 #shutdown {
-    background-image: image(url("./icons/power.png"));
-}
-#shutdown:hover {
-  background-image: image(url("./icons/power-hover.png"));
+  background-image: image(url("./icons/power.png"));
 }
 
 #logout {
-    background-image: image(url("./icons/logout.png"));
-
-}
-#logout:hover {
-  background-image: image(url("./icons/logout-hover.png"));
+  background-image: image(url("./icons/logout.png"));
 }
 
 #reboot {
-    background-image: image(url("./icons/restart.png"));
-}
-#reboot:hover {
-  background-image: image(url("./icons/restart-hover.png"));
+  background-image: image(url("./icons/restart.png"));
 }
 
-#lock {
-    background-image: image(url("./icons/lock.png"));
-}
-#lock:hover {
-  background-image: image(url("./icons/lock-hover.png"));
+#suspend {
+  background-image: image(url("./icons/lock.png"));
 }
 
 #hibernate {
-    background-image: image(url("./icons/hibernate.png"));
-}
-#hibernate:hover {
-  background-image: image(url("./icons/hibernate-hover.png"));
+  background-image: image(url("./icons/hibernate.png"));
 }

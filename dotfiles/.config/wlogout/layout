@@ -17,14 +17,14 @@
     "keybind" : "e"
 }
 {
+    "label" : "suspend",
+    "action" : "$HOME/.local/scripts/power.sh suspend",
+    "text" : "",
+    "keybind" : "p"
+}
+{
     "label" : "hibernate",
     "action" : "$HOME/.local/scripts/power.sh hibernate",
     "text" : "",
     "keybind" : "h"
-}
-{
-    "label" : "lock",
-    "action" : "hyprlock",
-    "text" : "",
-    "keybind" : "l"
 }
