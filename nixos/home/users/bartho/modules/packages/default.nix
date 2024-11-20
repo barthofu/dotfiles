@@ -126,6 +126,8 @@ in {
       # =======================
       zeroad # open source rts game
       xonotic # quake like
+      pokete # pokemon game in terminal
+      endless-sky # space exploration
 
       steam # game client
       prismlauncher # minecraft open source launcher 
