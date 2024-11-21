@@ -9,6 +9,8 @@ deadnix:
     nix run 'nixpkgs/nixos-unstable#deadnix' -- check ./nixos
 update:
     nix flake update --flake ./nixos
+update-master:
+    cd nixos && nix flake lock --update-input master
 
 # git
 f-pull:
