@@ -32,6 +32,7 @@
 			tailscale.enable = true;
 			dbus.enable = true;
 			polkit.enable = true;
+			openvpn.enable = true;
 			acpid.enable = false;
 		};
 

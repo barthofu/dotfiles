@@ -54,6 +54,8 @@
     "group/signals": {
         "orientation": "horizontal",
         "modules": [
+            "custom/openvpn",
+            "custom/tailscale",
             "network",
             "bluetooth"
         ]

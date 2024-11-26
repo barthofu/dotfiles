@@ -130,6 +130,22 @@
     "on-click": "meteo"
   },
 
+  "custom/openvpn": {
+    "format": "{}",
+    "interval": 3,
+    "exec": "$HOME/.local/scripts/get_current_openvpn.sh",
+    "return-type": "json",
+    "on-click": "$HOME/.local/scripts/select_openvpn.sh"
+  },
+
+  "custom/tailscale": {
+    "format": "{}",
+    "interval": 3,
+    "exec": "$HOME/.local/scripts/get_tailscale_status.sh",
+    "return-type": "json",
+    "on-click": "$HOME/.local/scripts/toggle_tailscale.sh"
+  },
+
   "custom/temperature": {
     "interval": 5,
     "return-type": "json",

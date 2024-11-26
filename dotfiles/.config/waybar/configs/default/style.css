@@ -83,7 +83,9 @@ window#waybar {
 #network,
 #battery,
 #custom-exit,
-#custom-weather
+#custom-weather,
+#custom-openvpn,
+#custom-tailscale
 {
     padding: 0 10px;
 }
@@ -144,6 +146,18 @@ window#waybar {
 
 #custom-temperature.warm {
     color: @yellow;
+}
+
+#custom-openvpn.inactive {
+    opacity: 0.3;
+}
+
+#custom-tailscale.up {
+    color: @blue;
+}
+
+#custom-tailscale.down {
+    color: @overlay1;
 }
 
 #clock {
