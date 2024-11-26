@@ -145,6 +145,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      heroic
       mangohud
       
     ] ++ lib.optionals isWayland [
