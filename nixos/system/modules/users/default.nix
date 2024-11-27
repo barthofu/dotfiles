@@ -38,7 +38,6 @@ in {
             "audio"
             "networkmanager"
             "wheel"
-            "docker"
           ];
         };
       };

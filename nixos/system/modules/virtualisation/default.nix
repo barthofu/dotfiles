@@ -1,6 +1,7 @@
 { lib
 , config
 , pkgs
+, username
 , ...
 }:
 
@@ -36,7 +37,11 @@ in {
         dockerCompat = true; # create a `docker` alias for podman, to use it as a drop-in replacement
         defaultNetwork.settings.dns_enabled = true; # required for containers under podman-compose to be able to talk to each other
       };
+
+      libvirtd.enable = true;
     };
+
+    users.users.${username}.extraGroups = [ "libvirt" "docker" ];
 
     environment.systemPackages = with pkgs; [
       distrobox

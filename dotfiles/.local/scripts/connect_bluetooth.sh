@@ -19,6 +19,7 @@ if [ -z "${devices[$device]}" ]; then
     exit 1
 fi
 
+rfkill unblock bluetooth
 bluetoothctl power on
 
 # get if the device is already connected
