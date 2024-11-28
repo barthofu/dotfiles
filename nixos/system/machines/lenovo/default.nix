@@ -33,6 +33,8 @@
 			dbus.enable = true;
 			polkit.enable = true;
 			openvpn.enable = true;
+			logind.enable = true;
+			
 			acpid.enable = false;
 		};
 
