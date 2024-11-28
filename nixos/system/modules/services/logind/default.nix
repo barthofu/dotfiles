@@ -14,10 +14,17 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.logind.extraConfig = ''
+    services.logind = {
       lidSwitch = "ignore";
       lidSwitchExternalPower = "ignore";
       lidSwitchDocked = "ignore";
-    '';
+    };
+
+      # systemd.sleep.extraConfig = ''
+      #   AllowSuspend=no
+      #   AllowHibernation=no
+      #   AllowHybridSleep=no
+      #   AllowSuspendThenHibernate=no
+      # '';
   };
 }
