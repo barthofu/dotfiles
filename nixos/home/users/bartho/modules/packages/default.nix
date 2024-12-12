@@ -145,6 +145,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      speedcrunch
       quickemu
       lutris
       heroic
