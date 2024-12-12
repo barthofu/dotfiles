@@ -12,7 +12,7 @@ let
   cfg = config.module.stylix;
 
   theme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
-  cursorSize = 14;
+  cursorSize = 18;
   fontSize = 11;
 in {
   options = {
@@ -22,6 +22,7 @@ in {
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
+
       image = pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/cyberpunk/cyberpunk_street.jpg";
         sha256 = "kDZLDfMtaMqsQH7M/O/KGMgtbqAks+kjUKRelMh5BcE=";
@@ -32,8 +33,8 @@ in {
       base16Scheme = theme;
 
       cursor = {
-        name    = "frappeDark";
-        package = pkgs.catppuccin-cursors;
+        name    = "Bibata-Modern-Classic";
+        package = pkgs.bibata-cursors;
         size    = cursorSize;
       };
 

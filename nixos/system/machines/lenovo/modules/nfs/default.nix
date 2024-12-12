@@ -9,18 +9,13 @@
 		nfs-utils
   ];
 
-  services.autofs = {
-		enable = true;
-
-		autoMaster =
-			let
-				# intr param depricated in nfs4
-				mapConf = pkgs.writeText "auto.mnt" ''
-					nas -fstype=nfs4,rw,soft 172.20.10.10:/export
-				'';
-			in
-				''
-				/mnt ${mapConf}
-				'';
-  };
+  fileSystems."/mnt/nas" = {
+		device = "172.20.10.100:/";
+		fsType = "nfs";
+		options = [
+			"nfsvers=4.2" 
+			"x-systemd.automount" 
+			"noauto" 
+		];
+	};
 }

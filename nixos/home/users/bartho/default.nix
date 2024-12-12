@@ -26,6 +26,7 @@
       swaync.enable = hyprlandEnable && isWorkstation;
       wlogout.enable = hyprlandEnable && isWorkstation;
       wofi.enable = hyprlandEnable && isWorkstation;
+      gtk.enable = isWorkstation;
     };
 
     dev = {
