@@ -88,6 +88,8 @@ in {
       powerstat # power consumption monitoring
 
       # To sort cli
+      gping
+      fd
     
     ] ++ lib.optionals isWorkstation [
 
