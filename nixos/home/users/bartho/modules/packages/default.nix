@@ -150,6 +150,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      rpcs3
       desmume
       wayvnc
       speedcrunch
