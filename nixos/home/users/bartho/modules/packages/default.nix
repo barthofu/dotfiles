@@ -145,6 +145,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      ryujinx
       lime3ds
       wayvnc
       speedcrunch
