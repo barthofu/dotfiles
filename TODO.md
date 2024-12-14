@@ -47,5 +47,6 @@
 ## Apps
 
 - [ ] gpg?
+- [ ] vnc server + client (for mobile)
 - [ ] fix geoclue2
-- [ ] pia
+- [ ] piaé

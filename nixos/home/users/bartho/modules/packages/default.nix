@@ -145,7 +145,8 @@ in {
       gedit # text editor
 
       # To sort gui
-      tigervnc
+      lime3ds
+      wayvnc
       speedcrunch
       quickemu
       lutris

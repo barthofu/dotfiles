@@ -63,6 +63,7 @@
       nix-add.enable = true;
       meteo.enable = isWorkstation;
       soundcloud.enable = isWorkstation;
+      ping-monitor.enable = isWorkstation;
     };
 
     user = {
