@@ -131,6 +131,11 @@ in {
 
       steam # game client
       prismlauncher # minecraft open source launcher 
+      ryujinx # switch emulator
+      lime3ds # 3ds emulator
+      lutris # game manager
+      heroic # epic games manager
+      mangohud # game overlay
 
       # Office
       # =======================
@@ -145,14 +150,10 @@ in {
       gedit # text editor
 
       # To sort gui
-      ryujinx
-      lime3ds
+      desmume
       wayvnc
       speedcrunch
       quickemu
-      lutris
-      heroic
-      mangohud
       
     ] ++ lib.optionals isWayland [
 
