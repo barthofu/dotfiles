@@ -117,6 +117,7 @@ in {
       krita # digital painting
       udiskie # automount
       teamviewer # remote desktop
+      appimage-run # appimage binaries runner
 
       # Web
       # =======================
