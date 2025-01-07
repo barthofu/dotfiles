@@ -151,6 +151,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      gnome-calculator
       rpcs3
       desmume
       wayvnc
