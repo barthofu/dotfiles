@@ -43,7 +43,6 @@ in {
       neofetch # system info
       screenfetch # system info
       ipfetch # ip fetcher
-      cpufetch # cpu fetcher
       ramfetch # ram fetcher
 
       # Hardware utils

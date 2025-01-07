@@ -64,6 +64,7 @@
       meteo.enable = isWorkstation;
       soundcloud.enable = isWorkstation;
       ping-monitor.enable = isWorkstation;
+      yuzu.enable = isWorkstation;
     };
 
     user = {
