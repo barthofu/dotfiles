@@ -24,8 +24,8 @@ in {
       enable = true;
 
       image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/cyberpunk/cyberpunk_street.jpg";
-        sha256 = "kDZLDfMtaMqsQH7M/O/KGMgtbqAks+kjUKRelMh5BcE=";
+        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/manganimation/perfect_blue.jpg";
+        sha256 = "g+sD1EVGxmbC1CgJTDHg7W+hsOK3kTMgzdR4RGDhQSU=";
       };
       autoEnable = true;
       polarity = "dark";

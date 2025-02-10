@@ -43,6 +43,8 @@
 			xdg-portal.enable = true;
 			hyprland.enable = true;
 			thunar.enable = true;
+			nix-ld.enable = true;
+			dconf.enable = true;
 		};
 	};
 }

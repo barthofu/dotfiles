@@ -84,6 +84,7 @@ in {
       spotify # music player
       jellyfin-media-player # jellyfin media player
       qbittorrent # torrent client
+      picard # music tagger and gui
 
       # Social
       # =======================

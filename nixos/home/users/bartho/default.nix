@@ -8,6 +8,10 @@
 {
   nixpkgs.overlays = [];
 
+  # services.pulseeffects = {
+  #   enable = false;
+  # };
+
   stylix.targets = {
     vscode.enable = false;
     wofi.enable = false;
