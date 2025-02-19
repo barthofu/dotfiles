@@ -152,6 +152,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      filezilla
       gnome-calculator
       rpcs3
       desmume
