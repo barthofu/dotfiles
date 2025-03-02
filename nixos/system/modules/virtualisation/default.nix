@@ -22,6 +22,9 @@ in {
   };
 
   config = mkIf cfg.enable {
+
+    programs.virt-manager.enable = true;
+
     virtualisation = {
       docker = {
         enable = !cfg.usePodman;
@@ -39,6 +42,7 @@ in {
       };
 
       libvirtd.enable = true;
+      spiceUSBRedirection.enable = true;
     };
 
     users.users.${username}.extraGroups = [ "libvirt" "docker" ];

@@ -11,6 +11,9 @@ update:
     nix flake update --flake ./nixos
 update-master:
     cd nixos && nix flake lock --update-input master
+clean:
+    nix-collect-garbage -d
+    sudo nix-collect-garbage -d
 
 # git
 f-pull:

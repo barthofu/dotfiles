@@ -78,6 +78,11 @@
     stylix = {
       url = "github:danth/stylix";
     };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

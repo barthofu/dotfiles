@@ -39,6 +39,7 @@ in {
         self 
         hostname 
         username 
+        homeDirectory
         platform 
         stateVersion 
         isLinux 

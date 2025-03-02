@@ -2,6 +2,8 @@
 , lib
 , pkgs
 , pkgs-master
+, inputs
+, platform
 , isWorkstation
 , wmEnable
 , hyprlandEnable ? false
@@ -141,7 +143,10 @@ in {
 
       # Office
       # =======================
-      onlyoffice-bin # office suite
+      # onlyoffice-bin # office suite
+      libreoffice
+      hunspell
+      hunspellDicts.fr-any
 
       # Misc
       # =======================

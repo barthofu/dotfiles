@@ -53,6 +53,7 @@
     utils = {
       syncthing.enable = true;
       cliphist.enable = isWorkstation;
+      winapps.enable = isWorkstation;
     };
 
     media = {
