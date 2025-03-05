@@ -157,7 +157,6 @@ in {
       gedit # text editor
 
       # To sort gui
-      anydesk
       filezilla
       gnome-calculator
       rpcs3
