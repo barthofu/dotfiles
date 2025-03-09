@@ -157,6 +157,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      code-cursor
       filezilla
       gnome-calculator
       rpcs3
