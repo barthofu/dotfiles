@@ -157,6 +157,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      bruno
       code-cursor
       filezilla
       gnome-calculator
