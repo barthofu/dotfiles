@@ -23,13 +23,20 @@ in {
       userEmail = "dev.bartho@gmail.com";
 
       aliases = {
-        graph = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
-        amend-all = "add . && git commit --amend --no-edit";
-        count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #";
-        co = "commit -m ";
+        cm = "commit -m";
+        cma = "! git add . && git commit -m";
+        a = "commit --amend";
+        a-all = "! git add . && git commit --amend --no-edit";
+        f-push = "! git add . && git commit --amend --no-edit && git push --force-with-lease";
         ch = "checkout";
-        st = "status -sb";
+        s = "status -sb";
         unstage = "reset HEAD --";
+        uncommit = "reset --soft HEAD^";
+        discard = "reset --hard HEAD";
+        # graph = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+        g = "! git graph";
+        graph = "! git-graph";
+        count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #";
       };
 
       extraConfig = {
@@ -48,6 +55,7 @@ in {
 
     home.packages = with pkgs; [
       lazygit
+      git-graph
     ];
   };
 }

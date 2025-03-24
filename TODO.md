@@ -15,8 +15,6 @@
 
 - [ ] hibernate crashes the system (sometimes?)
 - [ ] closing the lid has an unstable behavior (sometimes it hibernates, sometimes it doesn't)
-- [ ] discord, git not keeping session between launches
-  - [ ] maybe cause by not using any keyring service?
 - [ ] performance problem on games
 - [ ] 2.4ghz mouse bugged on login
 - [ ] vscode discord rpc connection not working
