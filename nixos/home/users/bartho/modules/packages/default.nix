@@ -93,7 +93,7 @@ in {
       pkgs-master.vesktop # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
-      signal-desktop # signal
+      pkgs-master.signal-desktop # signal
       
       # Utilities
       # =======================
