@@ -6,6 +6,7 @@ declare -A devices
 devices["soundcore"]="E8:EE:CC:2E:2A:1B"
 devices["enceinte-sony-salon"]="1C:D6:BE:95:96:FF"
 devices["wonderboom-3"]="20:64:DE:98:07:DB"
+devices["bp50"]="00:02:5B:00:FF:06"
 
 device=$1
 
