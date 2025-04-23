@@ -39,6 +39,7 @@
 		};
 
 		programs = {
+			adb.enable = true;
 			hm.enable = true;
 			xdg-portal.enable = true;
 			hyprland.enable = true;
