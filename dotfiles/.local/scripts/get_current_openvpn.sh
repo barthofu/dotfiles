@@ -22,6 +22,8 @@ for vpn in $vpns; do
             icon="🇧🇪"
         elif [ $vpn_name = "pia-germany" ]; then
             icon="🇩🇪"
+        elif [ $vpn_name = "pia-japan" ]; then
+            icon="🇯🇵"
         fi
         break
     fi

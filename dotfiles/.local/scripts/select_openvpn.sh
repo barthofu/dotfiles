@@ -1,6 +1,6 @@
 #!/bin/sh
 
-options="Disable | off\n🇫🇷   PIA - France | pia-france\n🇧🇪   PIA - Belgium | pia-belgium\n🇩🇪   PIA - Germany | pia-germany\n🇲🇩   PIA - Moldova | pia-moldova"
+options="Disable | off\n🇫🇷   PIA - France | pia-france\n🇧🇪   PIA - Belgium | pia-belgium\n🇩🇪   PIA - Germany | pia-germany\n🇲🇩   PIA - Moldova | pia-moldova\n🇯🇵    PIA - Japan | pia-japan"
 
 # display the Wofi menu and select a VPN
 SELECTED=$(echo -e "$options" | wofi --dmenu --prompt "Select a VPN:" -W 300 -H 400 --hide-scroll --cache-file /dev/null)
