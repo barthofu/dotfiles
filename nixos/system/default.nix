@@ -21,7 +21,7 @@
 
     "${commonModules}"
     "${systemModules}"
-    "${self}/overlays/nixpkgs"
+    # "${self}/overlays/nixpkgs"
   ]
   ++ lib.optional machineConfigurationPathExist machineConfigurationPath
   ++ lib.optional machineModulesPathExist machineModulesPath;

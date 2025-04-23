@@ -95,9 +95,31 @@
     hosts = import ./hosts.nix;
     # Import helper functions
     genNixosLib = import ./lib/gen-nixos.nix { inherit self inputs; };
+    # Overlays
+    overlays = import ./overlays/default.nix { inherit inputs; };
+    
   in flake-parts.lib.mkFlake { inherit inputs; } {
     
     systems = genNixosLib.forAllSystems;
+
+    # Cette partie est cruciale pour que tes overlays soient bien appliqués dans les `perSystem`
+    perSystem = { system, ... }: {
+      _module.args = {
+        inherit system;
+        overlays = overlays;
+      };
+
+      packages = {
+        # Tu peux ici exposer tes paquets persos dans `.#packages.${system}.blink` par exemple
+        blink = import ./pkgs/blink.nix {
+          inherit (inputs.nixpkgs) lib;
+          inherit system;
+          pkgs = import inputs.nixpkgs {
+            inherit system overlays;
+          };
+        };
+      };
+    };
 
     flake = {
       nixosConfigurations = genNixosLib.genNixos hosts.nixos;

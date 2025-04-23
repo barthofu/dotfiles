@@ -6,7 +6,7 @@
 }:
 
 {
-  nixpkgs.overlays = [];
+  # nixpkgs.overlays = [];
 
   # services.pulseeffects = {
   #   enable = false;

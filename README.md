@@ -25,6 +25,7 @@ This repository holds my NixOS configuration. It is fully reproducible, flakes b
 - [Features](#features)
 - [File structure](#file-structure)
 - [Preview](#preview)
+- [Inspirations](#inspirations)
 
 You can also find the full documentation in the [docs folder](docs/).
 
@@ -62,3 +63,9 @@ You can also find the full documentation in the [docs folder](docs/).
 ## Preview
 
 *The showcased images do not reflect the latest version of the system's appearance. The final setup may vary slightly.*
+
+## Inspirations
+
+Some of the inspirations for this configuration are:
+- https://github.com/TheMaxMur/NixOS-Configuration
+- 

@@ -28,15 +28,7 @@ let
 
       hyprlandEnable = wm == "hyprland";
       wmEnable       = hyprlandEnable;
-
-      myPkgs = import ../pkgs/cliphist-wofi-img/default.nix { inherit inputs; };
       
-      pkgs = import inputs.nixpkgs {
-        # inherit system;
-        overlays = [ 
-          (self: super: { cliphist-wofi-img = myPkgs.cliphist-wofi-img; }) 
-        ];
-      };
     in inputs.nixpkgs.lib.nixosSystem {
 
       specialArgs = {

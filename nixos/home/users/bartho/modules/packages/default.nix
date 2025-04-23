@@ -49,6 +49,7 @@ in {
       toilet # ascii art
       fortune # fortune teller
       cowsay # cow ascii art
+      ufetch-test
 
       # To sort cli
 

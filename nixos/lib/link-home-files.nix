@@ -1,6 +1,6 @@
 /**
-  This lib file is obsolete but serves as an example on how to create custom functions for me.
-*/
+  * This lib file is obsolete but serves as an example on how to create custom functions for me.
+  */
 
 { config
 , pkgs
