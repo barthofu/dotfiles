@@ -25,7 +25,13 @@ in {
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         libvdpau-va-gl
+        mesa
+        mesa.drivers
       ];
+    };
+
+    environment.variables = {
+      GBM_BACKENDS_PATH = "/run/opengl-driver/lib";
     };
   };
 }
