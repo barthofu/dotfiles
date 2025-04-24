@@ -85,6 +85,7 @@ in {
       vlc # media player
       spotify # music player
       jellyfin-media-player # jellyfin media player
+      delfin # jellyfin alternative client
       qbittorrent # torrent client
       picard # music tagger and gui
 
@@ -157,6 +158,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      vdhcoapp
       bruno
       code-cursor
       filezilla
