@@ -87,6 +87,7 @@ in {
       powerstat # power consumption monitoring
 
       # To sort cli
+      duf
       dialog
       gping
       fd
