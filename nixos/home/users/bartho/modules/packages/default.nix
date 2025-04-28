@@ -159,6 +159,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      jetbrains.gateway
       vdhcoapp
       bruno
       code-cursor
