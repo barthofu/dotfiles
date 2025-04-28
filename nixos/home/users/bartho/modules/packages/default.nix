@@ -77,7 +77,8 @@ in {
       coder # coder cli client
       
       gitkraken # git gui
-      jetbrains.idea-ultimate # jetbrains ide manager
+      jetbrains.idea-ultimate # jetbrains ultimate ide
+      jetbrains.rust-rover # jetbrains rust ide
       insomnia # rest client
 
       # Media
