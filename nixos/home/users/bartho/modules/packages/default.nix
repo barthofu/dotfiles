@@ -123,6 +123,7 @@ in {
       udiskie # automount
       teamviewer # remote desktop
       appimage-run # appimage binaries runner
+      popsicle # usb iso flasher
 
       # Web
       # =======================

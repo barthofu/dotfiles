@@ -32,6 +32,19 @@ in {
         {
           return polkit.Result.YES;
         }
+
+        if (
+          subject.isInGroup("wheel") 
+            && (
+              action.id == "org.freedesktop.policykit.exec" ||
+              action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+              action.id == "org.freedesktop.udisks2.drive-eject" ||
+              action.id == "org.freedesktop.udisks2.filesystem-mount"
+            )
+          ) 
+        {
+          return polkit.Result.YES;
+        }
       })
     '';
   };
