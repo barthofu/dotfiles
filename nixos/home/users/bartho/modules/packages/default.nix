@@ -160,6 +160,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      playerctl
       jetbrains.gateway
       vdhcoapp
       bruno
