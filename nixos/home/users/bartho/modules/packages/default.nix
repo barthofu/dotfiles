@@ -161,6 +161,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      webcord
       playerctl
       jetbrains.gateway
       vdhcoapp
