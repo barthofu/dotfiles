@@ -161,6 +161,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      fx-cast-bridge
       webcord
       playerctl
       jetbrains.gateway
