@@ -161,6 +161,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      mixxx
       fx-cast-bridge
       webcord
       playerctl
