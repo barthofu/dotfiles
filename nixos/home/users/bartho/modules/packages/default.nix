@@ -163,6 +163,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      shotcut
       pkgs-master.mixxx
       fx-cast-bridge
       playerctl
