@@ -80,6 +80,7 @@ in {
       jetbrains.idea-ultimate # jetbrains ultimate ide
       jetbrains.rust-rover # jetbrains rust ide
       insomnia # rest client
+      pkgs-master.code-cursor 
 
       # Media
       # =======================
@@ -94,6 +95,7 @@ in {
       # =======================
       pkgs-master.vesktop # discord
       pkgs-master.discord # discord
+      pkgs-master.webcord-vencord # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
       pkgs-master.signal-desktop # signal
@@ -161,14 +163,12 @@ in {
       gedit # text editor
 
       # To sort gui
-      mixxx
+      pkgs-master.mixxx
       fx-cast-bridge
-      webcord
       playerctl
       jetbrains.gateway
       vdhcoapp
       bruno
-      code-cursor
       filezilla
       gnome-calculator
       rpcs3

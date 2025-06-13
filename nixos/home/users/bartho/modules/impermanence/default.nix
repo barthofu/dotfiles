@@ -51,6 +51,7 @@ in {
           ".config/google-chrome"
           ".config/sops"
           ".config/vesktop"
+          ".config/discord"
           ".config/sops-nix"
           ".config/obsidian"
           ".config/Code"
