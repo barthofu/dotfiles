@@ -163,6 +163,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      beekeeper-studio
       dbeaver-bin
       shotcut
       pkgs-master.mixxx
