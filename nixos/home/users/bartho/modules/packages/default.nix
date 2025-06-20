@@ -84,7 +84,7 @@ in {
 
       # Media
       # =======================
-      vlc # media player
+      vlc
       spotify # music player
       jellyfin-media-player # jellyfin media player
       delfin # jellyfin alternative client
@@ -163,6 +163,7 @@ in {
       gedit # text editor
 
       # To sort gui
+      dbeaver-bin
       shotcut
       pkgs-master.mixxx
       fx-cast-bridge
