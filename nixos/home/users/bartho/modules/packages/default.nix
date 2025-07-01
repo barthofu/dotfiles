@@ -51,6 +51,7 @@ in {
       cowsay # cow ascii art
 
       # To sort cli
+      firefoxpwa
 
     ] ++ lib.optionals isWorkstation [
 
@@ -79,6 +80,7 @@ in {
       gitkraken # git gui
       jetbrains.idea-ultimate # jetbrains ultimate ide
       jetbrains.rust-rover # jetbrains rust ide
+      jetbrains.datagrip # jetbrains rust ide
       insomnia # rest client
       pkgs-master.code-cursor 
 
