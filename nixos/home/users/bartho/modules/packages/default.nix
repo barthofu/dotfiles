@@ -51,6 +51,7 @@ in {
       cowsay # cow ascii art
 
       # To sort cli
+      mitmproxy
       firefoxpwa
 
     ] ++ lib.optionals isWorkstation [
@@ -129,6 +130,8 @@ in {
       teamviewer # remote desktop
       appimage-run # appimage binaries runner
       popsicle # usb iso flasher
+      wineWowPackages.waylandFull # wine for wayland
+      winetricks # wine package manager
 
       # Web
       # =======================
