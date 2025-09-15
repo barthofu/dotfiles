@@ -83,14 +83,14 @@ in {
       jetbrains.rust-rover # jetbrains rust ide
       jetbrains.datagrip # jetbrains rust ide
       insomnia # rest client
-      pkgs-master.code-cursor 
+      # pkgs-master.code-cursor # ai fork of vscode 
 
       # Media
       # =======================
       vlc # video player
       mpv # video player
       pkgs-master.spotify # music player
-      pkgs-master.jellyfin-media-player # jellyfin media player
+      # pkgs-master.jellyfin-media-player # jellyfin media player
       pkgs-master.jellyfin-mpv-shim # jellyfin alternative client
       delfin # jellyfin alternative client
       qbittorrent # torrent client
