@@ -34,6 +34,7 @@
 			polkit.enable = true;
 			openvpn.enable = true;
 			logind.enable = true;
+			flatpak.enable = true;
 			
 			acpid.enable = false;
 		};

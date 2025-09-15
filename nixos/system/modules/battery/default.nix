@@ -14,12 +14,16 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      auto-cpufreq.enable = true;
-      system76-scheduler.settings.cfsProfiles.enable = true;
-      power-profiles-daemon.enable = !config.services.tlp.enable;
       thermald.enable = true;
+      system76-scheduler.settings.cfsProfiles.enable = true;
+      
+      # Power profiles daemon
+      power-profiles-daemon.enable = !config.services.tlp.enable;
+      
+      # TLP
+      auto-cpufreq.enable = config.services.tlp.enable;
       tlp = {
-        enable = true;
+        enable = false;
         settings = {
           # Platform
           PLATFORM_PROFILE_ON_BAT = "powersave";

@@ -87,9 +87,11 @@ in {
 
       # Media
       # =======================
-      vlc
-      spotify # music player
-      jellyfin-media-player # jellyfin media player
+      vlc # video player
+      mpv # video player
+      pkgs-master.spotify # music player
+      pkgs-master.jellyfin-media-player # jellyfin media player
+      pkgs-master.jellyfin-mpv-shim # jellyfin alternative client
       delfin # jellyfin alternative client
       qbittorrent # torrent client
       picard # music tagger and gui
@@ -97,11 +99,11 @@ in {
       # Social
       # =======================
       pkgs-master.vesktop # discord
-      pkgs-master.discord # discord
-      pkgs-master.webcord-vencord # discord
+      # pkgs-master.discord # discord
+      # pkgs-master.webcord-vencord # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
-      pkgs-master.signal-desktop # signal
+      signal-desktop # signal
       
       # Utilities
       # =======================
@@ -132,6 +134,7 @@ in {
       popsicle # usb iso flasher
       wineWowPackages.waylandFull # wine for wayland
       winetricks # wine package manager
+      wf-recorder # wayland screen recorder
 
       # Web
       # =======================
