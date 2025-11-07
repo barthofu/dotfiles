@@ -1,0 +1,8 @@
+# One entry per line, format: Label | value
+# Example values are passed to your toggle script (~/.local/scripts/toggle_openvpn.sh)
+Disable | off
+# 🇫🇷  PIA - France | pia-france
+# 🇧🇪  PIA - Belgium | pia-belgium
+# 🇩🇪  PIA - Germany | pia-germany
+# 🇯🇵  PIA - Japan | pia-japan
+# Add your own entries above without the leading '#'

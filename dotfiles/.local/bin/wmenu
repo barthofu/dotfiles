@@ -1,0 +1,227 @@
+#!/usr/bin/env bash
+
+# A lightweight, walker-driven menu for common tasks (Apps, VPN, Capture, Config, System)
+# - No external Omarchy deps
+# - Uses walker --dmenu
+# - Safe fallbacks for editor/terminal/tools
+
+set -euo pipefail
+
+# If WALKER_THEME is set, we'll pass --theme; otherwise we respect Walker's config/theme
+WALKER_THEME=${WALKER_THEME:-}
+VPN_OPTIONS_FILE=${VPN_OPTIONS_FILE:-"$HOME/.config/wmenu/vpn-options.txt"}
+
+# ---------- Utils ----------
+
+has() { command -v "$1" >/dev/null 2>&1; }
+
+notify() { has notify-send && notify-send "$@" || true; }
+
+terminal() {
+  if has alacritty; then
+    alacritty --class=Menu -e "$@"
+  elif has kitty; then
+    kitty "$@"
+  else
+    "${TERMINAL:-xterm}" -e "$@"
+  fi
+}
+
+editor() { "${EDITOR:-nvim}" "$@"; }
+
+menu() {
+  local prompt="$1"
+  local options="$2"
+  local extra="${3:-}"
+  local -a args=()
+  [[ -n "$extra" ]] && read -r -a args <<<"$extra"
+  local -a walker_args=(--dmenu -p "$prompt…")
+  if [[ -n "${WALKER_THEME}" ]]; then
+    walker_args+=(--theme "$WALKER_THEME")
+  fi
+  echo -e "$options" | walker "${walker_args[@]}" "${args[@]}"
+}
+
+# ---------- Menus ----------
+show_apps_menu() {
+  walker -p "Launch…"
+}
+
+show_toggle_menu() {
+  case $(menu "Toggle" "󱄄  Screensaver\n󰔎  Nightlight\n󱫖  Idle Lock\n󰍜  Top Bar") in
+  *Screensaver*) omarchy-toggle-screensaver ;;
+  *Nightlight*) omarchy-toggle-nightlight ;;
+  *Idle*) omarchy-toggle-idle ;;
+  *Bar*) omarchy-toggle-waybar ;;
+  *) show_trigger_menu ;;
+  esac
+}
+
+show_setup_power_menu() {
+  profile=$(menu "Power Profile" "$(omarchy-powerprofiles-list)" "" "$(powerprofilesctl get)")
+
+  if [[ "$profile" == "CNCLD" || -z "$profile" ]]; then
+    back_to show_setup_menu
+  else
+    powerprofilesctl set "$profile"
+  fi
+}
+
+
+
+
+# ---------- Apps ----------
+
+
+# ---------- VPN ----------
+# Expects a file with lines like: "🇫🇷  PIA - France | pia-france"
+# Calls ~/.local/scripts/toggle_openvpn.sh <value> if available.
+ensure_vpn_options_file() {
+  if [[ ! -f "$VPN_OPTIONS_FILE" ]]; then
+    mkdir -p "$(dirname "$VPN_OPTIONS_FILE")"
+    cat >"$VPN_OPTIONS_FILE" <<'EOF'
+# One entry per line, format: Label | value
+# Example values are passed to your toggle script (~/.local/scripts/toggle_openvpn.sh)
+Disable | off
+# 🇫🇷  PIA - France | pia-france
+# 🇧🇪  PIA - Belgium | pia-belgium
+# Add your own lines above without the leading '#'
+EOF
+    notify "wmenu: created $VPN_OPTIONS_FILE" "Edit this file to add your VPN entries."
+  fi
+}
+
+vpn_menu() {
+  ensure_vpn_options_file
+  local opts
+  # Filter out commented/empty lines
+  opts=$(grep -vE '^(#|\s*$)' "$VPN_OPTIONS_FILE" || true)
+  if [[ -z "$opts" ]]; then
+    notify "wmenu: No VPN entries" "Add lines to $VPN_OPTIONS_FILE"
+    return 0
+  fi
+
+  local selected value
+  selected=$(menu "VPN" "$opts") || true
+  [[ -z "$selected" || "$selected" == CNCLD ]] && return 0
+  value=$(awk -F '|' '{print $2}' <<<"$selected" | xargs)
+  [[ -z "$value" ]] && return 0
+
+  if [[ -x "$HOME/.local/scripts/toggle_openvpn.sh" ]]; then
+    "$HOME/.local/scripts/toggle_openvpn.sh" "$value"
+  else
+    notify "wmenu: toggle_openvpn.sh introuvable" "Créez ~/.local/scripts/toggle_openvpn.sh ou ajustez wmenu"
+  fi
+}
+
+# ---------- Capture ----------
+ss_dir() {
+  local d
+  d="${XDG_PICTURES_DIR:-$HOME/Pictures}/Screenshots"
+  mkdir -p "$d"
+  echo "$d"
+}
+
+ss_save_and_clip() {
+  local file="$1"
+  if has wl-copy; then
+    wl-copy -t image/png <"$file" || true
+  fi
+  notify "Screenshot enregistré" "$file"
+}
+
+ss_region() {
+  if has grim && has slurp; then
+    local out
+    out="$(ss_dir)/$(date +'%Y-%m-%d_%H-%M-%S')_region.png"
+    grim -g "$(slurp)" "$out" && ss_save_and_clip "$out"
+  else
+    notify "grim/slurp manquant" "Installez grim et slurp"
+  fi
+}
+
+ss_window() {
+  # Fallback: region capture if window-specific not available
+  ss_region
+}
+
+ss_display() {
+  if has grim; then
+    local out
+    out="$(ss_dir)/$(date +'%Y-%m-%d_%H-%M-%S')_display.png"
+    grim "$out" && ss_save_and_clip "$out"
+  else
+    notify "grim manquant" "Installez grim"
+  fi
+}
+
+color_pick() {
+  if has hyprpicker; then
+    pkill hyprpicker || true
+    hyprpicker -a
+  else
+    notify "hyprpicker manquant" "Installez hyprpicker pour le color pick"
+  fi
+}
+
+show_capture_menu() {
+  case "${1:-$(menu "Capture" $'  Region\n  Window\n  Display\n󰃉  Color')}" in
+    *Region*) ss_region ;;
+    *Window*) ss_window ;;
+    *Display*) ss_display ;;
+    *Color*) color_pick ;;
+  esac
+}
+
+# ---------- Config ----------
+reload_waybar() { pkill -SIGUSR2 waybar 2>/dev/null || true; }
+
+show_config_menu() {
+  case "${1:-$(menu "Config" $'  Hyprland\n󰍜  Waybar')}" in
+    *Hyprland*) editor "$HOME/.config/hypr/hyprland.conf" ;;
+    *Waybar*) editor "$HOME/.config/waybar/config.jsonc" && reload_waybar ;;
+  esac
+}
+
+# ---------- System ----------
+sys_lock() {
+  if has hyprlock; then hyprlock
+  elif has swaylock; then swaylock
+  else loginctl lock-session || true
+  fi
+}
+
+show_system_menu() {
+  case "${1:-$(menu "System" $'  Lock\n󰤄  Suspend\n󰜉  Restart\n󰐥  Shutdown')}" in
+    *Lock*) sys_lock ;;
+    *Suspend*) systemctl suspend ;;
+    *Restart*) systemctl reboot ;;
+    *Shutdown*) systemctl poweroff ;;
+  esac
+}
+
+# ---------- Main ----------
+show_main_menu() {
+  local choice
+  choice=$(menu "Go" $'󰀻  Apps\n󱚤  VPN\n  Capture\n  Config\n  System') || true
+  case "${choice,,}" in
+    *apps*) show_apps_menu ;;
+    *vpn*) vpn_menu ;;
+    *capture*) show_capture_menu ;;
+    *config*) show_config_menu ;;
+    *system*) show_system_menu ;;
+  esac
+}
+
+if [[ -n "${1:-}" ]]; then
+  case "${1,,}" in
+    apps|app) show_apps_menu ;;
+    vpn) vpn_menu ;;
+    capture) show_capture_menu ;;
+    config) code ~/.dotfiles ;;
+    system) show_system_menu ;;
+    *) show_main_menu ;;
+  esac
+else
+  show_main_menu
+fi

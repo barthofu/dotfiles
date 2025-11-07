@@ -39,6 +39,7 @@ in {
       networkmanager_dmenu # dmenu frontend for networkmanager
       brightnessctl # cli to control brightness
       ripgrep # better grep
+      playerctl # cli to control media players
       
       # Misc
       # =======================
@@ -49,8 +50,11 @@ in {
       toilet # ascii art
       fortune # fortune teller
       cowsay # cow ascii art
+      vdhcoapp # video downloader helper dependency
 
       # To sort cli
+      scrcpy
+      pkgs-master.basalt
       mitmproxy
       firefoxpwa
 
@@ -84,6 +88,9 @@ in {
       jetbrains.datagrip # jetbrains rust ide
       insomnia # rest client
       # pkgs-master.code-cursor # ai fork of vscode 
+      beekeeper-studio # database gui
+      dbeaver-bin # database gui
+      pkgs-master.bruno # database gui
 
       # Media
       # =======================
@@ -135,6 +142,7 @@ in {
       wineWowPackages.waylandFull # wine for wayland
       winetricks # wine package manager
       wf-recorder # wayland screen recorder
+      # walker # app launcher
 
       # Web
       # =======================
@@ -145,6 +153,7 @@ in {
       zeroad # open source rts game
       xonotic # quake like
       pokete # pokemon game in terminal
+      python312Packages.playsound # sound for pokete
       endless-sky # space exploration
 
       steam # game client
@@ -165,21 +174,13 @@ in {
       # Misc
       # =======================
       cavalier # cava frontend
-      starfetch # constellations fetcher
-      octofetch # github stats fetcher
-      zathura # document viewer
       gedit # text editor
+      pkgs-master.mixxx # dj software
 
       # To sort gui
-      beekeeper-studio
-      dbeaver-bin
-      shotcut
-      pkgs-master.mixxx
-      fx-cast-bridge
-      playerctl
-      jetbrains.gateway
-      vdhcoapp
-      bruno
+      
+      
+      
       filezilla
       gnome-calculator
       rpcs3

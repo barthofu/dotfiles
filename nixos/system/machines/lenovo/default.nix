@@ -47,6 +47,7 @@
 			thunar.enable = true;
 			nix-ld.enable = true;
 			dconf.enable = true;
+			obs-studio.enable = true;
 		};
 	};
 }

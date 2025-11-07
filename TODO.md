@@ -4,6 +4,7 @@
 
 ## Global
 
+- [ ] brand the whole repo and this project as "SietchOS" (use ascii generator for the logo)
 - [ ] check gc and nixos storage optimization
 - [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 - [ ] move boot system module to system configuration

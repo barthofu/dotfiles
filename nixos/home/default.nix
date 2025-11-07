@@ -63,6 +63,7 @@ in {
 
       imports = [
         inputs.impermanence.nixosModules.home-manager.impermanence
+        inputs.walker.homeManagerModules.default
 
         "${commonModules}"
         "${homeModules}"

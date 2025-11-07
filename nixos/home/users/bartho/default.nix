@@ -54,10 +54,11 @@
       syncthing.enable = true;
       cliphist.enable = isWorkstation;
       winapps.enable = isWorkstation;
+      walker.enable = isWorkstation;
     };
 
     media = {
-      obs-studio.enable = isWorkstation;
+      # obs-studio.enable = isWorkstation;
     };
 
     web = {
