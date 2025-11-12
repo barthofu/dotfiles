@@ -23,7 +23,7 @@ in {
       enable = true;
       package = if cfg.useCodium then pkgs-master.codium else pkgs-master.vscode;
 
-      extensions = (with pkgs-master.vscode-extensions; [
+      profiles.default.extensions = (with pkgs-master.vscode-extensions; [
         ms-vscode-remote.remote-ssh
       ]);
     };

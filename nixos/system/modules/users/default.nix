@@ -39,6 +39,7 @@ in {
             "video"
             "networkmanager"
             "wheel"
+            "render"
           ];
         };
       };

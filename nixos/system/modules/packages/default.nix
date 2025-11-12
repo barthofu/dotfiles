@@ -47,7 +47,7 @@ in {
 
       # Hardware utils
       # =======================
-      glxinfo # display info about a GLX extension
+      # mesa-demos # display info about a GLX extension
       pciutils # lspci
       usbutils # lsusb
       lm_sensors # sensors
@@ -99,7 +99,7 @@ in {
       # =======================
       smartmontools # monitor hard drive health
       hdparm # hard drive performance
-      microcodeIntel # intel cpu microcode
+      microcode-intel # intel cpu microcode
       libGL # opengl
       libva-utils # vaapi
       intel-gpu-tools # intel gpu tools

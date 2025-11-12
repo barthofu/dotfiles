@@ -88,9 +88,9 @@ in {
       jetbrains.datagrip # jetbrains rust ide
       insomnia # rest client
       # pkgs-master.code-cursor # ai fork of vscode 
-      beekeeper-studio # database gui
+      # beekeeper-studio # database gui
       dbeaver-bin # database gui
-      pkgs-master.bruno # database gui
+      bruno # api testing gui
 
       # Media
       # =======================
@@ -105,17 +105,17 @@ in {
 
       # Social
       # =======================
-      pkgs-master.vesktop # discord
+      vesktop # discord
       # pkgs-master.discord # discord
       # pkgs-master.webcord-vencord # discord
       teams-for-linux # microsoft teams
       telegram-desktop # telegram
-      signal-desktop # signal
+      # signal-desktop # signal
       
       # Utilities
       # =======================
       notion # note taking
-      obsidian # note taking
+      # obsidian # note taking
       realvnc-vnc-viewer # vnc client
       neatvnc # vnc server
       spacedrive # file manager
@@ -131,7 +131,7 @@ in {
       qdirstat # disk usage analyzer
       todoist-electron # task list
       todoist # cli client for todoist
-      kolourpaint # paint
+      # kolourpaint # paint
       gimp # image editor
       inkscape # vector editor
       krita # digital painting
@@ -158,8 +158,8 @@ in {
 
       steam # game client
       prismlauncher # minecraft open source launcher 
-      ryujinx # switch emulator
-      lime3ds # 3ds emulator
+      ryubing # switch emulator
+      # lime3ds # 3ds emulator
       lutris # game manager
       heroic # epic games manager
       mangohud # game overlay

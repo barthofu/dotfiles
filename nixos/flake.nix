@@ -44,19 +44,21 @@
     ####################  Desktop Environments & WindowManager | remote flake ####################
     # Hyprland is a collection of NixOS modules and packages for a more modern and minimal desktop experience. with plugins for home-manager.
     hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.44.0";
+      # url = "github:hyprwm/Hyprland";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.52.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
     hyprland-virtual-desktops = {
-      url = "https://github.com/levnikmyskin/hyprland-virtual-desktops/archive/refs/tags/v2.2.4.tar.gz";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    xdghypr = {
-      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+      # url = "github:levnikmyskin/hyprland-virtual-desktops";
+      url = "https://github.com/levnikmyskin/hyprland-virtual-desktops/archive/refs/tags/v2.2.8.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    #xdghypr = {
+    #  url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     ####################  Community & Other Repositories | remote flake ####################
     # Firefox-addons is a collection of Firefox extensions

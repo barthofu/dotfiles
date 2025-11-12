@@ -21,7 +21,10 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = null;
+      portalPackage = null;
+
       plugins = [
         inputs.hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
       ];

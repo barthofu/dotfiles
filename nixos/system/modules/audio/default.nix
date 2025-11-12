@@ -14,7 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     
     # daemon useful for wine, pipewire, pulseaudio, etc
     security.rtkit.enable = true;

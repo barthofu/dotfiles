@@ -21,17 +21,20 @@ in {
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
+      package = pkgs.mesa;
+      package32 = pkgs.pkgsi686Linux.mesa;
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         libvdpau-va-gl
-        mesa
-        mesa.drivers
+        #mesa
+        #mesa.drivers
+        mesa-demos
       ];
     };
 
-    environment.variables = {
-      GBM_BACKENDS_PATH = "/run/opengl-driver/lib";
-    };
+    # environment.variables = {
+    #  GBM_BACKENDS_PATH = "/run/opengl-driver/lib";
+    # };
   };
 }

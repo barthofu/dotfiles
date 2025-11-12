@@ -72,7 +72,7 @@ in {
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
   # This function just add mkHost before hosts attrset
-  # ex: lenovo = { username = "test"; stateVersion = "24.11"; }; ->
-  # lenovo = mkHost { username = "test"; stateVersion = "24.11"; };
+  # ex: lenovo = { username = "test"; stateVersion = "24.05"; }; ->
+  # lenovo = mkHost { username = "test"; stateVersion = "24.05"; };
   genNixos  = builtins.mapAttrs mkHost;
 }

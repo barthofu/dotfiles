@@ -29,7 +29,7 @@ in {
     environment.sessionVariables = {
       MOZ_LEGACY_PROFILES                       = "1";
       FLAKE                                     = "/home/${username}/.dotfiles/nixos";
-      QT_QPA_PLATFORMTHEME                      = "gtk3";
+      # QT_QPA_PLATFORMTHEME                      = "gtk3";
       TDESKTOP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY = "1";
     };
 

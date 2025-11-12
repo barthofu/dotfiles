@@ -1,5 +1,6 @@
 { config
 , lib
+, pkgs
 , ...
 }:
 
@@ -17,8 +18,14 @@ in {
   config = mkIf cfg.enable {
     # security.pam.services.hyprlock = {};
 
+    home.packages = with pkgs; [
+      hyprlock
+    ];
+
     programs.hyprlock = {
-        enable = true;
+      enable = false;
+
+      settings = {};
 
         # settings = {
         #     general = {

@@ -15,9 +15,13 @@ in {
 
   config = mkIf cfg.enable {
     services.logind = {
-      lidSwitch = "ignore";
-      lidSwitchExternalPower = "ignore";
-      lidSwitchDocked = "ignore";
+      settings = {
+        Login = {
+          HandleLidSwitch = "ignore";
+          HandleLidSwitchExternalPower = "ignore";
+          HandleLidSwitchDocked = "ignore";
+        };
+      };
     };
 
       # systemd.sleep.extraConfig = ''

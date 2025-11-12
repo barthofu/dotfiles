@@ -27,7 +27,6 @@ in {
 
     services.greetd = {
       enable = true;
-      vt = 1;
 
       settings = rec {
         initial_session = { # triggers the autologin
