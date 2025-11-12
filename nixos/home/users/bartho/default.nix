@@ -57,9 +57,9 @@
       walker.enable = isWorkstation;
     };
 
-    media = {
-      # obs-studio.enable = isWorkstation;
-    };
+    # media = {
+    #   # obs-studio.enable = isWorkstation;
+    # };
 
     web = {
       firefox.enable = isWorkstation;

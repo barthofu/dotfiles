@@ -35,6 +35,11 @@ in {
         autoStart = false;
         updateResolvConf = false;
       };
+      pia-italy = {
+          config = ''  config /etc/vpn/pia-italy.ovpn '';
+          autoStart = false;
+          updateResolvConf = false;
+      };
       pia-japan = {
         config = ''  config /etc/vpn/pia-japan.ovpn '';
         autoStart = false;
