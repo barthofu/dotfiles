@@ -23,8 +23,8 @@ in {
       };
     };
 
-    home.packages = with pkgs; [
-      syncthingtray
-    ];
+    # home.packages = with pkgs; [
+    #   syncthingtray
+    # ];
   };
 }

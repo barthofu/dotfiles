@@ -23,7 +23,7 @@
 
     # Latest stable
     stable = {
-      url = "github:NixOS/nixpkgs/nixos-24.05";
+      url = "github:NixOS/nixpkgs/nixos-25.05";
     };
 
     # Current nixpkgs branch
@@ -44,13 +44,14 @@
     ####################  Desktop Environments & WindowManager | remote flake ####################
     # Hyprland is a collection of NixOS modules and packages for a more modern and minimal desktop experience. with plugins for home-manager.
     hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.44.0";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
     hyprland-virtual-desktops = {
-      url = "https://github.com/levnikmyskin/hyprland-virtual-desktops/archive/refs/tags/v2.2.4.tar.gz";
-      inputs.hyprland.follows = "hyprland";
+      # url = "github:gilevnikmyskin/hyprland-virtual-desktops";
+      url = "github:levnikmyskin/hyprland-virtual-desktops";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     xdghypr = {

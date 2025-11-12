@@ -20,7 +20,6 @@ in {
       enable = true;
       runAsService = true;
 
-      # Configuration translated from the provided TOML
       config = {
         theme = "default";
         force_keyboard_focus = false;
@@ -163,11 +162,12 @@ in {
       };
 
       # If this is not set the default styling is used.
-      theme.style = ''
-        /* import */
-        @import url('./true-style.css');
-      '';
-      theme.name = "default";
+      themes."default" = {
+        style = ''
+          /* import */
+          @import url('./true-style.css');
+        '';
+      };
     };
   };
 }

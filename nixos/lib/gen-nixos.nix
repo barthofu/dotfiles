@@ -14,7 +14,7 @@ let
   # Helper function for generating host configs
   mkHost = machineDir:
     { username ? "user"
-    , stateVersion ? "24.05"
+    , stateVersion ? "25.05"
     , platform ? "x86_64-linux" 
     , hostname ? machineDir
     , isWorkstation ? false
@@ -72,7 +72,7 @@ in {
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
   # This function just add mkHost before hosts attrset
-  # ex: lenovo = { username = "test"; stateVersion = "24.11"; }; ->
-  # lenovo = mkHost { username = "test"; stateVersion = "24.11"; };
+  # ex: lenovo = { username = "test"; stateVersion = "25.05"; }; ->
+  # lenovo = mkHost { username = "test"; stateVersion = "25.05"; };
   genNixos  = builtins.mapAttrs mkHost;
 }

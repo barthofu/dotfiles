@@ -33,7 +33,7 @@ Flakes in Nix provide a more controlled and manageable way to handle inputs and 
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
   outputs = { self, nixpkgs }: {

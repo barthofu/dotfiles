@@ -31,7 +31,6 @@ in {
     environment.systemPackages = with pkgs; [
       vulnix       # nix store vulnerability scanner (scan command: vulnix --system)
       clamav       # clamav antivirus client (scan command: sudo freshclam; clamscan [options] [file/directory/-])
-      chkrootkit   # rootkit presence scanner (scan command: sudo chkrootkit)
 
       tomb        # encrypted storage
     ];

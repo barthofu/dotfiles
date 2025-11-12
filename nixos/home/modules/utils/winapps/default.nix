@@ -22,7 +22,7 @@ in {
     home.packages = with pkgs; [
       inputs.winapps.packages."${platform}".winapps
       inputs.winapps.packages."${platform}".winapps-launcher
-      freerdp3
+      freerdp
     ];
 
     home.file.".config/winapps/compose.yaml".text = ''${

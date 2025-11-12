@@ -21,16 +21,17 @@ in {
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
-        noto-fonts-emoji
-        maple-mono
+        noto-fonts-color-emoji
         kanji-stroke-order-font
         julia-mono
         
         # nerdfonts
-        nerdfonts
-        liberation_ttf
+        maple-mono.NF-CN
         fira-sans
+        liberation_ttf
         jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.droid-sans-mono
 
         # icons
         font-awesome
