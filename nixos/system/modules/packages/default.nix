@@ -47,7 +47,7 @@ in {
 
       # Hardware utils
       # =======================
-      mesa-demos # display info about a GLX extension
+      # mesa-demos # display info about a GLX extension
       pciutils # lspci
       usbutils # lsusb
       lm_sensors # sensors
