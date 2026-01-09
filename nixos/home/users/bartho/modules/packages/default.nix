@@ -53,6 +53,7 @@ in {
       vdhcoapp # video downloader helper dependency
 
       # To sort cli
+      protonmail-bridge
       aerc
       scrcpy
       pkgs-master.basalt
