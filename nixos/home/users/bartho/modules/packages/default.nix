@@ -53,6 +53,7 @@ in {
       vdhcoapp # video downloader helper dependency
 
       # To sort cli
+      monero-gui
       expat
       monero-cli
       protonmail-bridge
