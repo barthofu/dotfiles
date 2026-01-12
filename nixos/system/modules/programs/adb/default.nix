@@ -1,6 +1,7 @@
 { inputs
 , lib
 , config
+, pkgs
 , ...
 }:
 
@@ -15,8 +16,8 @@ in {
 
   config = mkIf cfg.enable {
 
-    programs.adb = {
-      enable = true;
-    };
+    environment.systemPackages = with pkgs; [
+      android-tools
+    ];
   };
 }

@@ -53,6 +53,8 @@ in {
       vdhcoapp # video downloader helper dependency
 
       # To sort cli
+      expat
+      monero-cli
       protonmail-bridge
       aerc
       scrcpy
@@ -116,7 +118,7 @@ in {
       
       # Utilities
       # =======================
-      notion # note taking
+      # notion # note taking
       # obsidian # note taking
       realvnc-vnc-viewer # vnc client
       neatvnc # vnc server
