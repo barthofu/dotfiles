@@ -38,7 +38,9 @@ in {
     # network
     networking.firewall = { # enable firewall and block all ports
       enable = true;
-      allowedTCPPorts = [];
+      allowedTCPPorts = [
+        58585 # bittorrent
+      ];
       allowedUDPPorts = [];
     };
     services.fail2ban.enable = true; # block brute force attacks
