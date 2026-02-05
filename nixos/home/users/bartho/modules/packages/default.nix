@@ -53,6 +53,7 @@ in {
       vdhcoapp # video downloader helper dependency
 
       # To sort cli
+      cloudmonkey
       obsidian
       monero-gui
       expat
