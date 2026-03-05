@@ -185,6 +185,7 @@ in {
       pkgs-master.mixxx # dj software
 
       # To sort gui
+      moonlight-qt
       
       
       
