@@ -34,6 +34,8 @@ in {
       '' + ''
         ${if cliphistEnabled then "exec-once = cliphist wipe; wl-paste --watch cliphist store" else ""}
       '' + ''
+        exec-once = sudo -n reset-mouse-dongle
+      '' + ''
         plugin {
           virtual-desktops {
             names = 1, 2, 3, 4, 5, 6, 7, 8, 9

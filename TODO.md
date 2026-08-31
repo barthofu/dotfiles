@@ -17,7 +17,7 @@
 - [ ] hibernate crashes the system (sometimes?)
 - [ ] closing the lid has an unstable behavior (sometimes it hibernates, sometimes it doesn't)
 - [ ] performance problem on games
-- [ ] 2.4ghz mouse bugged on login (reacts with delay, fixed by reconnecting the dongle after login - likely USB autosuspend/runtime PM on the receiver; udev rule added in nixos/system/modules/misc to disable autosuspend for the Logitech Lightspeed receiver 046d:c539, needs testing on next login)
+- [ ] 2.4ghz mouse bugged on login (reacts with delay, fixed by reconnecting the dongle after login - udev autosuspend rule didn't fix it; now trying a `reset-mouse-dongle` script (usb unbind/bind on 046d:c539) run via `exec-once` in hyprland on login, needs testing)
 - [ ] vscode discord rpc connection not working
 - [ ] windows random freezing (quite rare tho)
 - [ ] discord vscode rich presence not working (open an issue)

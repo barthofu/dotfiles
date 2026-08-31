@@ -69,36 +69,29 @@ in {
     no-offload
   ];
 
-  # The dGPU never reaches D3cold on its own (finegrained runtime PM is disabled above
-  # because it caused shutdown hangs), so s2idle suspend barely reduces power draw and
-  # the laptop keeps heating up with the lid closed. Best-effort workaround: unload the
-  # nvidia modules before sleep and reload them after resume. Runs as a systemd-sleep
-  # drop-in, so it executes strictly between the official nvidia-suspend/resume services
-  # (powerManagement.enable above), which still handle VRAM save/restore.
-  # Always exits 0 and ignores failures (e.g. a running nvidia-offload process holding
-  # the module busy) so it can never block or break a suspend/resume cycle.
-  # To roll back: delete this block and rebuild, no reboot required.
-  environment.etc."systemd/system-sleep/nvidia-gpu-off.sh" = {
-    mode = "0755";
-    text = ''
-      #!/bin/sh
-      set -u
+  # powertop --auto-tune (module.power) sets power/control=auto on every PCI device,
+  # including this GPU, even though finegrained runtime PM is disabled above. The kernel
+  # then keeps attempting a runtime-suspend that the driver always fails (nv_pmops_runtime_suspend
+  # returns -5), leaving the device stuck in runtime_status=error instead of active.
+  # Force it back to "on" so the GPU never enters that broken retry state.
+  services.udev.extraRules = ''
+    SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{power/control}="on"
+  '';
 
-      case "$1" in
-        pre)
-          for mod in nvidia_uvm nvidia_drm nvidia_modeset nvidia; do
-            modprobe -r "$mod" 2>/dev/null
-          done
-          ;;
-        post)
-          modprobe nvidia 2>/dev/null
-          modprobe nvidia_modeset 2>/dev/null
-          modprobe nvidia_drm 2>/dev/null
-          modprobe nvidia_uvm 2>/dev/null
-          ;;
-      esac
-
-      exit 0
-    '';
+  # powertop.service runs After=multi-user.target, i.e. AFTER the udev rule above already
+  # applied, and unconditionally resets power/control=auto on every PCI device again,
+  # silently undoing the rule. Re-apply it once more, ordered after powertop.service, so
+  # the GPU never ends up in the broken runtime-suspend retry loop that wedges nvidia-smi
+  # ("Unable to determine the device handle ... Unknown Error") even without any real
+  # suspend/resume cycle happening.
+  systemd.services.nvidia-no-runtime-pm = {
+    description = "Keep NVIDIA GPU power/control=on after powertop --auto-tune";
+    after = [ "powertop.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo on > /sys/bus/pci/devices/0000:01:00.0/power/control'";
+    };
   };
 }
