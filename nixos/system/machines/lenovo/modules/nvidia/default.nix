@@ -68,4 +68,37 @@ in {
     nvidia-offload
     no-offload
   ];
+
+  # The dGPU never reaches D3cold on its own (finegrained runtime PM is disabled above
+  # because it caused shutdown hangs), so s2idle suspend barely reduces power draw and
+  # the laptop keeps heating up with the lid closed. Best-effort workaround: unload the
+  # nvidia modules before sleep and reload them after resume. Runs as a systemd-sleep
+  # drop-in, so it executes strictly between the official nvidia-suspend/resume services
+  # (powerManagement.enable above), which still handle VRAM save/restore.
+  # Always exits 0 and ignores failures (e.g. a running nvidia-offload process holding
+  # the module busy) so it can never block or break a suspend/resume cycle.
+  # To roll back: delete this block and rebuild, no reboot required.
+  environment.etc."systemd/system-sleep/nvidia-gpu-off.sh" = {
+    mode = "0755";
+    text = ''
+      #!/bin/sh
+      set -u
+
+      case "$1" in
+        pre)
+          for mod in nvidia_uvm nvidia_drm nvidia_modeset nvidia; do
+            modprobe -r "$mod" 2>/dev/null
+          done
+          ;;
+        post)
+          modprobe nvidia 2>/dev/null
+          modprobe nvidia_modeset 2>/dev/null
+          modprobe nvidia_drm 2>/dev/null
+          modprobe nvidia_uvm 2>/dev/null
+          ;;
+      esac
+
+      exit 0
+    '';
+  };
 }

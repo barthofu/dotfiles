@@ -3,7 +3,7 @@
 if [ -f ~/.cache/powersaving ] ;then
     hyprctl reload
     rm ~/.cache/powersaving
-    powerprofilectl set balanced
+    powerprofilesctl set balanced
     notify-send "Powersaving mode deactivated" "Animations and blur enabled"
 else
     hyprctl --batch "\
@@ -12,7 +12,7 @@ else
         keyword decoration:active_opacity 1;\
         keyword decoration:inactive_opacity 1;\
         misc:vfr = true;"
-    powerprofilectl set powersave
+    powerprofilesctl set power-saver
 	touch ~/.cache/powersaving
     notify-send "Powersaving mode activated" "Animations and blur disabled"
 fi

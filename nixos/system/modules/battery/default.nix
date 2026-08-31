@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -19,6 +20,12 @@ in {
       
       # Power profiles daemon
       power-profiles-daemon.enable = !config.services.tlp.enable;
+
+      # Bascule performance/balanced selon secteur/batterie -> courbe ventilo firmware plus agressive sur secteur
+      udev.extraRules = mkIf config.services.power-profiles-daemon.enable ''
+        SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance"
+        SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", RUN+="${pkgs.power-profiles-daemon}/bin/powerprofilesctl set balanced"
+      '';
       
       # TLP
       auto-cpufreq.enable = config.services.tlp.enable;
