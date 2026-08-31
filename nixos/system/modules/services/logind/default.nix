@@ -17,7 +17,9 @@ in {
     services.logind = {
       settings = {
         Login = {
-          HandleLidSwitch = "ignore";
+          # Suspend on battery to avoid overheating/battery drain in a bag.
+          HandleLidSwitch = "suspend";
+          # Assume AC power means docked at a desk with an external monitor.
           HandleLidSwitchExternalPower = "ignore";
           HandleLidSwitchDocked = "ignore";
         };
