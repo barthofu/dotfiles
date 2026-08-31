@@ -18,7 +18,9 @@
       };
     };
 
-    kernelParams = [ "processor.max_cstate=4" "amd_iomu=soft" "idle=nomwait"];
+    # Removed processor.max_cstate=4 / amd_iomu=soft / idle=nomwait: they blocked deep CPU
+    # C-states (pc2-pc10 stuck at 0% per powertop) and caused excessive idle heat/power draw.
+    kernelParams = [ ];
     kernelPackages = pkgs.linuxPackages_latest;
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     extraModprobeConfig = ''

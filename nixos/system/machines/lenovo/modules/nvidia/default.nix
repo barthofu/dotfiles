@@ -47,7 +47,10 @@ in {
     
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = true;
+    # Disabled: runtime suspend fails on driver 580.105.08 (nv_pmops_runtime_suspend
+    # returns -5, GPU never reaches D3cold anyway) and correlates with shutdown hangs
+    # ("nvidia-modeset: Error while waiting for GPU progress" looping, forcing a hard power-off).
+    powerManagement.finegrained = false;
 
     prime = {
       offload = {
