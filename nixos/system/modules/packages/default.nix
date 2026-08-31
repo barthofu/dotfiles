@@ -40,7 +40,7 @@ in {
       bat # cat with wings
       fastfetch # system info
       pfetch-rs # system info
-      neofetch # system info
+      # neowofetch # system info
       screenfetch # system info
       ipfetch # ip fetcher
       ramfetch # ram fetcher

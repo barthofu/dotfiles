@@ -50,7 +50,7 @@ in {
       toilet # ascii art
       fortune # fortune teller
       cowsay # cow ascii art
-      vdhcoapp # video downloader helper dependency
+      # vdhcoapp # video downloader helper dependency
 
       # To sort cli
       opencode
@@ -72,9 +72,9 @@ in {
       jdk21 # java
       cargo # rust
       rustc # rust
-      nodejs_22 # node
-      nodePackages.pnpm # node package manager
-      nodePackages.yarn # node package manager
+      nodejs_24 # node
+      pnpm # node package manager
+      yarn # node package manager
       d2 # modern diagram scripting language
 
       gh # github cli
@@ -89,9 +89,9 @@ in {
       git-crypt # encrypt git repos
       coder # coder cli client
       
-      gitkraken # git gui
-      jetbrains.idea-ultimate # jetbrains ultimate ide
-      jetbrains.rust-rover # jetbrains rust ide
+      # gitkraken # git gui
+      # jetbrains.idea-ultimate # jetbrains ultimate ide
+      # jetbrains.rust-rover # jetbrains rust ide
       jetbrains.datagrip # jetbrains rust ide
       insomnia # rest client
       # pkgs-master.code-cursor # ai fork of vscode 
@@ -123,9 +123,9 @@ in {
       # =======================
       # notion # note taking
       # obsidian # note taking
-      realvnc-vnc-viewer # vnc client
+      # realvnc-vnc-viewer # vnc client
       neatvnc # vnc server
-      spacedrive # file manager
+      # spacedrive # file manager
       nemo # file manager
       nautilus # file manager
       smile # emoji picker
