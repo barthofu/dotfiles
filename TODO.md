@@ -17,7 +17,7 @@
 - [ ] hibernate crashes the system (sometimes?)
 - [ ] closing the lid has an unstable behavior (sometimes it hibernates, sometimes it doesn't)
 - [ ] performance problem on games
-- [ ] 2.4ghz mouse bugged on login
+- [ ] 2.4ghz mouse bugged on login (reacts with delay, fixed by reconnecting the dongle after login - likely USB autosuspend/runtime PM on the receiver; udev rule added in nixos/system/modules/misc to disable autosuspend for the Logitech Lightspeed receiver 046d:c539, needs testing on next login)
 - [ ] vscode discord rpc connection not working
 - [ ] windows random freezing (quite rare tho)
 - [ ] discord vscode rich presence not working (open an issue)
@@ -25,9 +25,9 @@
 ## Environment
 
 - [ ] configure gdm or sddm
-- [ ] global system dark mode so apps can inherit it (e.g: chrome)
-- [ ] add a dynamic option to change power mode (powersave, performance, etc) on fly
-- [ ] apps auto-launch and disposition across workspaces at startup (hyprland related)
+- [ ] ~~global system dark mode so apps can inherit it (e.g: chrome)~~
+- [x] add a dynamic option to change power mode (powersave, performance, etc) on fly
+- [x] apps auto-launch and disposition across workspaces at startup (hyprland related)
 - [ ] selectable display mode when external monitor connected (same as Windows; duplicate, extend and only 2nd screen) -> autorandr?
 - [ ] gui for when typing in my encrypted disk code
 - [ ] hyprland
