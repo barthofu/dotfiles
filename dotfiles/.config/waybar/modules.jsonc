@@ -232,6 +232,14 @@
     "on-click": "$HOME/.local/scripts/toggle_night_mode.sh"
   },
 
+  // Powersaving mode toggle
+  "custom/powersaving": {
+    "return-type": "json",
+    "interval": 1,
+    "exec": "$HOME/.local/scripts/powersaving.sh status",
+    "on-click": "$HOME/.local/scripts/powersaving.sh toggle"
+  },
+
   // backlight:
   "backlight": {
     "format": "{icon}   {percent}%",

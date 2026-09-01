@@ -79,6 +79,7 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #custom-nightmode,
+#custom-powersaving,
 #bluetooth,
 #network,
 #battery,
@@ -120,6 +121,14 @@ window#waybar {
 
 #custom-nightmode {
     color: @lavender; 
+}
+
+#custom-powersaving.off {
+    color: @lavender;
+}
+
+#custom-powersaving.on {
+    color: @yellow;
 }
 
 #network {

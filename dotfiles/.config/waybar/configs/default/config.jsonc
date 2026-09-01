@@ -86,7 +86,8 @@
             "pulseaudio",
             "pulseaudio#microphone",
             "backlight",
-            "custom/nightmode"
+            "custom/nightmode",
+            "custom/powersaving"
         ]
     }    
 }
