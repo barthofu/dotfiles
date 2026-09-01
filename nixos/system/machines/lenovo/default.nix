@@ -1,6 +1,10 @@
 { username, ... }:
 
 {
+	# Single flag to fully disable the discrete RTX 3050 in software (driver blacklisted,
+	# Intel iGPU only) - flip to true to re-enable PRIME offload when needed (gaming/CUDA).
+	machine.nvidiaDgpu.enable = false;
+
 	module = {
 
 		ai.enable = false;

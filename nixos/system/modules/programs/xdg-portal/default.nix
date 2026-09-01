@@ -28,9 +28,12 @@ in {
         };
       };
 
+      # xdg-desktop-portal-wlr deliberately excluded: it conflicts with the
+      # Hyprland-native portal (programs.hyprland.portalPackage) for the
+      # Screencast/Screenshot interfaces, causing unstable PipeWire DMA-BUF
+      # negotiation (EGL_BAD_MATCH renegotiation loops during screen sharing).
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
       ];
     };
   };

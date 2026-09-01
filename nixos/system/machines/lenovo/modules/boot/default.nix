@@ -1,5 +1,6 @@
 { config
 , pkgs
+, lib
 , ...
 }:
 
@@ -22,7 +23,7 @@
     # C-states (pc2-pc10 stuck at 0% per powertop) and caused excessive idle heat/power draw.
     kernelParams = [ ];
     kernelPackages = pkgs.linuxPackages_latest;
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    extraModulePackages = lib.optional config.machine.nvidiaDgpu.enable config.boot.kernelPackages.nvidia_x11;
     extraModprobeConfig = ''
       options kvm_intel nested=1
       options kvm_intel emulate_invalid_guest_state=0

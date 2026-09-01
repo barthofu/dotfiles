@@ -34,7 +34,7 @@ in {
       '' + ''
         ${if cliphistEnabled then "exec-once = cliphist wipe; wl-paste --watch cliphist store" else ""}
       '' + ''
-        exec-once = sudo -n reset-mouse-dongle
+        exec-once = /run/wrappers/bin/sudo -n /run/current-system/sw/bin/reset-mouse-dongle > /tmp/reset-mouse-dongle.log 2>&1
       '' + ''
         plugin {
           virtual-desktops {

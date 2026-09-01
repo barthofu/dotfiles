@@ -24,8 +24,8 @@ in {
       enable = true;
 
       image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/manganimation/perfect_blue.jpg";
-        sha256 = "g+sD1EVGxmbC1CgJTDHg7W+hsOK3kTMgzdR4RGDhQSU=";
+        url = "https://raw.githubusercontent.com/barthofu/dotfiles/refs/heads/dev/dotfiles/.local/share/wallpapers/aesthetic/japanese_wave.jpg";
+        sha256 = "sha256-I0bagjxNhd3yg+muK5aNhw/ZKDmVdNBuy+UYeP4+pSE=";
       };
       autoEnable = true;
       polarity = "dark";
