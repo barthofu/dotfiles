@@ -1,9 +1,12 @@
 { pkgs
 , config
+, lib
 , ... 
 }:
 
 let
+  cfg = config.machine.nvidiaDgpu;
+
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -19,6 +22,20 @@ let
     exec "$@"
   '';
 in {
+  # Single switch to fully disable the discrete RTX 3050 in software (driver blacklisted,
+  # Intel iGPU only). Only touches the Linux driver, not BIOS/Windows dual-boot.
+  options.machine.nvidiaDgpu.enable = lib.mkOption {
+    type = lib.types.bool;
+    default = true;
+    description = ''
+      Enable the discrete NVIDIA RTX 3050 GPU (PRIME offload + power-management
+      workarounds). Set to false to work around shutdown hangs / runtime-PM wedging
+      by never loading the nvidia driver at all (Intel iGPU only).
+    '';
+  };
+
+  config = lib.mkMerge [
+    (lib.mkIf cfg.enable {
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
@@ -94,4 +111,11 @@ in {
       ExecStart = "${pkgs.bash}/bin/bash -c 'echo on > /sys/bus/pci/devices/0000:01:00.0/power/control'";
     };
   };
+    })
+
+    (lib.mkIf (!cfg.enable) {
+      boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" "nvidia_uvm" ];
+      services.xserver.videoDrivers = lib.mkForce [ "modesetting" ];
+    })
+  ];
 }
