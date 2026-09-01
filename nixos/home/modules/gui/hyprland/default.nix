@@ -21,12 +21,12 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       package = null;
       portalPackage = null;
 
       plugins = [
-        inputs.hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+        inputs.hyprland-virtual-desktops.packages.${pkgs.stdenv.hostPlatform.system}.virtual-desktops
       ];
 
       extraConfig = ''
@@ -47,7 +47,7 @@ in {
         }
       '';
 
-      # plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
+      # plugins = with inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}; [
       #     hyprbars
       #     hyprexpo
       # ];

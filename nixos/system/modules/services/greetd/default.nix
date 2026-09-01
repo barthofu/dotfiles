@@ -13,7 +13,7 @@ let
   cfg = config.module.services.greetd;
 
   cmd = if wm == "hyprland"
-    then "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
+    then "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/Hyprland"
   else "";
 in {
   options.module.services.greetd = {
