@@ -185,6 +185,7 @@ in {
       pkgs-master.mixxx # dj software
 
       # To sort gui
+      discord
       signal-desktop
       zed-editor
       moonlight-qt
