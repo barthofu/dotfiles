@@ -8,7 +8,7 @@ theme="macchiato"
 # ----------------------------------------------------- 
 killall waybar
 pkill waybar
-sleep 0.5
+sleep 2
 
 # ----------------------------------------------------- 
 # Loading the configuration
