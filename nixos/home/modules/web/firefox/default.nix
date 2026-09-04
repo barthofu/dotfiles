@@ -1,6 +1,7 @@
 { config
 , lib
 , pkgs
+, pkgs-master
 , ...
 }:
 
@@ -16,7 +17,7 @@ in {
   config = mkIf cfg.enable {
       
     home.packages = with pkgs; [
-      firefox
+      pkgs-master.firefox
     ];
 
     home.file.".mozilla/native-messaging-hosts" = {

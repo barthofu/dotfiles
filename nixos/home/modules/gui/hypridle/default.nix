@@ -26,9 +26,11 @@ let
     exit 1  # AC is not connected (on battery)
   '';
 
-  # Generate config file for hypridle based on power state
+  # Generate config file for hypridle based on power state.
+  # hypridle only auto-discovers hypridle.conf under "~/.config/hypr" (its -c flag
+  # is broken on this version and silently ignored), so it must live there.
   generateHypridleConfig = pkgs.writeShellScriptBin "hypridle-gen-config" ''
-    config_dir="$HOME/.config/hypridle"
+    config_dir="$HOME/.config/hypr"
     config_file="$config_dir/hypridle.conf"
     mkdir -p "$config_dir"
     

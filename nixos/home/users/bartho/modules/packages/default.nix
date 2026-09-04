@@ -64,6 +64,7 @@ in {
       pkgs-master.basalt
       mitmproxy
       firefoxpwa
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     ] ++ lib.optionals isWorkstation [
 

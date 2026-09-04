@@ -61,6 +61,11 @@
     #};
 
     ####################  Community & Other Repositories | remote flake ####################
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Firefox-addons is a collection of Firefox extensions
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
