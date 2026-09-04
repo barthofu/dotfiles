@@ -6,9 +6,9 @@
 
 - [ ] brand the whole repo and this project as "SietchOS" (use ascii generator for the logo)
 - [ ] check gc and nixos storage optimization
-- [ ] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 - [ ] move boot system module to system configuration
 - [ ] dig the iso creation process (https://github.com/erictossell/nixflakes/blob/main/docs/installation-media.md)
+- [x] automatic last nixos generation chooser (would be could to do a key combination in order to select the generation)
 
 ## Current problems
 
@@ -16,11 +16,8 @@
 
 - [ ] hibernate crashes the system (sometimes?)
 - [ ] closing the lid has an unstable behavior (sometimes it hibernates, sometimes it doesn't)
-- [ ] performance problem on games
 - [ ] 2.4ghz mouse bugged on login (reacts with delay, fixed by reconnecting the dongle after login - udev autosuspend rule didn't fix it; now trying a `reset-mouse-dongle` script (usb unbind/bind on 046d:c539) run via `exec-once` in hyprland on login, needs testing)
-- [ ] vscode discord rpc connection not working
-- [ ] windows random freezing (quite rare tho)
-- [ ] discord vscode rich presence not working (open an issue)
+- [x] vscode discord rpc connection not working
 
 ## Environment
 
