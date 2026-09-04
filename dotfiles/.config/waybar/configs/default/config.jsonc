@@ -42,7 +42,7 @@
 
     // Modules Right    
     "modules-right": [
-        "tray",
+        // "tray",
         "group/hardware",
         "group/signals",
         "group/misc"
@@ -73,8 +73,8 @@
         "orientation": "inherit",
         "modules": [
             "custom/system", 
-            "cpu", 
-            "memory", 
+            // "cpu", 
+            // "memory", 
             "disk", 
             "custom/temperature"
         ]
@@ -84,8 +84,8 @@
         "orientation": "horizontal",
         "modules": [
             "pulseaudio",
-            "pulseaudio#microphone",
-            "backlight",
+            // "pulseaudio#microphone",
+            // "backlight",
             "custom/nightmode",
             "custom/powersaving"
         ]
