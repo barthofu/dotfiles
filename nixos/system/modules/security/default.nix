@@ -40,7 +40,6 @@ in {
       enable = true;
       allowedTCPPorts = [
         58585 # bittorrent
-        8096  # jellyfin
       ];
       allowedUDPPorts = [];
     };

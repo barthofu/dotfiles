@@ -3,8 +3,10 @@
 if [[ "$1" == "logout" ]]; then
     echo ":: Logout"
     sleep 0.5
-    pkill Hyprland 
-    sleep 2
+    # graceful exit (unloads plugins, tears down hyprland-session.target)
+    # instead of pkill Hyprland, which orphans clients and left stale
+    # systemd/portal state that hung the *next* logout
+    hyprctl dispatch exit
 fi
 
 if [[ "$1" == "lock" ]]; then
