@@ -27,7 +27,7 @@ toggle() {
             keyword decoration:blur:enabled 0;\
             keyword decoration:active_opacity 1;\
             keyword decoration:inactive_opacity 1;\
-            keyword misc:vfr true"
+            keyword debug:vfr true"
         command -v powerprofilesctl >/dev/null 2>&1 && powerprofilesctl set power-saver
         touch "$STATE_FILE"
         notify-send "Powersaving mode activated" "Animations and blur disabled"
