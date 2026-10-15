@@ -11,9 +11,10 @@ with lib;
 
 let
   cfg = config.module.services.greetd;
+  hyprlandPkg = import ../../../../lib/hyprland.nix { inherit inputs pkgs; };
 
   cmd = if wm == "hyprland"
-    then "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/Hyprland"
+    then "${hyprlandPkg}/bin/Hyprland"
   else "";
 in {
   options.module.services.greetd = {

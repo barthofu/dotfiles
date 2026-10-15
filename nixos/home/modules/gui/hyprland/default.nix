@@ -11,6 +11,15 @@ let
   cfg = config.module.gui.hyprland;
   swayBgEnabled = config.module.gui.swaybg.enable;
   cliphistEnabled = config.module.utils.cliphist.enable;
+
+  hyprlandPkg = import ../../../../lib/hyprland.nix { inherit inputs pkgs; };
+
+  # Upstream recipe, built against our Hyprland; gcc14Stdenv would mismatch hyprutils' libstdc++.
+  virtualDesktops = pkgs.callPackage "${inputs.hyprland-virtual-desktops}/default.nix" {
+    hyprland = hyprlandPkg;
+    gcc14Stdenv = pkgs.stdenv;
+    lua = pkgs.lua5_5;
+  };
 in {
   options.module.gui.hyprland = {
     enable = mkEnableOption "Enables hyprland";
@@ -24,9 +33,11 @@ in {
       #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       package = null;
       portalPackage = null;
+      # extraConfig below is hyprlang syntax; home-manager defaults to lua on newer stateVersions.
+      configType = "hyprlang";
 
       plugins = [
-        inputs.hyprland-virtual-desktops.packages.${pkgs.stdenv.hostPlatform.system}.virtual-desktops
+        virtualDesktops
       ];
 
       extraConfig = ''

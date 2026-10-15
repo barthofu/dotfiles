@@ -45,13 +45,12 @@
     # Hyprland is a collection of NixOS modules and packages for a more modern and minimal desktop experience. with plugins for home-manager.
     hyprland = {
       # url = "github:hyprwm/Hyprland";
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.52.1";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.56.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
     hyprland-virtual-desktops = {
-      # url = "github:levnikmyskin/hyprland-virtual-desktops";
-      url = "https://github.com/levnikmyskin/hyprland-virtual-desktops/archive/refs/tags/v2.2.8.tar.gz";
+      url = "github:levnikmyskin/hyprland-virtual-desktops";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -61,10 +60,10 @@
     #};
 
     ####################  Community & Other Repositories | remote flake ####################
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # zen-browser = {
+    #   url = "github:youwen5/zen-browser-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # Firefox-addons is a collection of Firefox extensions
     firefox-addons = {
@@ -90,6 +89,11 @@
     walker = {
       url = "github:abenz1267/walker";
       inputs.nixpkgs.follows = "master";
+    };
+
+    # OpenChamber web UI / desktop GUI (nix flake from openchamber PR #4529, pending upstream merge)
+    openchamber = {
+      url = "github:fabiob/openchamber/feat/nix-flake";
     };
   };
 

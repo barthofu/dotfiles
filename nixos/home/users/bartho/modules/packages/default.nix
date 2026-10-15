@@ -13,7 +13,7 @@
 with lib;
 
 let
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
   cfg = config.module.user.packages;
   
   isWayland = isLinux && isWorkstation && hyprlandEnable;
@@ -53,7 +53,6 @@ in {
       # vdhcoapp # video downloader helper dependency
 
       # To sort cli
-      opencode
       obsidian
       monero-gui
       expat
@@ -64,7 +63,7 @@ in {
       pkgs-master.basalt
       mitmproxy
       firefoxpwa
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     ] ++ lib.optionals isWorkstation [
 
@@ -77,6 +76,10 @@ in {
       pnpm # node package manager
       yarn # node package manager
       d2 # modern diagram scripting language
+
+      # AI coding workspace (desktop GUI, bundles its own OpenCode CLI)
+      inputs.openchamber.packages.${platform}.openchamber-desktop
+      inputs.openchamber.packages.${platform}.opencode-cli
 
       gh # github cli
       kubectl # kubernetes cli
@@ -141,13 +144,12 @@ in {
       todoist # cli client for todoist
       # kolourpaint # paint
       gimp # image editor
-      inkscape # vector editor
       krita # digital painting
       udiskie # automount
       teamviewer # remote desktop
       appimage-run # appimage binaries runner
       popsicle # usb iso flasher
-      wineWowPackages.waylandFull # wine for wayland
+      wineWow64Packages.waylandFull # wine for wayland
       winetricks # wine package manager
       wf-recorder # wayland screen recorder
       # walker # app launcher
@@ -172,7 +174,7 @@ in {
       heroic # epic games manager
       mangohud # game overlay
 
-      # Office
+      # Office  
       # =======================
       # onlyoffice-bin # office suite
       libreoffice
@@ -181,7 +183,7 @@ in {
 
       # Misc
       # =======================
-      cavalier # cava frontend
+      cavasik # audio visualizer (cava based)
       gedit # text editor
       pkgs-master.mixxx # dj software
 
@@ -195,7 +197,6 @@ in {
       
       filezilla
       gnome-calculator
-      rpcs3
       desmume
       wayvnc
       speedcrunch

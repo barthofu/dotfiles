@@ -17,7 +17,7 @@
 }:
 
 let
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
 
   isRoot                     = username == "root";
   homeDirectory              = if isRoot then "/root" else "/home/${username}";
