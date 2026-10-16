@@ -11,6 +11,8 @@ update:
     nix flake update --flake ./nixos
 update-master:
     cd nixos && nix flake lock --update-input master
+update-openchamber:
+    nix flake update openchamber --flake ./nixos
 clean:
     nix-collect-garbage -d
     sudo nix-collect-garbage -d
