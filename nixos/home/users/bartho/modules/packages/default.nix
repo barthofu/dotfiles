@@ -17,6 +17,23 @@ let
   cfg = config.module.user.packages;
   
   isWayland = isLinux && isWorkstation && hyprlandEnable;
+
+  # Local bunDeps hash: upstream's nix/hashes.json does not reproduce on this machine.
+  ocCore = inputs.openchamber.packages.${platform}.openchamber.passthru.core;
+  ocBunDeps = ocCore.passthru.bunDeps.overrideAttrs (_: {
+    outputHash = "sha256-uum3lOBdZUF2On1Ebm3T7V7NMNGxjBsYJGaAjC8W8WU=";
+  });
+  ocCoreFixed = ocCore.overrideAttrs (old: {
+    passthru = old.passthru // { bunDeps = ocBunDeps; };
+    configurePhase = ''
+      cp -a "${ocBunDeps}"/. .
+      chmod -R u+w .
+      patchShebangs node_modules
+      for dir in packages/*/node_modules; do
+        [ -d "$dir" ] && patchShebangs "$dir"
+      done
+    '';
+  });
 in {
   options.module.user.packages = {
     enable = mkEnableOption "Enables user packages";
@@ -78,7 +95,9 @@ in {
       d2 # modern diagram scripting language
 
       # AI coding workspace (desktop GUI, bundles its own OpenCode CLI)
-      inputs.openchamber.packages.${platform}.openchamber-desktop
+      (inputs.openchamber.packages.${platform}.openchamber-desktop.override {
+        openchamberCore = ocCoreFixed;
+      })
       inputs.openchamber.packages.${platform}.opencode-cli
 
       gh # github cli

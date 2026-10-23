@@ -91,9 +91,9 @@
       inputs.nixpkgs.follows = "master";
     };
 
-    # OpenChamber web UI / desktop GUI (nix flake from openchamber PR #4529, pending upstream merge)
+    # OpenChamber web UI / desktop GUI (upstream nix flake)
     openchamber = {
-      url = "github:fabiob/openchamber/feat/nix-flake";
+      url = "github:openchamber/openchamber";
     };
   };
 

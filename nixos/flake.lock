@@ -904,16 +904,15 @@
         "opencode": "opencode"
       },
       "locked": {
-        "lastModified": 1792036699,
-        "narHash": "sha256-E3Lf/isS4ORP3d1AhOz+3iXqiIoONWRajVHD2BaU7eg=",
-        "owner": "fabiob",
+        "lastModified": 1792722668,
+        "narHash": "sha256-2tKTmsrSZWPLFCynTZHdaEE0JVPNylbglbIqE/XbN3w=",
+        "owner": "openchamber",
         "repo": "openchamber",
-        "rev": "bb8d5072691ea4c2b9f76aed14d24373fd60a0ee",
+        "rev": "6b86d926420747429b96461b7a7e5411fbe14531",
         "type": "github"
       },
       "original": {
-        "owner": "fabiob",
-        "ref": "feat/nix-flake",
+        "owner": "openchamber",
         "repo": "openchamber",
         "type": "github"
       }
@@ -923,16 +922,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791968597,
-        "narHash": "sha256-qfT8gQCyGahr5v7v95wNArXrBOAnfQZja1WyJkaCpJI=",
+        "lastModified": 1792673127,
+        "narHash": "sha256-b4+ZFgnlAuQMkRXBnYsEcHdhPsTfCZnEYArzdWP2TK4=",
         "owner": "anomalyco",
         "repo": "opencode",
-        "rev": "042d0832f5f3a73eaa039a58a7d565776f6d4290",
+        "rev": "bb25a2f4a3f3f04d7c344bec0c0574ea3510b3b1",
         "type": "github"
       },
       "original": {
         "owner": "anomalyco",
-        "ref": "v2.0.29",
+        "ref": "v2.1.3",
         "repo": "opencode",
         "type": "github"
       }
