@@ -169,6 +169,8 @@
 
   // Battery
   "battery": {
+    // Pin to the laptop battery; otherwise HID++ mouse batteries crash waybar on unplug
+    "bat": "BAT0",
     "states": {
       // "good": 95,
       "warning": 30,
