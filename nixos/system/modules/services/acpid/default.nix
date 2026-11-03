@@ -28,7 +28,7 @@ in {
           external_monitor=$(hyprctl monitors | grep "Monitor" | grep -v "$INTERNAL_SCREEN" | awk '{print $2}' | head -n 1)
 
           if [ -n "$external_monitor" ] && [ $lid_state == "closed" ]; then
-            hyprctl keyword monitor "$INTERNAL_SCREEN, disable"
+            hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
           else
             hyprctl reload
           fi

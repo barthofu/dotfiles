@@ -6,7 +6,11 @@ if [[ "$1" == "logout" ]]; then
     # graceful exit (unloads plugins, tears down hyprland-session.target)
     # instead of pkill Hyprland, which orphans clients and left stale
     # systemd/portal state that hung the *next* logout
-    hyprctl dispatch exit
+    if hyprctl -j getoption animations:enabled | jq -e 'has("bool")' >/dev/null; then
+        hyprctl dispatch 'hl.dsp.exit()'
+    else
+        hyprctl dispatch exit
+    fi
 fi
 
 if [[ "$1" == "lock" ]]; then

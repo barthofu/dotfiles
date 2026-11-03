@@ -4,10 +4,18 @@ if [[ $(cat $HOME/.config/hypr/conf/animation.conf) == *"disabled"* ]]; then
     echo ":: Toggle blocked by disabled.conf variation."
 else
     if [ -f $cache_file ] ;then
-        hyprctl keyword animations:enabled true
+        if hyprctl -j getoption animations:enabled | jq -e 'has("bool")' >/dev/null; then
+            hyprctl eval 'hl.config({ animations = { enabled = true } })'
+        else
+            hyprctl keyword animations:enabled 1
+        fi
         rm $cache_file
     else
-        hyprctl keyword animations:enabled false
+        if hyprctl -j getoption animations:enabled | jq -e 'has("bool")' >/dev/null; then
+            hyprctl eval 'hl.config({ animations = { enabled = false } })'
+        else
+            hyprctl keyword animations:enabled 0
+        fi
         touch $cache_file
     fi
 fi

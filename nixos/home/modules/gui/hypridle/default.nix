@@ -62,7 +62,7 @@ let
     general {
         lock_cmd = pidof hyprlock || hyprlock
         before_sleep_cmd = hyprlock
-        after_sleep_cmd = hyprctl dispatch dpms on && $HOME/.config/waybar/launch.sh
+        after_sleep_cmd = hyprctl dispatch 'hl.dsp.dpms({ action = "on" })' && $HOME/.config/waybar/launch.sh
     }
 
     ${renderListener {

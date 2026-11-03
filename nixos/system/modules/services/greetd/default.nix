@@ -14,7 +14,7 @@ let
   hyprlandPkg = import ../../../../lib/hyprland.nix { inherit inputs pkgs; };
 
   cmd = if wm == "hyprland"
-    then "${hyprlandPkg}/bin/Hyprland"
+    then "${hyprlandPkg}/bin/start-hyprland"
   else "";
 in {
   options.module.services.greetd = {

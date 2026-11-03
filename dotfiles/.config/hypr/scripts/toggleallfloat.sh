@@ -6,5 +6,9 @@
 # /_/   \_\_|_|_| |_|\___/ \__,_|\__| 
 #                                     
 
-hyprctl dispatch workspaceopt allfloat
+if hyprctl -j getoption animations:enabled | jq -e 'has("bool")' >/dev/null; then
+	hyprctl eval 'require("lua.actions").toggle_all_float()'
+else
+	hyprctl dispatch workspaceopt allfloat
+fi
 notify-send "Windows on this workspace toggled to floating/tiling"
